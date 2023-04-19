@@ -2,8 +2,17 @@
 {% block content %}
 
 {% for recipe in recipes %}
-    <h1>{{ recipe.title }}</h1>
-        <p>by {{ recipe.author }} on {{ recipe.date_posted }}</p>
-        <p>{{ recipe.content }}</p>
+
+<div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+        <h1>{{ recipe.title }}</h1>
+        <small>
+            <p>by {{ recipe.author }} on {{ recipe.date_posted }}</p>
+        </small>
+        <p class="card-text">{{ recipe.content }}</p>
+    </div>
+</div>
+
 {% endfor %}
 {% endblock content %}
