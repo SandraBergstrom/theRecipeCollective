@@ -8,5 +8,6 @@ def home(request):
     }
     return render(request, 'cookbook/home.html', context)
 
+
 def about(request):
     return render(request, 'cookbook/about.html', {'title': 'About'})
