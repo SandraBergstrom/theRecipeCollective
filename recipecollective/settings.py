@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
-    'cookbook',
+    'cookbook.apps.CookbookConfig',
 ]
 
 MIDDLEWARE = [
