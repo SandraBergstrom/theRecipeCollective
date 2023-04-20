@@ -7,7 +7,7 @@
 
     --clr-accent-pink: rgb(176, 75, 124);
     --clr-accent-orange: rgba(213, 142, 88);
-    --clr-accent-green: rgba(136, 145, 112);
+    --clr-accent-green: rgb(103, 139, 96);
 }
 
 body{
@@ -17,13 +17,18 @@ body{
 
 a {
     text-decoration: none;
-    color: var(--bs-heading-color,inherit);
+    font-weight: 500;
+    color: var(--clr-accent-orange)
 }
 
-.btn-custom {
+.btn-custom-primary {
     background-color: var(--clr-accent-orange);
     color: var(--clr-primary-light);
+}
 
+.btn-custom-secondary {
+    background-color: var(--clr-accent-green);
+    color: var(--clr-primary-light);
 }
  
 /* SASS */ 
