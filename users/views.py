@@ -11,9 +11,9 @@ def register(request):
             username = form.cleaned_data.get('username')
             messages.success(
                 request, 
-                f'Welcome { username }! Your account was successfully created!'
+                f'Welcome { username }! Your account was successfully created! Please log in!'
                 )
-            return redirect('cookbook-home')
+            return redirect('login')
     else:
         form = UserRegisterForm()
     return render(request, 'users/register.html', {'form': form})
