@@ -30,6 +30,10 @@ a {
     background-color: var(--clr-accent-green);
     color: var(--clr-primary-light);
 }
+
+.btn-link {
+    color: var(--clr-neutral-dark);
+}
  
 /* SASS */ 
 $card-height: 100% 
