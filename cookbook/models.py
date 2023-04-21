@@ -6,7 +6,7 @@ STATUS = ((0, "Private"), (1, "Public"))
 
 class Recipe(models.Model):
 
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=200)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     excerp = models.CharField(max_length=50, blank=True, null=True)
     category_choices = [
