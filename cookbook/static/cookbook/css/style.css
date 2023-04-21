@@ -38,6 +38,13 @@ a {
 /* SASS */ 
 $card-height: 100% 
 
+/* PROFILE */
+
+.profile-image {
+    height: 150px;
+    width: 150px;
+}
+
 
 /* RECIPE POST */
 
