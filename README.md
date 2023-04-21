@@ -113,6 +113,13 @@ Registration form
 - Check in django admin panel if user was actually created. Yes, it was
 - Check if email was saved  - yes
 
+## Bugs
+
+### Known bugs
+- Update user profle form is not working. Keep getting the error message: Type Error at /profile/. Exception Value: 'UserUpdateForm' object is not iterable. 
+  - Solved: Forgot to put inherit forms.ModelForm in the class UserUpdateForm. 
+- Default profile pic is not showing. Tried both to add a direct link to cloudinary and to store it locally. 
+
 ## Credits
 
 
