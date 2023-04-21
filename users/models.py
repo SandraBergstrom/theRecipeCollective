@@ -15,7 +15,8 @@ class Profile(models.Model):
         ('OTHER', 'Other'),
     ]
     food_relation = models.CharField(max_length=30, choices=food_relation_choices, default='HOME_COOK')
+    country = models.CharField(max_length=200, default='Citizen of the world')
 
     def __str__(self):
-        return f'{self.user.username} Profile'
+        return f'{self.user.first_name} {self.user.last_name}, {self.get_food_relation_display()}'
 

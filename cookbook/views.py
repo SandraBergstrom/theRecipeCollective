@@ -4,7 +4,7 @@ from .models import Recipe
 
 def home(request):
     context = {
-        'recipes': Recipe.objects.all()
+        'recipes': Recipe.objects.all(),
     }
     return render(request, 'cookbook/home.html', context)
 
