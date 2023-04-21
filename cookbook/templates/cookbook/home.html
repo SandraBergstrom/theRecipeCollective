@@ -1,23 +1,25 @@
 {% extends 'cookbook/base.html' %}
 {% block content %}
 
-<h1>Welcome</h1>
+<h1>the Collective Cookbook</h1><br><hr>
 
 <!-- Recipe List -->
 <div class="row row-cols-1 row-cols-md-3 g-4">
     {% for recipe in recipes %}
     <div class="col">
         <div class="card h-100">
-            <img src="https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032_960_720.jpg" class="card-img-top" alt="Skyscrapers" />
+            <img src="{{ recipe.featured_image.url }}" class="card-img-top" alt="Skyscrapers" />
             <div class="card-body">
                 <h5 class="card-title"><a href="{% url 'recipe-detail' recipe.id %}"> {{ recipe.title }} </a></h5>
-                <small class="author">by {{ recipe.author }} on {{ recipe.date_posted }}</small>
+                <small class="author">by <a href="#">{{ recipe.author }}</a> on {{ recipe.date_posted }}</small><br>
+                <small>Prep Time: {{ recipe.prep_time }} | Cooking Time: {{ recipe.cooking_time }} </small>
+                <hr>
                 <p class="card-text">
                     {{ recipe.excerp }}
-                </p>
+                </p>  
             </div>
             <div class="card-footer">
-                <small class="text-muted">Last updated: {{ date_updated }}</small>
+                <small class="text-muted">Last updated: {{ recipe.date_updated }}</small>
             </div>
         </div>
     </div>
