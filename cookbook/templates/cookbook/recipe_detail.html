@@ -1,27 +1,34 @@
-{% extends 'cookbook/base.html' %}
-
-{% block content %}
+{% extends 'cookbook/base.html' %} {% block content %}
 
 <section>
     <div class="card mb-3">
         <div class="row g-0">
             <div class="col-md-4 h-400">
                 <img src="{{ recipe.featured_image.url }}" class="img-fluid rounded-start" alt="Image of recipe"
-                    style="overflow:hidden">
+                    style="overflow: hidden"/>
             </div>
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">{{ recipe.title }}</h5>
-                    <small>by {{ recipe.author }} </small>
+                    <small>by <a href="#">{{ recipe.author }}</a> on {{ recipe.date_posted }}</small>
                     <hr>
-                    <p class="card-text">{{ recipe.description|safe }}</p>
-                    <p class="card-text" id="recipe-post-description"><small class="text-body-secondary">Last updated:
-                            {{ recipe.updated_on }}</small></p>
+                    <p>
+                        {{ recipe.author }}s words about the recipe: <br> {{ recipe.about }} <br>
+                        Category: {{ recipe.category }} <br>
+                        Preparation time: {{ recipe.prep_time }} <br>
+                        Cooking time: {{ recipe.cooking_time }} <br>
+                        Total time: {{ recipe.prep_time|add:recipe.cooking_time }}
+                        {{ recipe.servings }} <br>
+                    </p>
+                    <div>
+                        <p class="card-text" id="recipe-post-description">
+                            <small class="text-body-secondary">Last updated: {{ recipe.updated_on }}</small>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
 
 {% endblock %}

@@ -31,6 +31,11 @@ a {
     color: var(--clr-primary-light);
 }
 
+.btn-custom-neutral-light {
+    background-color: var(--clr-neutral-light)
+    color: var(--clr-primary-dark);
+}
+
 .btn-link {
     color: var(--clr-neutral-dark);
 }

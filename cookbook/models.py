@@ -12,7 +12,8 @@ class Recipe(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     featured_image = CloudinaryField('image', default='placeholder')
-    excerp = models.CharField(max_length=50, blank=True, null=True)
+    excerp = models.CharField(max_length=200, blank=True, null=True)
+    about = models.TextField(max_length=1000, blank=True, null=True)
     category_choices = [
         ('APPETIZERS', 'Appetizers'),
         ('BREAKFAST', 'Breakfast'),
