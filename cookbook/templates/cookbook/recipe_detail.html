@@ -5,7 +5,7 @@
         <div class="row g-0">
             <div class="col-md-4 h-400">
                 <img src="{{ recipe.featured_image.url }}" class="img-fluid rounded-start" alt="Image of recipe"
-                    style="overflow: hidden"/>
+                    style="object-fit: cover; height: 100%; width: 100%" />
             </div>
             <div class="col-md-8">
                 <div class="card-body">
@@ -25,6 +25,22 @@
                             <small class="text-body-secondary">Last updated: {{ recipe.updated_on }}</small>
                         </p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card mb-3">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card-body">
+                    <h5>Ingredients:</h5>
+                    <p>{{ recipe.ingredients|linebreaksbr }}</p>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5>Instructions:</h5>
+                    <p>{{ recipe.instructions|linebreaksbr }}</p>
                 </div>
             </div>
         </div>
