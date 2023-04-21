@@ -3,6 +3,7 @@ from .models import Recipe
 from django.views.generic import ListView, DetailView, CreateView
 
 
+
 def home(request):
     context = {
         'recipes': Recipe.objects.all(),
@@ -36,7 +37,11 @@ class RecipeCreateView(CreateView):
         'instructions',
         'status',
     ]
-  
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
 
 def about(request):
     return render(request, 'cookbook/about.html', {'title': 'About'})

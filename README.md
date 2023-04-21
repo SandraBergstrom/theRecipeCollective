@@ -116,6 +116,7 @@ Registration form
 ## Bugs
 
 ### Known bugs
+- time is showing seconds and not minutes
 - Default profile pic is not showing. Tried both to add a direct link to cloudinary and to store it locally. 
 - Default recipe pic is not showing.
 - Can't connect to fontawesome
