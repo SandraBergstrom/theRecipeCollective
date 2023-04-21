@@ -10,7 +10,7 @@
         <div class="card h-100">
             <img src="https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032_960_720.jpg" class="card-img-top" alt="Skyscrapers" />
             <div class="card-body">
-                <h5 class="card-title"> {{ recipe.title }} </h5>
+                <h5 class="card-title"><a href="{% url 'recipe-detail' recipe.id %}"> {{ recipe.title }} </a></h5>
                 <small class="author">by {{ recipe.author }} on {{ recipe.date_posted }}</small>
                 <p class="card-text">
                     {{ recipe.excerp }}
