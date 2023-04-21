@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Recipe
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 
 
 def home(request):
@@ -19,7 +19,24 @@ class RecipeListView(ListView):
 
 class RecipeDetailView(DetailView):
     model = Recipe
-    
+
+
+class RecipeCreateView(CreateView):
+    model = Recipe
+    fields = [
+        'title', 
+        'excerp', 
+        'featured_image', 
+        'category', 
+        'prep_time', 
+        'cooking_time',
+        'servings',
+        'ingredients',
+        'instructions',
+        'instructions',
+        'status',
+    ]
+  
 
 def about(request):
     return render(request, 'cookbook/about.html', {'title': 'About'})
