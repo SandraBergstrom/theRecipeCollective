@@ -1,7 +1,7 @@
 {% extends 'cookbook/base.html' %}
 {% block content %}
 
-<h1>the Collective Cookbook</h1><br>
+<h2>Cookbook</h2><br>
 <hr>
 
 <!-- Recipe List -->
@@ -30,12 +30,15 @@
     <div class="row row-cols-1 mt-3 mx-auto">
         <nav aria-label="Site pagination">
             <ul class="pagination">
+
+                <!-- if there is more than 3 pages we will also see a button to go back to the first page -->
                 {% if page_obj.number > 3 %}
                 <li class="page-item">
                     <a class=" page-link" href="?page=1">First</a>
                 </li>
                 {% endif %}
 
+                <!-- if current page has a previous page we be able to press on the previous button -->
                 {% if page_obj.has_previous %}
                 <li class="page-item">
                     <a class="page-link" href="?page={{ page_obj.previous_page_number}}">Previous</a>
@@ -46,17 +49,20 @@
                 </li>
                 {% endif %}
 
+                <!-- button with page number for each page -->
                 {% for num in page_obj.paginator.page_range %}
                     {% if page_obj.number == num %}
                     <li class="page-item active" aria-current="page">
                         <a class="page-link" href="?page={{ num }}">{{ num }}<span
                                 class="visually-hidden">(current)</span></a>
                     </li>
+                    <!-- if there is more than 3 pages we add more buttons for pages and move forward -->
                     {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %} <li class="page-item"><a
                             class="page-link" href="?page={{ num }}">{{ num }}</a></li>
                     {% endif %}
                 {% endfor %}
 
+                <!-- if current page has a next page we will be able to press the next button -->
                 {% if page_obj.has_next %}
                 <li class="page-item">
                     <a class="page-link" href="?page={{ page_obj.next_page_number}}">Next</a>
