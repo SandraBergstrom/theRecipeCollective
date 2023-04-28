@@ -26,7 +26,7 @@ class RecipeListView(ListView):
     template_name = 'cookbook/home.html'
     context_object_name = 'recipes'
     ordering = ['-date_posted']
-    paginate_by = 3
+    paginate_by = 9
 
 
 # this class will show the recipe with all details.

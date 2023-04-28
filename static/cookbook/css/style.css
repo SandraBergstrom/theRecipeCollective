@@ -47,11 +47,31 @@ a {
 .btn-link {
     color: var(--clr-neutral-dark);
 }
- 
-/* SASS */ 
-$card-height: 100% 
 
-/* PROFILE */
+        /* HOME PAGE */
+
+.pagination a {
+    color: var(--clr-neutral-dark);
+}
+
+.pagination .active a {
+    color: var(--clr-primary-light);
+    background-color: var(--clr-accent-orange);
+    border-color: var(--clr-accent-orange);
+}
+
+.pagination a:hover {
+    color: var(--clr-primary-dark);
+    /* background-color: var(--clr-neutral-light); */
+    border-color: var(--clr-accent-orange);
+}
+
+
+        /* SASS PROFILE IMAGE */ 
+
+$card-height: 100%  */
+
+        /* PROFILE */
 
 .profile-image {
     height: 150px;
@@ -59,7 +79,7 @@ $card-height: 100%
 }
 
 
-/* RECIPE DETAIL PAGE */
+        /* RECIPE DETAIL PAGE */
 
 #recipe-ud-btn {
     display: flex;
