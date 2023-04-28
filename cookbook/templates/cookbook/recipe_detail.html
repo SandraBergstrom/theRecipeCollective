@@ -10,7 +10,15 @@
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">{{ recipe.title }}</h5>
-                    <small>by <a href="#">{{ recipe.author }}</a> on {{ recipe.date_posted }}</small>
+                    <div id="recipe-ud-btn">
+                        <small>by <a href="#">{{ recipe.author }}</a> on {{ recipe.date_posted }}</small>
+                        <div>
+                        {% if recipe.author == user %}
+                            <a class="btn btn-custom-secondary btn-sm" href="{% url 'recipe-update' object.id %}">Update</a>
+                            <a class="btn btn-danger btn-sm" href="{% url 'recipe-delete' object.id %}">Delete</a>
+                        {% endif %}
+                    </div>
+                    </div>
                     <hr>
                     <p>
                         {{ recipe.author }}s words about the recipe: <br> {{ recipe.about }} <br>
