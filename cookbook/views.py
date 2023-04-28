@@ -1,14 +1,15 @@
 from django.shortcuts import render
 from .models import Recipe
 from django.views.generic import ListView, DetailView, CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 
-def home(request):
-    context = {
-        'recipes': Recipe.objects.all(),
-    }
-    return render(request, 'cookbook/home.html', context)
+# def home(request):
+#     context = {
+#         'recipes': Recipe.objects.all(),
+#     }
+#     return render(request, 'cookbook/home.html', context)
 
 
 class RecipeListView(ListView):
@@ -22,7 +23,7 @@ class RecipeDetailView(DetailView):
     model = Recipe
 
 
-class RecipeCreateView(CreateView):
+class RecipeCreateView(LoginRequiredMixin, CreateView):
     model = Recipe
     fields = [
         'title', 
@@ -39,8 +40,11 @@ class RecipeCreateView(CreateView):
     ]
 
     def form_valid(self, form):
-        form.instance.author = self.request.user
-        return super().form_valid(form)
+        if self.request.user.is_authenticated:
+            form.instance.author = self.request.user
+            return super().form_valid(form)
+        else:
+            return self.form.invalid(form)
 
 
 def about(request):
