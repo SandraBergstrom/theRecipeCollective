@@ -56,10 +56,13 @@
         <!-- Left links -->
         <div class="d-flex align-items-center">
           {% if user.is_authenticated %}
-          <button type="button" class="btn btn-link px-3 me-2">
+          <button type="button" class="btn btn-link me-auto mb-2 mb-lg-0">
+            <a class="nav-link" href="{% url 'recipe-create' %}">Add Recipe</a>
+          </button>
+          <button type="button" class="btn btn-link me-auto mb-2 mb-lg-0">
             <a class="nav-link" href="{% url 'profile' %}">Profile</a>
           </button>
-          <button type="button" class="btn btn-link px-3 me-2">
+          <button type="button" class="btn btn-link me-auto mb-2 mb-lg-0">
             <a class="nav-link" href="{% url 'logout' %}">Logout</a>
           </button>
           <!-- <button type="button" class="btn btn-custom-primary me-3">

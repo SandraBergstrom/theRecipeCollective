@@ -21,6 +21,10 @@ a {
     color: var(--clr-accent-orange)
 }
 
+.btn-link {
+    text-decoration: none;
+}
+
 .btn-custom-primary {
     background-color: var(--clr-accent-orange);
     color: var(--clr-primary-light);
