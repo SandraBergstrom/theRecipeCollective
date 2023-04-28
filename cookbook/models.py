@@ -8,11 +8,9 @@ STATUS = ((0, "Private"), (1, "Public"))
 
 class Recipe(models.Model):
 
-    placeholder = 'static/cookbook/images/placeholder.jpg'
-
     title = models.CharField(max_length=200)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    featured_image = CloudinaryField('image', default='placeholder')
+    featured_image = CloudinaryField('image', default='https://res.cloudinary.com/sandrabergstrom/image/upload/v1682690083/placeholder_got9h5.jpg')
     excerp = models.CharField(max_length=200, blank=True, null=True)
     about = models.TextField(max_length=600, blank=True, null=True)
     category_choices = [
