@@ -1,0 +1,21 @@
+{% extends 'cookbook/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="content-section">
+    <form method="POST" action="#">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Delete Post?</legend>
+            <h3>Are you sure that you want to delete recipe '{{ object.title }}'?</h3>
+            <p>Once you click on the delete button below, <strong>this recipe will be permanently removed</strong> and cannot be recovered. Please make sure that you want to proceed with this action before continuing.</p>
+        </fieldset>
+        <div class="form-group">
+            <button type="submit" class="btn btn-danger">Delete Recipe</button>
+            <a class="btn btn-custom-secondary" href="{% url 'recipe-detail' object.id %}">Cancel</a>
+        </div>
+        <br>
+        <br>
+    </form>
+</div>
+{% endblock content %}

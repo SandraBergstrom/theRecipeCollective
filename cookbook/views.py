@@ -5,7 +5,7 @@ from django.views.generic import (
     DetailView,
     CreateView,
     UpdateView,
-    DetailView
+    DeleteView
 )
 
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -97,6 +97,7 @@ class RecipeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 # this class will delete the recipe
 class RecipeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Recipe
+    success_url = '/'
 
     # will check if the logged in user is the author and if so, allow
     # them to delete the recipe
@@ -105,8 +106,6 @@ class RecipeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         if self.request.user == recipe.author:
             return True
         return False
-
-
 
 
 def about(request):
