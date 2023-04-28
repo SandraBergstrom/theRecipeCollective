@@ -7,7 +7,7 @@ from django.views.generic import (
     UpdateView
 )
 
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
 
@@ -59,7 +59,7 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
 
 
 # this class will update the recipe
-class RecipeUpdateView(LoginRequiredMixin, UpdateView):
+class RecipeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Recipe
     fields = [
         'title',
@@ -83,6 +83,14 @@ class RecipeUpdateView(LoginRequiredMixin, UpdateView):
             return super().form_valid(form)
         else:
             return self.form.invalid(form)
+
+    # will check if the logged in user is the author and if so, allow
+    # them to update the recipe
+    def test_func(self):
+        recipe = self.get_object()
+        if self.request.user == recipe.author:
+            return True
+        return False
 
 
 def about(request):
