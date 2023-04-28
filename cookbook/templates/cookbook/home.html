@@ -1,7 +1,8 @@
 {% extends 'cookbook/base.html' %}
 {% block content %}
 
-<h1>the Collective Cookbook</h1><br><hr>
+<h1>the Collective Cookbook</h1><br>
+<hr>
 
 <!-- Recipe List -->
 <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -16,7 +17,7 @@
                 <hr>
                 <p class="card-text">
                     {{ recipe.excerp }}
-                </p>  
+                </p>
             </div>
             <div class="card-footer">
                 <small class="text-muted">Last updated: {{ recipe.date_updated }}</small>
@@ -24,6 +25,49 @@
         </div>
     </div>
     {% endfor %}
+    {% if is_paginated %}
+    <div class="row row-cols-1 mt-3 mx-auto">
+        <nav aria-label="...">
+            <ul class="pagination">
+                {% if page_obj.number > 3 %}
+                <li class="page-item">
+                    <a class=" page-link" href="?page=1">First</a>
+                </li>
+                {% endif %}
+                {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number}}">Previous</a>
+                </li>
+                {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link">Previous</a>
+                </li>
+                {% endif %}
+
+                {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                <li class="page-item active" aria-current="page">
+                    <a class="page-link" href="?page={{ num }}">{{ num }}<span
+                            class="visually-hidden">(current)</span></a>
+                </li>
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %} <li class="page-item"><a
+                        class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number}}">Next</a>
+                </li>
+                {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link">Next</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+    {% endif %}
 </div>
 
 {% endblock content %}
