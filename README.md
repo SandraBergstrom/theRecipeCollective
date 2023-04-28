@@ -116,6 +116,7 @@ Registration form
 ## Bugs
 
 ### Known bugs
+- Last updated not working in recipe detail.
 - Prep time and cooking time is showing seconds and not minutes
 - Default profile pic is not showing. Tried both to add a direct link to cloudinary and to store it locally. 
 - Default recipe pic is not showing.
@@ -124,8 +125,12 @@ Registration form
 ### Solved bugs
 - Update user profle form is not working. Keep getting the error message: Type Error at /profile/. Exception Value: 'UserUpdateForm' object is not iterable. 
   - Solved: Forgot to put inherit forms.ModelForm in the class UserUpdateForm. 
+
 - Cancel in delete view not working. Asking for a success url. 
   - Had to switch from <button> to <a>
+
+- Recipe images are not showing. Trying to re-direct to default. 
+  - Had to add image field in the detail template. 
 
 
 ## Credits

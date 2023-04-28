@@ -8,7 +8,7 @@ STATUS = ((0, "Private"), (1, "Public"))
 
 class Recipe(models.Model):
 
-    placeholder = 'static/cookbook/images/placeholder.placeholder.jpg'
+    placeholder = 'static/cookbook/images/placeholder.jpg'
 
     title = models.CharField(max_length=200)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
