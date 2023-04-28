@@ -38,8 +38,6 @@ class Recipe(models.Model):
     def __str__(self):
         return self.title
 
-    
+    # Will show the user the recipe-detail page for the recipe posted
     def get_absolute_url(self):
         return reverse('recipe-detail', kwargs={'pk': self.pk})
-
-

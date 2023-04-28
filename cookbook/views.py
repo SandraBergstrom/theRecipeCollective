@@ -1,6 +1,12 @@
 from django.shortcuts import render
 from .models import Recipe
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import (
+    ListView,
+    DetailView,
+    CreateView,
+    UpdateView
+)
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
@@ -12,6 +18,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 #     return render(request, 'cookbook/home.html', context)
 
 
+# this class will list all recipes with the latest
+# recipe listed first
 class RecipeListView(ListView):
     model = Recipe
     template_name = 'cookbook/home.html'
@@ -19,18 +27,19 @@ class RecipeListView(ListView):
     ordering = ['-date_posted']
 
 
+# this class will show the recipe with all details.
 class RecipeDetailView(DetailView):
     model = Recipe
 
-
+# This class will make it possible to create a new recipe
 class RecipeCreateView(LoginRequiredMixin, CreateView):
     model = Recipe
     fields = [
-        'title', 
-        'excerp', 
-        'featured_image', 
-        'category', 
-        'prep_time', 
+        'title',
+        'excerp',
+        'featured_image',
+        'category',
+        'prep_time',
         'cooking_time',
         'servings',
         'ingredients',
@@ -39,6 +48,35 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
         'status',
     ]
 
+    # If the form is valid it will first check if user is logged in and if so
+    # the user will be set as the author. If not it will redirect to the login page.
+    def form_valid(self, form):
+        if self.request.user.is_authenticated:
+            form.instance.author = self.request.user
+            return super().form_valid(form)
+        else:
+            return self.form.invalid(form)
+
+
+# this class will update the recipe
+class RecipeUpdateView(LoginRequiredMixin, UpdateView):
+    model = Recipe
+    fields = [
+        'title',
+        'excerp',
+        'featured_image',
+        'category',
+        'prep_time',
+        'cooking_time',
+        'servings',
+        'ingredients',
+        'instructions',
+        'instructions',
+        'status',
+    ]
+
+    # If the form is valid it will first check if user is logged in and if so
+    # the user will be set as the author. If not it will redirect to the login page.
     def form_valid(self, form):
         if self.request.user.is_authenticated:
             form.instance.author = self.request.user
