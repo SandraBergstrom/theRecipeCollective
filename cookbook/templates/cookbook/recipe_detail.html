@@ -1,58 +1,56 @@
 {% extends 'cookbook/base.html' %} {% block content %}
 
-<section>
-    <div class="card mb-3">
-        <div class="row g-0">
-            <div class="col-md-4 h-400">
-                <img src="{{ recipe.featured_image.url }}" class="img-fluid rounded-start" alt="Image of {{ recipe.title }}"
-                    style="object-fit: cover; height: 100%; width: 100%" />
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">{{ recipe.title }}</h5>
-                    <div id="recipe-ud-btn">
-                        <small>by <a href="#">{{ recipe.author }}</a> on {{ recipe.date_posted }}</small>
-                        <div>
+<div class="card mb-3">
+    <div class="row g-0">
+        <div class="col-md-4 h-400">
+            <img src="{{ recipe.featured_image.url }}" class="img-fluid rounded-start" alt="Image of {{ recipe.title }}"
+                style="object-fit: cover; height: 100%; width: 100%" />
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{ recipe.title }}</h5>
+                <div id="recipe-ud-btn">
+                    <small>by <a href="#">{{ recipe.author }}</a> on {{ recipe.date_posted }}</small>
+                    <div>
                         {% if recipe.author == user %}
-                            <a class="btn btn-custom-secondary btn-sm" href="{% url 'recipe-update' object.id %}">Update</a>
-                            <a class="btn btn-danger btn-sm" href="{% url 'recipe-delete' object.id %}">Delete</a>
+                        <a class="btn btn-custom-secondary btn-sm" href="{% url 'recipe-update' object.id %}">Update</a>
+                        <a class="btn btn-danger btn-sm" href="{% url 'recipe-delete' object.id %}">Delete</a>
                         {% endif %}
                     </div>
-                    </div>
-                    <hr>
-                    <p>
-                        {{ recipe.author }}s words about the recipe: <br> {{ recipe.about }} <br>
-                        Category: {{ recipe.category }} <br>
-                        Preparation time: {{ recipe.prep_time }} <br>
-                        Cooking time: {{ recipe.cooking_time }} <br>
-                        Total time: {{ recipe.prep_time|add:recipe.cooking_time }}
-                        {{ recipe.servings }} <br>
+                </div>
+                <hr>
+                <p>
+                    {{ recipe.author }}s words about the recipe: <br> {{ recipe.about }} <br>
+                    Category: {{ recipe.category }} <br>
+                    Preparation time: {{ recipe.prep_time }} <br>
+                    Cooking time: {{ recipe.cooking_time }} <br>
+                    Total time: {{ recipe.prep_time|add:recipe.cooking_time }}
+                    {{ recipe.servings }} <br>
+                </p>
+                <div>
+                    <p class="card-text" id="recipe-post-description">
+                        <small class="text-body-secondary">Last updated: {{ recipe.date_updated }}</small>
                     </p>
-                    <div>
-                        <p class="card-text" id="recipe-post-description">
-                            <small class="text-body-secondary">Last updated: {{ recipe.date_updated }}</small>
-                        </p>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="card mb-3">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card-body">
-                    <h5>Ingredients:</h5>
-                    <p>{{ recipe.ingredients|linebreaksbr }}</p>
-                </div>
+</div>
+<div class="card mb-3">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card-body">
+                <h5>Ingredients:</h5>
+                <p>{{ recipe.ingredients|linebreaksbr }}</p>
             </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5>Instructions:</h5>
-                    <p>{{ recipe.instructions|linebreaksbr }}</p>
-                </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5>Instructions:</h5>
+                <p>{{ recipe.instructions|linebreaksbr }}</p>
             </div>
         </div>
     </div>
-</section>
+</div>
 
 {% endblock %}
