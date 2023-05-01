@@ -4,13 +4,22 @@ from cloudinary.models import CloudinaryField
 from django.urls import reverse
 
 
+# Status for user to set if recipe should be public or private
 STATUS = ((0, "Private"), (1, "Public"))
 
+"""
+Model that represents a recipe that users can create, view, update and delete.
+Includes fields for title, author, featured image, excerpt, about, category, preparation
+and cooking time, servings, ingredients, instructions, date posted, date updated and status
+"""
 class Recipe(models.Model):
 
     title = models.CharField(max_length=200)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    featured_image = CloudinaryField('image', default='https://res.cloudinary.com/sandrabergstrom/image/upload/v1682690083/placeholder_got9h5.jpg')
+    featured_image = CloudinaryField(
+        'image', 
+        default='https://res.cloudinary.com/sandrabergstrom/image/upload/v1682690083/placeholder_got9h5.jpg'
+        )
     excerp = models.CharField(max_length=200, blank=True, null=True)
     about = models.TextField(max_length=600, blank=True, null=True)
     category_choices = [

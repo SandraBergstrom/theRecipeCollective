@@ -5,12 +5,13 @@ from .views import (
     RecipeDetailView,
     RecipeCreateView,
     RecipeUpdateView,
-    RecipeDeleteView
+    RecipeDeleteView,
+    AboutView
 )
 
 urlpatterns = [
     path('', RecipeListView.as_view(), name='cookbook-home'),
-    path('about/', views.about, name='cookbook-about'),
+    path('about/', AboutView.as_view(), name='cookbook-about'),
     path('recipe/<int:pk>/', RecipeDetailView.as_view(), name='recipe-detail'),
     path('recipe/<int:pk>/update/', RecipeUpdateView.as_view(), name='recipe-update'),
     path('recipe/<int:pk>/delete/', RecipeDeleteView.as_view(), name='recipe-delete'),

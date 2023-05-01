@@ -1,22 +1,32 @@
-:root {
-    --clr-primary-light: rgba(248, 248, 246);
-    --clr-primary-dark: rgba(36, 36, 36);
+        /* ROOT */
 
-    --clr-neutral-light: rgba(212, 195, 171);
-    --clr-neutral-dark: rgba(86, 79, 69);
+:root {
+    --clr-primary-light: rgba(237 237 237);
+    --clr-primary-dark: rgba(66, 47, 33);
+    --clr-primary-black: rgba(29, 19, 18);
+
+    --clr-neutral-light: rgba(192, 188,  177);
+    --clr-neutral-dark: rgba(106, 86, 77);
 
     --clr-accent-pink: rgb(176, 75, 124);
-    --clr-accent-orange: rgba(213, 142, 88);
+    --clr-accent-orange: rgba(195, 130, 53);
     --clr-accent-green: rgb(103, 139, 96);
 }
+
+        /* BASE */
 
 body{
     background: var(--clr-primary-light);
     color: var(--clr-primary-dark)
 }
 
+#navbar-bg {
+    color: var(--clr-neutral-light);
+}
+
 #nav-logo {
     font-size: 2rem;
+    color: var(--clr-primary-dark);
 }
 
 a {
@@ -66,7 +76,6 @@ a {
     border-color: var(--clr-accent-orange);
 }
 
-
         /* SASS PROFILE IMAGE */ 
 
 $card-height: 100%  */
@@ -78,7 +87,6 @@ $card-height: 100%  */
     width: 150px;
 }
 
-
         /* RECIPE DETAIL PAGE */
 
 #recipe-ud-btn {
@@ -86,7 +94,6 @@ $card-height: 100%  */
     justify-content: space-between;
     align-items: center;
 }
-
 
 #recipe-post-description {
     position: absolute;
@@ -112,15 +119,10 @@ $card-height: 100%  */
 
 .card {
     margin-bottom: 1.5rem;
-} 
+}
 
 .card-img-top {
     width: 100%;
     height: 300px;
     object-fit: cover;
 }
-
-/* .recipe-image {
-    width: 100%;
-    object-fit: cover;
-} */

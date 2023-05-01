@@ -5,18 +5,10 @@ from django.views.generic import (
     DetailView,
     CreateView,
     UpdateView,
-    DeleteView
+    DeleteView,
+    TemplateView
 )
-
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-
-
-
-# def home(request):
-#     context = {
-#         'recipes': Recipe.objects.all(),
-#     }
-#     return render(request, 'cookbook/home.html', context)
 
 
 # this class will list all recipes with the latest
@@ -108,6 +100,7 @@ class RecipeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
             return True
         return False
 
-
-def about(request):
-    return render(request, 'cookbook/about.html', {'title': 'About'})
+# Shows the about page 
+class AboutView(TemplateView):
+    template_name = 'cookbook/about.html'
+    extra_content = {'title': 'About'}
