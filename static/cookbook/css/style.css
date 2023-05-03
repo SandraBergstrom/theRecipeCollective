@@ -10,7 +10,7 @@
 
     --clr-accent-pink: rgb(176, 75, 124);
     --clr-accent-orange: rgba(195, 130, 53);
-    --clr-accent-green: rgb(103, 139, 96);
+    --clr-accent-green: rgb(85, 151, 72);
 }
 
         /* BASE */
@@ -37,11 +37,17 @@ a {
 
 .btn-link {
     text-decoration: none;
+    color: var(--clr-neutral-dark);
+}
+
+#singup-btn a {
+    color: var(--clr-primary-light)
 }
 
 .btn-custom-primary {
     background-color: var(--clr-accent-orange);
     color: var(--clr-primary-light);
+    padding: 2px;
 }
 
 .btn-custom-secondary {
@@ -52,10 +58,6 @@ a {
 .btn-custom-neutral-light {
     background-color: var(--clr-neutral-light)
     color: var(--clr-primary-dark);
-}
-
-.btn-link {
-    color: var(--clr-neutral-dark);
 }
 
         /* HOME PAGE */

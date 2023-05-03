@@ -21,7 +21,7 @@
             </div>
             <div class="card-footer d-flex justify-content-between align-items-center pt-3 pb-3">
                 <small class="text-muted">Last updated: {{ recipe.date_updated }}</small>
-                <a href="{% url 'favorite_add' recipe.id %}" class="btn btn-custom-secondary btn-sm">Add to Favorites</a>
+                <a href="{% url 'recipe-detail' recipe.id %}" class="btn btn-outline-success btn-sm">More Info...</a>
             </div>
         </div>
     </div>
