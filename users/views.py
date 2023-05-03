@@ -1,8 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
-
+from cookbook.models import Recipe
 
 # registtration view for new user
 def register(request):
@@ -47,3 +47,24 @@ def profile(request):
         
     }
     return render(request, 'users/profile.html', context)
+
+
+# view to filter favorite field to see if user id is there or not. If 
+# the user id is there the user can remove from its favorites. If the 
+# user id isn't there the user can add to favorites.
+@login_required
+def favorite_add(request, id):
+    recipe = get_object_or_404(Recipe, id=id)
+    if recipe.favorites.filter(id=request.user.id).exists():
+        recipe.favorites.remove(request.user)
+    else:
+        recipe.favorites.add(request.user)
+    # redirect to the current page
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+# view for the users list of favorites
+@login_required
+def favorite_list(request):
+    new = Recipe.favorite_objects.get_queryset(user=request.user)
+    return render(request, 'users/favorites.html', {'new': new})

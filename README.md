@@ -123,6 +123,9 @@ Registration form
 - Can't connect to fontawesome
 
 ### Solved bugs
+- I get the error message: Exception Value:	'Recipe' object has no attribute 'favorites' when trying to add a recipe to favorites. Trying to makemigrations but 
+  there is no updates to model according to the terminal. 
+    - Typo, model said favourites so changed it to  favorites. 
 - Update user profle form is not working. Keep getting the error message: Type Error at /profile/. Exception Value: 'UserUpdateForm' object is not iterable. 
   - Solved: Forgot to put inherit forms.ModelForm in the class UserUpdateForm. 
 

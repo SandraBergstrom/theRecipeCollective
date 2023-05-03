@@ -4,6 +4,10 @@ from cloudinary.models import CloudinaryField
 from django.urls import reverse
 
 
+class FavoriteManager(models.Manager):
+    def get_queryset(self, user):
+        return super().get_queryset().filter(favorites=user)
+
 # Status for user to set if recipe should be public or private
 STATUS = ((0, "Private"), (1, "Public"))
 
@@ -41,6 +45,9 @@ class Recipe(models.Model):
     date_posted = models.DateField(auto_now_add=True)
     date_updated = models.DateField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
+    favorites = models.ManyToManyField(User, related_name='favorite', default=None, blank=True)
+    objects = models.Manager()
+    favorite_objects = FavoriteManager()
 
     def __str__(self):
         return self.title
