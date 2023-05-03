@@ -115,7 +115,7 @@ $card-height: 100%  */
     width: 66%;
 }
 
-/* RECIPE CARDS IN LIST */
+        /* RECIPE CARDS IN LIST */
 
 .card {
     margin-bottom: 1.5rem;
@@ -125,4 +125,12 @@ $card-height: 100%  */
     width: 100%;
     height: 300px;
     object-fit: cover;
+}
+
+        /* LIKE BUTTON ON RECIPE */
+
+.btn-like {
+    color: var(--clr-accent-green);
+    font-size: 20px;
+    
 }

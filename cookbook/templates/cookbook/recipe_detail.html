@@ -1,4 +1,6 @@
-{% extends 'cookbook/base.html' %} {% block content %}
+{% extends 'cookbook/base.html' %} 
+
+{% block content %}
 
 <div class="card mb-3">
     <div class="row g-0">
@@ -16,7 +18,11 @@
                         <a class="btn btn-custom-secondary btn-sm" href="{% url 'recipe-update' object.id %}">Update</a>
                         <a class="btn btn-danger btn-sm" href="{% url 'recipe-delete' object.id %}">Delete</a>
                         {% else %}
-                        <a class="btn btn-custom-secondary btn-sm" href="{% url 'favorite_add' recipe.id %}">Add to Favorites</a>
+                            {% if not favorite %}
+                            <a class="btn btn-like" href="{% url 'favorite_add' recipe.id %}"><i class="fa-regular fa-heart"></i></a>
+                            {% else %}
+                            <a class="btn btn-like" href="{% url 'favorite_add' recipe.id %}"><i class="fa-solid fa-heart"></i></a>
+                            {% endif %}
                         {% endif %}
                     </div>
                 </div>

@@ -25,6 +25,17 @@ class RecipeListView(ListView):
 class RecipeDetailView(DetailView):
     model = Recipe
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        recipe = self.get_object()
+        user = self.request.user
+        if user.is_authenticated:
+            if recipe.favorites.filter(id=user.id).exists():
+                context['favorite'] = True
+            else:
+                context['favorite'] = False
+        return context
+
 # This class will make it possible to create a new recipe
 class RecipeCreateView(LoginRequiredMixin, CreateView):
     model = Recipe
