@@ -10,6 +10,8 @@ from django.views.generic import (
 )
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
+def index(request):
+    return render(request, 'index.html')
 
 # this class will list all recipes with the latest
 # recipe listed first
