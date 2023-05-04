@@ -4,7 +4,7 @@
 <h2>Cookbook</h2><br>
 <hr>
 
-<!-- Recipe List -->
+    <!-- RECIPE LIST -->
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     {% for recipe in recipes %}
     <div class="col">
@@ -26,11 +26,13 @@
         </div>
     </div>
     {% endfor %}
-
+</div>
+<div div class="row">
+    <!-- PAGINATION -->
     {% if is_paginated %}
-    <div class="row row-cols-1 mt-3 mx-auto">
+    <div class="cols-md-6 mt-3">
         <nav aria-label="Site pagination">
-            <ul class="pagination">
+            <ul class="pagination justify-content-center">
 
                 <!-- if there is more than 3 pages we will also see a button to go back to the first page -->
                 {% if page_obj.number > 3 %}
@@ -76,7 +78,8 @@
             </ul>
         </nav>
     </div>
-    {% endif %}
 </div>
+    {% endif %}
+
 
 {% endblock content %}
