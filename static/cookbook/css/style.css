@@ -138,5 +138,12 @@ $card-height: 100%  */
 .btn-like {
     color: var(--clr-accent-green);
     font-size: 20px;
-    
+}
+
+    /* FOOTER */
+
+.footer-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
