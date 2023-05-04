@@ -28,7 +28,7 @@ p {
     color: var(--clr-primary-dark);
 }
 
-@media (max-width: 426px) {
+@media (max-width: 770px) {
     p {
         font-size: 80%;
     }
@@ -100,25 +100,22 @@ a {
 }
     
     /* Height for devices larger than 992px */
-@media (min-width: 426px) {
+@media (min-width: 430px) {
+#intro-example {
+    height: 500px;
+    }
+}
+
+/* Height for devices larger than 1025px */
+@media (min-width: 1025px) {
 #intro-example {
     height: 700px;
     }
-}
-
-/* Height for devices larger than 992px */
-@media (max-width: 426px) {
-#intro-example {
-    height: 600px;
-    }
-}
+} 
 
         /* ABOUT PAGE */
-@media (min-width: 992px) {
-#intro-example {
-    height: 600px;
-    }
-}
+
+
 
 
         /* HOME PAGE */
