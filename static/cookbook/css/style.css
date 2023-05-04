@@ -20,13 +20,29 @@ body{
     color: var(--clr-primary-dark)
 }
 
+h1, h2, h3, h4 {
+    color: var(--clr-primary-dark);
+}
+
+p {
+    color: var(--clr-primary-dark);
+}
+
+@media (max-width: 426px) {
+    p {
+        font-size: 80%;
+    }
+}
+
+            /* Navbar */
+
 #navbar-bg {
     color: var(--clr-neutral-light);
 }
 
-#nav-logo {
-    font-size: 2rem;
+.navbar-brand {
     color: var(--clr-primary-dark);
+    font-size: 1.4rem;
 }
 
 #navbar-links-coll li {
@@ -39,15 +55,7 @@ a {
     color: var(--clr-accent-orange)
 }
 
-p {
-    color: var(--clr-primary-dark);
-}
-
-@media (max-width: 426px) {
-    p {
-        font-size: 80%;
-    }
-}
+            /* Buttons */
 
 .btn-link {
     text-decoration: none;
@@ -77,6 +85,10 @@ p {
 
 .btn-custom-neutral-light {
     background-color: var(--clr-neutral-light)
+    color: var(--clr-primary-dark);
+}
+
+.text-dark {
     color: var(--clr-primary-dark);
 }
 
