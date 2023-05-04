@@ -1,15 +1,28 @@
-{% extends 'cookbook/base.html' %}
-
-{% block content %}
-
-<div class="content-section">
-    <h3>You've been logged out!</h3>
-    
-    <div class="border-top pt-3">
-        <small class="text-muted">
-            Log in again?  <a class="ml-2" href="{% url 'login' %}">Sign In!</a>
-        </small>
+{% extends 'cookbook/base.html' %} {% block content %}
+<div
+  id="intro-example"
+  class="p-5 text-center bg-image"
+  style="
+    background-image: url('https://res.cloudinary.com/sandrabergstrom/image/upload/v1683207949/ella-olsson-oPBjWBCcAEo-unsplash_hjwunu.jpg');">
+  <div class="mask" style="background-color: rgba(248, 248, 248, 0.6)">
+    <div class="container d-flex h-100 justify-content-center">
+      <div class="text-dark row justify-content-center align-items-center">
+        <div
+          class="col-md-12 p-5 rounded"
+          style="background-color: rgba(248, 248, 248, 0.6)">
+          <div class="content-section">
+            <h3>You've been logged out!</h3>
+            <div class="border-top pt-3">
+              <small class="text-muted">
+                Log in again?
+                <a class="ml-2" href="{% url 'login' %}">Sign In!</a>
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 
 {% endblock content %}s
