@@ -39,7 +39,7 @@
         </button>
         <!-- Navbar brand -->
         {% if user.is_authenticated %}
-        <a class="navbar-brand mx-auto" href="{% url 'cookbook-home' %}">the Recipe Collective</a>
+        <a class="navbar-brand mx-auto" href="{% url 'cookbook-home' %}" style="font-size: 2rem;">the Recipe Collective</a>
         {% else %}
         <a class="navbar-brand mx-auto" href="{% url 'index' %}">the Recipe Collective</a>
         {% endif %}
@@ -129,7 +129,7 @@
     <!-- Grid container -->
     <div class=" container pt-1">
       <!-- Section: Social media -->
-      <div class="pt-1" style="
+      <div class="pt-3" style="
             display: flex;
             justify-content: center;
             align-items: center;">
@@ -160,7 +160,7 @@
     <!-- Grid container -->
 
     <!-- Copyright -->
-    <div class="text-center text-dark">
+    <div class="text-center text-dark pb-4">
       <small>© 2023 Copyright:
         <a class="text-dark" href="#">the Recipe Collective</a></small>
     </div>
