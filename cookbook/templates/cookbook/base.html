@@ -39,7 +39,7 @@
         </button>
         <!-- Navbar brand -->
         {% if user.is_authenticated %}
-        <a class="navbar-brand mx-auto" href="{% url 'cookbook-home' %}" style="font-size: 2rem;">the Recipe Collective</a>
+        <a class="navbar-brand mx-auto" href="{% url 'cookbook-home' %}">the Recipe Collective</a>
         {% else %}
         <a class="navbar-brand mx-auto" href="{% url 'index' %}">the Recipe Collective</a>
         {% endif %}
@@ -125,7 +125,7 @@
       </div>
   </main>
 
-  <footer class="text-center text-dark sticky-bottom bg-white">
+  <footer class="text-center text-dark mb-0 bg-white">
     <!-- Grid container -->
     <div class=" container pt-1">
       <!-- Section: Social media -->
