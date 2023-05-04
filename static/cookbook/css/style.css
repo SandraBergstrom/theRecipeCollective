@@ -54,7 +54,7 @@ p {
     color: var(--clr-neutral-dark);
 }
 
-#singup-btn a {
+#signup-btn a {
     color: var(--clr-primary-light)
 }
 
@@ -67,6 +67,12 @@ p {
 .btn-custom-secondary {
     background-color: var(--clr-accent-green);
     color: var(--clr-primary-light);
+}
+
+.btn-custom-secondary-outline {
+    border-color: var(--clr-accent-green);
+    border-radius: 5px;
+    color: var(--clr-accent-green)
 }
 
 .btn-custom-neutral-light {
