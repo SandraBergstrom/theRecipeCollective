@@ -51,7 +51,7 @@ a {
 .btn-custom-primary {
     background-color: var(--clr-accent-orange);
     color: var(--clr-primary-light);
-    padding: 2px;
+    padding: 4px;
 }
 
 .btn-custom-secondary {
