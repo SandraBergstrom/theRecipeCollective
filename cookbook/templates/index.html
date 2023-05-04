@@ -1,7 +1,44 @@
 {% extends 'cookbook/base.html' %}
-
+{% load static %}
 {% block content %}
 
-<h1>welcome</h1>
+<header>
+    <!-- Intro settings -->
+    <style>
+        /* Default height for small devices */
+        #intro-example {
+            height: 400px;
+        }
+
+        /* Height for devices larger than 992px */
+        @media (min-width: 992px) {
+            #intro-example {
+                height: 600px;
+            }
+        }
+    </style>
+
+    <!-- Background image -->
+    <div id="intro-example" class="p-5 text-center bg-image"
+        style="background-image: url('https://res.cloudinary.com/sandrabergstrom/image/upload/v1682956919/fwdc4fqa45f66nayicva.webp');">
+        <div class="mask" style="background-color: rgba(248, 248,248, 0.7);">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-dark container">
+                    <div col-6>
+                        <h1 class="mb-3">the Recipe Collecitve</h1>
+                        <p class="mb-4">Discover a world of culinary inspiration with the Recipe Collective - your go-to
+                            resource for mouth-watering recipes and expert cooking tips, all presented in a beautifully
+                            responsive design</p>
+                        <a class="btn btn-outline-dark btn-lg m-2 btn-sm" href="{% url 'register' %}"
+                            role="button" rel="nofollow">Sign up!</a>
+                        <a class="btn btn-outline-dark btn-lg m-2 btn-sm" href="{% url 'login' %}"
+                            role="button">Login!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Background image -->
+</header>
 
 {% endblock content %}

@@ -26,9 +26,9 @@
 </head>
 
 <body>
-  <section>
+  <header>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm p-3 bg-body-tertiary rounded">
       <!-- Container wrapper -->
       <div class="container-fluid">
         <!-- Toggle button -->
@@ -104,12 +104,11 @@
       <!-- End Container wrapper -->
     </nav>
     <!-- End Navbar -->
-  </section>
+  </header>
+
 
   <!-- Content block with flash message on top -->
-  <section>
-    <br>
-    <div class="container">
+  <main>
       <div>
         {% if messages %}
         {% for message in messages %}
@@ -119,57 +118,54 @@
         </div>
         {% endfor %}
         {% endif %}
-        <br><br>
       </div>
       <div>
         {% block content %}
         {% endblock %}
       </div>
-    </div>
-  </section>
+  </main>
 
-  <section>
-    <footer class="text-center text-dark mt-3 mb-0 pb-4 bg-white">
-      <!-- Grid container -->
-      <div class=" container pt-1">
-        <!-- Section: Social media -->
-        <div class="pt-1" style="
+  <footer class="text-center text-dark sticky-bottom">
+    <!-- Grid container -->
+    <div class=" container pt-1">
+      <!-- Section: Social media -->
+      <div class="pt-1" style="
             display: flex;
             justify-content: center;
             align-items: center;">
-          <!-- Facebook -->
-          <a class=" btn btn-link btn-floating btn-lg text-dark m-1 footer-icon"  href="https://www.facebook.com/" role="button"
-            data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
+        <!-- Facebook -->
+        <a class=" btn btn-link btn-floating btn-lg text-dark m-1 footer-icon" href="https://www.facebook.com/"
+          role="button" data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
 
-          <!-- Twitter -->
-          <a class="btn btn-link btn-floating btn-lg text-dark m-1 footer-icon" href="https://twitter.com/" role="button"
-            data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
+        <!-- Twitter -->
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1 footer-icon" href="https://twitter.com/" role="button"
+          data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
 
-          <!-- Instagram -->
-          <a class="btn btn-link btn-floating btn-lg text-dark m-1 footer-icon" href="https://www.instagram.com/" role="button"
-            data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
+        <!-- Instagram -->
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1 footer-icon" href="https://www.instagram.com/"
+          role="button" data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
 
-          <!-- Linkedin -->
-          <a class="btn btn-link btn-floating btn-lg text-dark m-1 footer-icon" href="https://www.linkedin.com/in/sandrabergstrom/"
-            role="button" data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
+        <!-- Linkedin -->
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1 footer-icon"
+          href="https://www.linkedin.com/in/sandrabergstrom/" role="button" data-mdb-ripple-color="dark"><i
+            class="fab fa-linkedin"></i></a>
 
-          <!-- Github -->
-          <a class="btn btn-link btn-floating btn-lg text-dark m-1 footer-icon"
-            href="https://github.com/SandraBergstrom/theRecipeCollective" role="button" data-mdb-ripple-color="dark"><i
-              class="fab fa-github"></i></a>
-        </div>
-        <!-- Section: Social media -->
+        <!-- Github -->
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1 footer-icon"
+          href="https://github.com/SandraBergstrom/theRecipeCollective" role="button" data-mdb-ripple-color="dark"><i
+            class="fab fa-github"></i></a>
       </div>
-      <!-- Grid container -->
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
 
-      <!-- Copyright -->
-      <div class="text-center text-dark">
-        <small>© 2023 Copyright:
-          <a class="text-dark" href="#">the Recipe Collective</a></small>
-      </div>
-      <!-- Copyright -->
-    </footer>
-  </section>
+    <!-- Copyright -->
+    <div class="text-center text-dark">
+      <small>© 2023 Copyright:
+        <a class="text-dark" href="#">the Recipe Collective</a></small>
+    </div>
+    <!-- Copyright -->
+  </footer>
 
 
   <!-- MDB -->
