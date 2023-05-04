@@ -69,7 +69,6 @@ a {
 .btn-custom-primary {
     background-color: var(--clr-accent-orange);
     color: var(--clr-primary-light);
-    padding: 4px;
 }
 
 .btn-custom-secondary {
@@ -113,7 +112,11 @@ a {
     }
 } 
 
-        /* ABOUT PAGE */
+        /* LOGIN PAGE */
+
+.form-label {
+    display: flex;
+}
 
 
 
