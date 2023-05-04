@@ -39,6 +39,16 @@ a {
     color: var(--clr-accent-orange)
 }
 
+p {
+    color: var(--clr-primary-dark);
+}
+
+@media (max-width: 426px) {
+    p {
+        font-size: 80%;
+    }
+}
+
 .btn-link {
     text-decoration: none;
     color: var(--clr-neutral-dark);
@@ -63,6 +73,35 @@ a {
     background-color: var(--clr-neutral-light)
     color: var(--clr-primary-dark);
 }
+
+        /* INDEX PAGE */
+
+    /* Default height for small devices */
+#intro-example {
+    height: 400px;
+}
+    
+    /* Height for devices larger than 992px */
+@media (min-width: 426px) {
+#intro-example {
+    height: 700px;
+    }
+}
+
+/* Height for devices larger than 992px */
+@media (max-width: 426px) {
+#intro-example {
+    height: 600px;
+    }
+}
+
+        /* ABOUT PAGE */
+@media (min-width: 992px) {
+#intro-example {
+    height: 600px;
+    }
+}
+
 
         /* HOME PAGE */
 
