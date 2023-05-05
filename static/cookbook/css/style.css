@@ -1,11 +1,11 @@
-        /* ROOT */
+/* ROOT */
 
 :root {
     --clr-primary-light: rgba(248, 248, 248);
     --clr-primary-dark: rgba(66, 47, 33);
     --clr-primary-black: rgba(29, 19, 18);
 
-    --clr-neutral-light: rgba(192, 188,  177);
+    --clr-neutral-light: rgba(192, 188, 177);
     --clr-neutral-dark: rgba(106, 86, 77);
 
     --clr-accent-pink: rgb(176, 75, 124);
@@ -13,14 +13,17 @@
     --clr-accent-green: rgb(85, 151, 72);
 }
 
-        /* BASE */
+/* BASE */
 
-body{
+body {
     background: var(--clr-primary-light);
     color: var(--clr-primary-dark)
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     color: var(--clr-primary-dark);
 }
 
@@ -34,7 +37,7 @@ p {
     }
 }
 
-            /* Navbar */
+/* Navbar */
 
 #navbar-bg {
     color: var(--clr-neutral-light);
@@ -55,7 +58,7 @@ a {
     color: var(--clr-accent-orange)
 }
 
-            /* Buttons */
+/* Buttons */
 
 .btn-link {
     text-decoration: none;
@@ -83,42 +86,71 @@ a {
 }
 
 .btn-custom-neutral-light {
-    background-color: var(--clr-neutral-light)
-    color: var(--clr-primary-dark);
+    background-color: var(--clr-neutral-light) color: var(--clr-primary-dark);
 }
 
 .text-dark {
     color: var(--clr-primary-dark);
 }
 
-        /* INDEX PAGE */
+/* INDEX PAGE */
 
-    /* Default height for small devices */
+/* Default height for small devices */
 #intro-example {
     height: 400px;
 }
-    
-    /* Height for devices larger than 992px */
+
+/* Height for devices larger than 992px */
 @media (min-width: 430px) {
-#intro-example {
-    height: 500px;
+    #intro-example {
+        height: 500px;
     }
 }
 
 /* Height for devices larger than 1025px */
 @media (min-width: 1025px) {
-#intro-example {
-    height: 700px;
+    #intro-example {
+        height: 700px;
     }
-} 
+}
 
-        /* LOGIN PAGE */
+/* REGISTER/SIGNUP PAGE */
+#intro-example {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .content-section {
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 50px;
+  }
+
+.content-section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.content-section::-webkit-scrollbar-thumb {
+    background-color: #999;
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.content-section::-webkit-scrollbar-track {
+    background-color: #eee;
+    border-radius: 10px;
+}
+
+
+/* LOGIN PAGE */
 
 .form-label {
     display: flex;
 }
 
-        /* PROFILE */
+/* PROFILE */
 
 .profile-image {
     width: 150px;
@@ -126,7 +158,7 @@ a {
 }
 
 
-        /* HOME PAGE */
+/* HOME PAGE */
 
 .pagination a {
     color: var(--clr-neutral-dark);
@@ -144,18 +176,10 @@ a {
     border-color: var(--clr-accent-orange);
 }
 
-        /* SASS PROFILE IMAGE */ 
+/* SASS PROFILE IMAGE */
 
-$card-height: 100%  */
-
-        /* PROFILE */
-
-.profile-image {
-    height: 150px;
-    width: 150px;
-}
-
-        /* RECIPE DETAIL PAGE */
+$card-height: 100% */
+/* RECIPE DETAIL PAGE */
 
 #recipe-ud-btn {
     display: flex;
@@ -183,7 +207,7 @@ $card-height: 100%  */
     width: 66%;
 }
 
-        /* RECIPE CARDS IN LIST */
+/* RECIPE CARDS IN LIST */
 
 .card {
     margin-bottom: 1.5rem;
@@ -195,14 +219,14 @@ $card-height: 100%  */
     object-fit: cover;
 }
 
-        /* LIKE BUTTON ON RECIPE */
+/* LIKE BUTTON ON RECIPE */
 
 .btn-like {
     color: var(--clr-accent-green);
     font-size: 20px;
 }
 
-    /* FOOTER */
+/* FOOTER */
 
 .footer-icon {
     display: flex;
