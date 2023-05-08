@@ -67,10 +67,20 @@ a {
 }
 
 @media (min-width: 770px) {
-
     #nav-items {
         display: flex;
         align-items: flex-end;
+    }
+}
+
+@media (max-width: 430px) {
+    #nav-profile-img {
+        height: 30px;
+        width: 30px;
+    }
+
+    #logo-auth {
+        font-size: 1rem;
     }
 }
 

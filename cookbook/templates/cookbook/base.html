@@ -39,7 +39,7 @@
         </button>
         <!-- Navbar brand -->
         {% if user.is_authenticated %}
-        <a class="navbar-brand mx-auto" href="{% url 'cookbook-home' %}">the Recipe Collective</a>
+        <a class="navbar-brand mx-auto" id="logo-auth" href="{% url 'cookbook-home' %}">the Recipe Collective</a>
         {% else %}
         <a class="navbar-brand mx-auto" href="{% url 'index' %}">the Recipe Collective</a>
         {% endif %}
