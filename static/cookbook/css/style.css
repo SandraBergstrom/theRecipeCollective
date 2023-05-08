@@ -52,6 +52,14 @@ p {
     padding-left: 10px;
 }
 
+#nav-profile-img {
+    transition: all 0.3s ease-in-out;
+  }
+  
+#nav-profile-img:hover {
+    transform: scale(1.2);
+}  
+
 a {
     text-decoration: none;
     font-weight: 500;
@@ -210,14 +218,6 @@ a {
         padding-right: 0px;
     }
 }
-
-/* @media (max-width: 376px) {
-    #intro-login {
-        max-height: none;
-        height: 600px;
-        width: 100%;
-    }
-} */
 
 /* PROFILE */
 
