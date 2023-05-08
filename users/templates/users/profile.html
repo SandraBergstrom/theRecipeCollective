@@ -2,29 +2,43 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<div class="content-section">
-  <div class="media profile-image">
-    <img class="rounded-circle" src="{{ user.profile.image.url }}" style="
-          width: 250px;
-      ">
-    <div class="media-body">
-      <h2 class="account-heading">{{ user.first_name }} {{ user.last_name }}</h2>
-      <p class="text-secondary">{{ user.email }}</p>
+<div id="intro-profile" class="p-5 text-center bg-image"
+  style="
+      background-image: url('https://res.cloudinary.com/sandrabergstrom/image/upload/v1682956919/fwdc4fqa45f66nayicva.webp');">
+  <div class="mask" style="background-color: rgba(248, 248, 248, 0.6)">
+    <div class="container d-flex h-100 justify-content-center">
+      <div class="text-dark row justify-content-center align-items-center">
+        <div class="col-md-12 p-5 rounded" style="background-color: rgba(248, 248, 248, 0.6)">
+          <div class="content-section" id="content-profile">
+            <div class="media profile-image">
+              <img class="rounded-circle" src="{{ user.profile.image.url }}" style="
+                  width: 150px;
+              ">
+              <div class="media-body-profile">
+                <h2 class="account-heading">{{ user.first_name }} {{ user.last_name }}</h2>
+                <p class="text-secondary" id="profile-p">{{ user.email }}</p>
+              </div>
+            </div>
+            <form method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+              <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Profile</legend>
+                {{ user_form|crispy }}
+                {{ profile_form|crispy }}
+              </fieldset>
+              <div class="form-group">
+                <button type="submit" class="btn btn-custom-primary">Update Profile</button>
+              </div>
+              <br>
+              <br>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <fieldset class="form-group">
-      <legend class="border-bottom mb-4">Profile</legend>
-      {{ user_form|crispy }}
-      {{ profile_form|crispy }}
-    </fieldset>
-    <div class="form-group">
-      <button type="submit" class="btn btn-custom-primary">Update Profile</button>
-    </div>
-    <br>
-    <br>
-  </form>
 </div>
+</div>
+
 
 {% endblock content %}

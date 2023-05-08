@@ -17,7 +17,7 @@
                 <img src="{{ recipe.featured_image.url }}" class="card-img-top" alt="Image of {{ recipe.title }}" />
                 <div class="card-body">
                     <h5 class="card-title"><a href="{% url 'recipe-detail' recipe.id %}"> {{ recipe.title }} </a></h5>
-                    <small class="author">by <a href="#">{{ recipe.author }}</a> on {{ recipe.date_posted }}</small><br>
+                    <small class="author">by <a href="#">{{ recipe.author }}, {{ recipe.author.profile.get_food_relation_display }}</a> on {{ recipe.date_posted }}</small><br>
                     <small>Prep Time: {{ recipe.prep_time }} | Cooking Time: {{ recipe.cooking_time }} </small>
                     <hr>
                     <p class="card-text">
