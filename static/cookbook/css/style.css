@@ -57,6 +57,14 @@ a {
     font-weight: 500;
     color: var(--clr-accent-orange)
 }
+@media (min-width: 770px) {
+
+    #nav-items {
+        display: flex;
+        align-items: flex-end;
+    }
+}
+
 
 /* Buttons */
 
