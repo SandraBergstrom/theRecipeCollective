@@ -239,6 +239,26 @@ a {
 
 /* HOME PAGE */
 
+#container-home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#list-header {
+    margin-top: 25px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+#pagination-container {
+    padding-top: 25px;
+}
+
 .pagination a {
     color: var(--clr-neutral-dark);
 }
@@ -251,9 +271,10 @@ a {
 
 .pagination a:hover {
     color: var(--clr-primary-dark);
-    /* background-color: var(--clr-neutral-light); */
     border-color: var(--clr-accent-orange);
 }
+
+
 
 /* SASS PROFILE IMAGE */
 
