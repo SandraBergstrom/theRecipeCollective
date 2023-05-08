@@ -1,48 +1,39 @@
-<style>
+{% extends 'cookbook/base.html' %}
+{% load crispy_forms_tags %}
+{% block content%}
 
-  </style>
-  
-  {% extends 'cookbook/base.html' %}
-  {% load crispy_forms_tags %}
-  {% block content%}
-  
-  <div
-    id="intro-example"
-    class="p-5 text-center bg-image"
-    style="
+<div id="intro-register" class="p-5 text-center bg-image"
+  style="
       background-image: url('https://res.cloudinary.com/sandrabergstrom/image/upload/v1683207949/ella-olsson-oPBjWBCcAEo-unsplash_hjwunu.jpg');">
-    <div class="mask" style="background-color: rgba(248, 248, 248, 0.6)">
-      <div class="container d-flex h-100 justify-content-center">
-        <div class="text-dark row justify-content-center align-items-center">
-          <div
-            class="col-md-12 p-5 rounded"
-            style="background-color: rgba(248, 248, 248, 0.6)">
-            <div class="content-section">
-              <form method="POST" action="#">
-                  {% csrf_token %}
-                  <fieldset class="form-group">
-                    <legend class="border-bottom mb-4">Join Us Today!</legend>
-                    {{ form|crispy }}
-                  </fieldset>
-                  <div class="form-group">
-                    <button type="submit" class="btn btn-custom-primary">Sign Up!</button>
-                  </div>
-                  <br/>
-                  <br/>
-                </form>
-                <div class="border-top pt-3">
-                  <small class="text-muted">
-                    Already Have An Account?
-                    <a class="ml-2" href="{% url 'login' %}">Sign In!</a>
-                  </small>
-                </div>
+  <div class="mask" style="background-color: rgba(248, 248, 248, 0.6)">
+    <div class="container d-flex h-100 justify-content-center">
+      <div class="text-dark row justify-content-center align-items-center">
+        <div class="col-md-12 p-5 rounded" style="background-color: rgba(248, 248, 248, 0.6)">
+          <div class="content-section" id="content-register">
+            <form method="POST" action="#">
+              {% csrf_token %}
+              <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Join Us Today!</legend>
+                {{ form|crispy }}
+              </fieldset>
+              <div class="form-group">
+                <button type="submit" class="btn btn-custom-primary">Sign Up!</button>
               </div>
+              <br />
+              <br />
+            </form>
+            <div class="border-top pt-3">
+              <small class="text-muted">
+                Already Have An Account?
+                <a class="ml-2" href="{% url 'login' %}">Sign In!</a>
+              </small>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
-  {% endblock content %}
-  
+</div>
+</div>
+
+{% endblock content %}
