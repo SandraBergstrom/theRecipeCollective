@@ -3,7 +3,7 @@
 {% block content %}
 
 <div
-  id="intro-example"
+  id="intro-login"
   class="p-5 text-center bg-image"
   style="
     background-image: url('https://res.cloudinary.com/sandrabergstrom/image/upload/v1683207949/ella-olsson-oPBjWBCcAEo-unsplash_hjwunu.jpg');">
@@ -13,7 +13,7 @@
         <div
           class="col-md-12 p-5 rounded"
           style="background-color: rgba(248, 248, 248, 0.6)">
-          <div class="content-section">
+          <div class="content-section" id="content-login">
             <form method="POST" action="#">
               {% csrf_token %}
               <fieldset class="form-group">
