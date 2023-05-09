@@ -159,6 +159,27 @@ a {
     border-radius: 10px;
 }
 
+.cookbook-links a {
+    margin-top: 20px;
+    color: var(--clr-neutral-dark);
+    text-transform: capitalize;
+    border: 1px solid var(--clr-neutral-dark);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.cookbook-links a:hover,
+.cookbook-links a:focus,
+.cookbook-links a:active {
+    background-color: var(--clr-neutral-dark) !important;
+    color: var(--clr-primary-light);
+    border-color: var(--clr-neutral-dark);
+}
+
+.btn-link {
+    padding: 6px;
+}
+
 /* media queries */
 
 /* Height on bg-im for devices larger than 430px */
@@ -179,8 +200,24 @@ a {
     .content-section::-webkit-scrollbar {
         display: none;
     }
+
     .content-section {
         max-height: 700px;
+    }
+
+    .cookbook-links a {
+        font-size: 60%;
+        padding: 2px;
+    }
+
+    .cookbook-links {
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 325px) {
+    .btn-link {
+        padding: 6px !important;
     }
 }
 
@@ -302,8 +339,10 @@ a {
 
 @media (max-width: 430px) {
 
-    #list-header {
-        width: 90%;
+    .list-header {
+        width: 100%;
+        margin-top: 0px;
+        padding: 20px;
     }
 }
 
