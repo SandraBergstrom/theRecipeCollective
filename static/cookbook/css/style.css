@@ -278,12 +278,9 @@ a {
     }
 }
 
-
-
-
 /* HOME PAGE */
 
-#container-home {
+.container-centered {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -297,6 +294,13 @@ a {
     align-items: center;
     justify-content: center;
     padding: 25px;
+}
+
+@media (max-width: 430px) {
+
+    #list-header {
+        width: 90%;
+    }
 }
 
 #pagination-container {
