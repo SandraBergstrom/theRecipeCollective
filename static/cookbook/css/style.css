@@ -279,6 +279,8 @@ a {
 }
 
 
+
+
 /* HOME PAGE */
 
 #container-home {
@@ -316,7 +318,20 @@ a {
     border-color: var(--clr-accent-orange);
 }
 
+/* ADD RECIPE PAGE */
 
+#intro-recipe {
+    max-height: none;
+    height: 1800px;
+    width: 100%;
+} 
+
+#content-recipe {
+    max-height: 1700px;
+    overflow-y: auto;
+    padding-right: 0px;
+    width: 700px;
+}
 
 /* SASS PROFILE IMAGE */
 
