@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Recipe
 from django.views.generic import (
     ListView,
@@ -11,7 +11,10 @@ from django.views.generic import (
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 def index(request):
-    return render(request, 'index.html')
+    if request.user.is_authenticated:
+        return redirect ('cookbook-home')
+    else:
+        return render(request, 'index.html')
 
 # this class will list all recipes with the latest
 # recipe listed first
