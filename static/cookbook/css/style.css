@@ -39,6 +39,12 @@ p {
 
     /* Navbar */
 
+header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1;
+}
+
 #navbar-bg {
     color: var(--clr-neutral-light);
 }
