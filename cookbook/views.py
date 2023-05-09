@@ -9,6 +9,7 @@ from django.views.generic import (
     TemplateView
 )
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.db.models import Q
 
 def index(request):
     if request.user.is_authenticated:
@@ -24,6 +25,9 @@ class RecipeListView(ListView):
     context_object_name = 'recipes'
     ordering = ['-date_posted']
     paginate_by = 9
+
+    def get_queryset(self):
+        return Recipe.objects.filter(status=1)
 
 
 # this class will show the recipe with all details.
