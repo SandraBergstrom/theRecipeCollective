@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import ListView
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from cookbook.models import Recipe
 
@@ -68,3 +71,11 @@ def favorite_add(request, id):
 def favorite_list(request):
     new = Recipe.favorite_objects.get_queryset(user=request.user)
     return render(request, 'users/favorites.html', {'new': new})
+
+
+class MyRecipeListView(LoginRequiredMixin, ListView):
+    model = Recipe
+    template_name = 'users/myrecipes.html'
+    context_object_name = 'added'
+    ordering = ['-date_posted']
+    paginate_by = 9
