@@ -231,6 +231,18 @@ a {
 
 /* PROFILE */
 
+#intro-profile {
+    max-height: none;
+    height: 1200px;
+    width: 100%;
+} 
+
+#content-profile {
+    max-height: 1000px;
+    overflow-y: auto;
+    padding-right: 0px;
+}
+
 .profile-image {
     display: flex;
     flex-direction: row;
@@ -251,22 +263,13 @@ a {
 
     #intro-profile {
         max-height: none;
-        height: 720px;
+        height: 1040px;
         width: 100%;
     }
 
     #content-profile {
         padding-right: 0px;
     }
-}
-
-@media (min-width: 430px) {
-
-    #intro-profile {
-        max-height: none;
-        height: 700px;
-        width: 100%;
-    }    
 }
 
 
