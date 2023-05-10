@@ -394,9 +394,38 @@ a {
     width: 700px;
 }
 
+/* DELETE RECIPE  */ 
+
+#intro-recipe-delete {
+    max-height: none;
+    height: 600px;
+    width: 100%;
+} 
+
+#content-recipe-delete {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 0px;
+    width: 700px;
+}
+
+@media (max-width: 430px) {
+    #intro-recipe-delete {
+        height: 600px;
+
+    } 
+    
+    #content-recipe-delete {
+        max-height: 600px;
+        width: 200px;
+        font-size: 80%;
+    }
+}
+
 /* SASS PROFILE IMAGE */
 
 $card-height: 100% */
+
 /* RECIPE DETAIL PAGE */
 
 #recipe-ud-btn {
