@@ -2,6 +2,8 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
+
+<!-- Header and paragraph with links to users different recipe pages -->
 <div class="container container-centered">
     <div class="list-header">
         <div class="container-centered">
@@ -14,46 +16,48 @@
         {% include 'cookbook/cookbook_links.html' %}
     </div>
 
-    {% if user.profile.favorites.all.count > 0 %}
-
-    <!-- RECIPE LIST -->
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        {% for recipe in new %}
-        <div class="col">
-            <div class="card h-100">
-                <img src="{{ recipe.featured_image.url }}" class="card-img-top" alt="Image of {{ recipe.title }}" />
-                <div class="card-body">
-                    <h5 class="card-title"><a href="{% url 'recipe-detail' recipe.id %}"> {{ recipe.title }} </a></h5>
-                    <small class="author">by <a href="#">{{ recipe.author }}, {{
-                            recipe.author.profile.get_food_relation_display }}</a>
-                        on {{ recipe.date_posted }}</small><br>
-                    <small>Prep Time: {{ recipe.prep_time }} | Cooking Time: {{ recipe.cooking_time }} </small>
-                    <hr>
-                    <p class="card-text">
-                        {{ recipe.excerp }}
-                    </p>
-                </div>
-                <div class="card-footer d-flex justify-content-between align-items-center pt-3 pb-3">
-                    <small class="text-muted">Last updated: {{ recipe.date_updated }}</small>
-                    <a href="{% url 'recipe-detail' recipe.id %}"
-                        class="btn btn-custom-primary info-btn btn-sm">Info</a>
+    <!-- Check if user has any favorites and if it has - show list of favorites  -->
+    {% if new.exists %}
+    <div>
+        <!-- Recipe List -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {% for recipe in new %}
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{{ recipe.featured_image.url }}" class="card-img-top" alt="Image of {{ recipe.title }}" />
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="{% url 'recipe-detail' recipe.id %}"> {{ recipe.title }} </a>
+                        </h5>
+                        <small class="author">by <a href="#">{{ recipe.author }}, {{
+                                recipe.author.profile.get_food_relation_display }}</a>
+                            on {{ recipe.date_posted }}</small><br>
+                        <small>Prep Time: {{ recipe.prep_time }} | Cooking Time: {{ recipe.cooking_time }} </small>
+                        <hr>
+                        <p class="card-text">
+                            {{ recipe.excerp }}
+                        </p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center pt-3 pb-3">
+                        <small class="text-muted">Last updated: {{ recipe.date_updated }}</small>
+                        <a href="{% url 'recipe-detail' recipe.id %}"
+                            class="btn btn-custom-primary info-btn btn-sm">Info</a>
+                    </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-    </div>
-    {% else %}
+        <!-- If user doesn't have any favorites this message with link to cookbook will appear -->
+        {% else %}
         <div class="nothing-message">
-                <p>You don't have any favorites yet. Check out the recipes in
-                    <a href="{% url 'cookbook-home' %}"> the Collective Cookbook</a>
-                    and see if you find any favorites to save.
-                </p>
-            </div>
+            <p>You don't have any favorites yet. Check out the recipes in
+                <a href="{% url 'cookbook-home' %}"> the Collective Cookbook</a>
+                and see if you find any favorites to save.
+            </p>
         </div>
     </div>
-    {% endif %}
-
-    {% include 'cookbook/pagination.html' %}
 </div>
+    {% endif %}
+    <!-- Pagination -->
+    {% include 'cookbook/pagination.html' %}
 
 {% endblock content %}
