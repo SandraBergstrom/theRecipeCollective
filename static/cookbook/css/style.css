@@ -127,15 +127,10 @@ a {
 }
 
 .info-btn {
-    height: 30px;
-    width: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.info-btn i {
-    font-size: 1.2rem;
+    text-transform: capitalize;
 }
 
 /* ALL PAGES */
