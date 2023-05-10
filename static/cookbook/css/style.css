@@ -454,6 +454,26 @@ $card-height: 100% */
     width: 66%;
 }
 
+/* FAVORITES */
+
+.nothing-message {
+    margin-top: 25px;
+    background-color: var(--clr-primary-light);
+    border: 1px var(--clr-neutral-dark) solid;
+    border-radius: 10px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+.nothing-message p {
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
 /* RECIPE CARDS IN LIST */
 
 .card {
