@@ -60,8 +60,18 @@ def favorite_add(request, id):
     recipe = get_object_or_404(Recipe, id=id)
     if recipe.favorites.filter(id=request.user.id).exists():
         recipe.favorites.remove(request.user)
+
+        messages.warning (
+                request, 
+                f'This recipe was removed from your favorites!'
+                )
     else:
         recipe.favorites.add(request.user)
+
+        messages.success(
+                request, 
+                f'This recipe was added to your favorites!'
+                )
     # redirect to the current page
     return redirect(request.META.get('HTTP_REFERER'))
 
