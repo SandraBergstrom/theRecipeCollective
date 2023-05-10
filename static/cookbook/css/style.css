@@ -126,6 +126,17 @@ a {
     color: var(--clr-primary-dark);
 }
 
+.info-btn {
+    height: 30px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-btn i {
+    font-size: 1.2rem;
+}
 
 /* ALL PAGES */
 
@@ -163,17 +174,18 @@ a {
     margin-top: 20px;
     color: var(--clr-neutral-dark);
     text-transform: capitalize;
-    border: 1px solid var(--clr-neutral-dark);
-    padding: 5px 10px;
-    border-radius: 5px;
 }
 
-.cookbook-links a:hover,
-.cookbook-links a:focus,
-.cookbook-links a:active {
-    background-color: var(--clr-neutral-dark) !important;
-    color: var(--clr-primary-light);
+/* .cookbook-links:active {
+    color: var(--clr-primary-dark);
     border-color: var(--clr-neutral-dark);
+    font-weight: 700;
+} */
+
+.cookbook-links a:hover {
+    color: var(--clr-primary-dark);
+    border-color: var(--clr-neutral-dark);
+    font-weight: 700;
 }
 
 .btn-link {
@@ -326,6 +338,7 @@ a {
 .list-header {
     margin-top: 25px;
     width: 60%;
+    height: ;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -335,6 +348,11 @@ a {
 
 .list-header p {
     padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.container-cookbook-text {
+    height: 180px;
 }
 
 @media (max-width: 430px) {

@@ -4,13 +4,15 @@
 
 <div class="container container-centered">
     <div class="list-header">
-        <h2>my Favorite Recipes</h2>
-        <p>Here you can view all the recipes that you have added to your favorites. You can easily remove recipes from your favorites list by clicking on the
-            remove button that you see below or add to favorites by clicking on the add button on the recipe detail page.</p>
-
-            {% include 'cookbook/cookbook_links.html' %}
+        <div class="container-centered">
+            <h2>my Favorite Recipes</h2>
+            <p>Here you can view all the recipes that you have added to your favorites. You can easily remove recipes
+                from your favorites list by clicking on the
+                remove button that you see below or add to favorites by clicking on the add button on the recipe detail
+                page.</p>
+        </div>
+        {% include 'cookbook/cookbook_links.html' %}
     </div>
-    <hr>
 
     <!-- RECIPE LIST -->
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -20,7 +22,8 @@
                 <img src="{{ recipe.featured_image.url }}" class="card-img-top" alt="Image of {{ recipe.title }}" />
                 <div class="card-body">
                     <h5 class="card-title"><a href="{% url 'recipe-detail' recipe.id %}"> {{ recipe.title }} </a></h5>
-                    <small class="author">by <a href="#">{{ recipe.author }}, {{ recipe.author.profile.get_food_relation_display }}</a> 
+                    <small class="author">by <a href="#">{{ recipe.author }}, {{
+                            recipe.author.profile.get_food_relation_display }}</a>
                         on {{ recipe.date_posted }}</small><br>
                     <small>Prep Time: {{ recipe.prep_time }} | Cooking Time: {{ recipe.cooking_time }} </small>
                     <hr>
@@ -30,15 +33,14 @@
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center pt-3 pb-3">
                     <small class="text-muted">Last updated: {{ recipe.date_updated }}</small>
-                    <a href="{% url 'recipe-detail' recipe.id %}" class="btn btn-outline-success btn-sm">More
-                        Info...</a>
+                    <a href="{% url 'recipe-detail' recipe.id %}" class="btn btn-custom-primary info-btn"><i class="fas fa-info-circle"></i></a>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
 
-    {% include 'cookbook/pagination.html' %}    
+    {% include 'cookbook/pagination.html' %}
 </div>
 
 {% endblock content %}

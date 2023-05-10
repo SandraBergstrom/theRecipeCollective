@@ -4,12 +4,14 @@
 
 <div class="container container-centered">
     <div class="list-header">
-        <h2>my Recipes</h2>
-        <p>Here you can view all the recipes that you have added to the collective - both the private and the public ones.</p>
-
+        <div class="container-centered">
+            <h2>my Recipes</h2>
+            <p>Here you can view all the recipes that you have added to the collective - both the private and the public ones.</p>
+            <br>
+        </div>
         {% include 'cookbook/cookbook_links.html' %}
     </div>
-    <hr>
+
 
     <!-- RECIPE LIST -->
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -30,8 +32,7 @@
                     </div>
                     <div class="card-footer d-flex justify-content-between align-items-center pt-3 pb-3">
                         <small class="text-muted">Last updated: {{ recipe.date_updated }}</small>
-                        <a href="{% url 'recipe-detail' recipe.id %}" class="btn btn-outline-success btn-sm">More
-                            Info...</a>
+                        <a href="{% url 'recipe-detail' recipe.id %}" class="btn btn-custom-primary info-btn"><i class="fas fa-info-circle"></i></a>
                     </div>
                 </div>
             </div>
