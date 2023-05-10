@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 from PIL import Image
 
 
@@ -9,9 +10,9 @@ food relation and country.
 """
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    image = models.ImageField(
-        default='/static/users/profile_pics/default.jpg', 
-        upload_to='profile_pics'
+    image = CloudinaryField(
+        'image', 
+        default='https://res.cloudinary.com/sandrabergstrom/image/upload/v1683716250/user_minu4x.png'
         )
     food_relation_choices = [
         ('CHEF', 'Chef'),
