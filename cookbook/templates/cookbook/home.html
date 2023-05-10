@@ -5,14 +5,15 @@
     <div class="list-header">
         <div class="container-centered container-cookbook-text">
             <h2>the Collective Cookbook</h2>
-            <p>On this page, you can view the latest recipes that have been added to the collective's cookbook. If you find any
-            that you like, feel free to add them to your favorites.</p>
+            <p>On this page, you can view the latest recipes that have been added to the collective's cookbook. If you
+                find any
+                that you like, feel free to add them to your favorites.</p>
         </div>
         {% include 'cookbook/cookbook_links.html' %}
     </div>
     <br>
 
-    <!-- RECIPE LIST -->
+    <!-- Recipe List -->
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         {% for recipe in recipes %}
         <div class="col">
@@ -20,7 +21,9 @@
                 <img src="{{ recipe.featured_image.url }}" class="card-img-top" alt="Image of {{ recipe.title }}" />
                 <div class="card-body">
                     <h5 class="card-title"><a href="{% url 'recipe-detail' recipe.id %}"> {{ recipe.title }} </a></h5>
-                    <small class="author">by <a href="#">{{ recipe.author }}, {{ recipe.author.profile.get_food_relation_display }}</a> on {{ recipe.date_posted }}</small><br>
+                    <small class="author">by <a href="#">{{ recipe.author }},
+                            {{ recipe.author.profile.get_food_relation_display }}</a> on {{ recipe.date_posted
+                        }}</small><br>
                     <small>Prep Time: {{ recipe.prep_time }} | Cooking Time: {{ recipe.cooking_time }} </small>
                     <hr>
                     <p class="card-text">
@@ -29,14 +32,15 @@
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center pt-3 pb-3">
                     <small class="text-muted">Last updated: {{ recipe.date_updated }}</small>
-                    <a href="{% url 'recipe-detail' recipe.id %}" class="btn btn-custom-primary info-btn btn-sm">Info</a>
+                    <a href="{% url 'recipe-detail' recipe.id %}"
+                        class="btn btn-custom-primary info-btn btn-sm">Info</a>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
 
-    {% include 'cookbook/pagination.html' %}    
+    {% include 'cookbook/pagination.html' %}
 </div>
 
 {% endblock content %}
