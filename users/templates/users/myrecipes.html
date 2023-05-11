@@ -2,9 +2,8 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-
-<!-- Header and paragraph with links to users different recipe pages -->
 <div class="container container-centered">
+    <!-- Header and paragraph with links to users different recipe pages -->
     <div class="list-header">
         <div class="container-centered">
             <h2>my Recipes</h2>
@@ -17,38 +16,18 @@
 
     <!-- Check if user has any favorites and if it has - show list of favorites  -->
     {% if added.exists %}
-    <div>
-        <!-- Recipe List -->
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-            {% for recipe in added %}
-            {% if recipe.author == user %}
-            <div class="col">
-                <div class="card h-100">
-                    <img src="{{ recipe.featured_image.url }}" class="card-img-top" alt="Image of {{ recipe.title }}" />
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="{% url 'recipe-detail' recipe.id %}"> {{ recipe.title }} </a>
-                        </h5>
-                        <small class="author">by <a href="#">{{ recipe.author }}, 
-                            {{ recipe.author.profile.get_food_relation_display }}</a>
-                            on {{ recipe.date_posted }}</small><br>
-                        <small>Prep Time: {{ recipe.prep_time }} | Cooking Time: {{ recipe.cooking_time }} </small>
-                        <hr>
-                        <p class="card-text">
-                            {{ recipe.excerp }}
-                        </p>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between align-items-center pt-3 pb-3">
-                        <small class="text-muted">Last updated: {{ recipe.date_updated }}</small>
-                        <a href="{% url 'recipe-detail' recipe.id %}"
-                            class="btn btn-custom-primary info-btn btn-sm">Info</a>
-                    </div>
-                </div>
+        <div>
+            <!-- Recipe List -->
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                {% for recipe in added %}
+                    {% if recipe.author == user %}
+                        {% include 'cookbook/list_card.html' %}
+                    {% endif %}
+                {% endfor %}
             </div>
-            {% endif %}
-            {% endfor %}
         </div>
-        <!-- If user doesn't have any favorites this message with link to cookbook will appear -->
-        {% else %}
+    <!-- If user doesn't have any favorites this message with link to cookbook will appear -->
+    {% else %}
         <div class="nothing-message">
             <p>You don't have any recipes yet. Why don't you 
                 <a href="{% url 'recipe-create' %}"> add a recipe</a>
@@ -56,10 +35,9 @@
             </p>
         </div>
     </div>
+    {% endif %}
+
+    {% include 'cookbook/pagination.html' %}
 </div>
-{% endif %}
 
-        {% include 'cookbook/pagination.html' %}
-    </div>
-
-    {% endblock content %}
+{% endblock content %}

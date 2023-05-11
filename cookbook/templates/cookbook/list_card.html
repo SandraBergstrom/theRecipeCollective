@@ -1,0 +1,21 @@
+<div class="col">
+    <div class="card h-100">
+        <img src="{{ recipe.featured_image.url }}" class="card-img-top" alt="Image of {{ recipe.title }}" />
+        <div class="card-body">
+            <h5 class="card-title"><a href="{% url 'recipe-detail' recipe.id %}"> {{ recipe.title }} </a></h5>
+            <small class="author">by <a href="#">{{ recipe.author }},
+                    {{ recipe.author.profile.get_food_relation_display }}</a> on {{ recipe.date_posted
+                }}</small><br>
+            <small>Prep Time: {{ recipe.prep_time }} | Cooking Time: {{ recipe.cooking_time }} </small>
+            <hr>
+            <p class="card-text">
+                {{ recipe.excerp }}
+            </p>
+        </div>
+        <div class="card-footer d-flex justify-content-between align-items-center pt-3 pb-3">
+            <small class="text-muted">Last updated: {{ recipe.date_updated }}</small>
+            <a href="{% url 'recipe-detail' recipe.id %}"
+                class="btn btn-custom-primary info-btn btn-sm">Info</a>
+        </div>
+    </div>
+</div>
