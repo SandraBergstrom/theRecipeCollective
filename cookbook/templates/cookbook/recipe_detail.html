@@ -8,81 +8,90 @@
             <img src="{{ recipe.featured_image.url }}" class="img-fluid rounded-start" alt="Image of {{ recipe.title }}"
                 style="object-fit: cover; max-height: 500px; width: 100%" />
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 p-3">
             <div class="card-body">
-                <h5 class="card-title">{{ recipe.title }}</h5>
-                <div id="recipe-ud-btn">
-                    <small>by <a href="#">{{ recipe.author }}, {{ recipe.author.profile.get_food_relation_display }}</a>
-                        on {{ recipe.date_posted }}</small>
-                    <div>
-                        {% if recipe.author == user %}
-                        <a class="btn btn-custom-secondary btn-sm" href="{% url 'recipe-update' object.id %}">Update</a>
-                        <a class="btn btn-danger btn-sm" href="{% url 'recipe-delete' object.id %}">Delete</a>
-                        {% else %}
-                        {% if not favorite %}
-                        <a class="btn btn-like" href="{% url 'favorite_add' recipe.id %}"><i
-                                class="fa-regular fa-heart"></i></a>
-                        {% else %}
-                        <a class="btn btn-like" href="{% url 'favorite_add' recipe.id %}"><i
-                                class="fa-solid fa-heart"></i></a>
-                        {% endif %}
-                        {% endif %}
-                    </div>
-                </div>
-                <hr>
                 <div>
-                    <div class="pb-3">{{ recipe.excerp }}</div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="mb-4">
-                                <strong>Preparation time:</strong><br>
-                                <p class="text-capitalize">{{ recipe.prep_time }}</p>
+                    <div style="
+                        display: flex;
+                        justify-content: space-between;
+                    ">
+                        <div>
+                            <h5 class="card-title">{{ recipe.title }}</h5>
+                            <div id="recipe-ud-btn">
+                                <small>by <a href="#">{{ recipe.author }}, 
+                                    {{recipe.author.profile.get_food_relation_display }}</a>
+                                    on {{ recipe.date_posted }}</small>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="mb-4">
-                                <strong>Cooking time:</strong><br>
-                                <p class="text-capitalize">{{ recipe.cooking_time }}</p>
+                        <div>
+                            {% if recipe.author == user %}
+                            <a class="btn btn-custom-secondary btn-sm"
+                                href="{% url 'recipe-update' object.id %}">Update</a>
+                            <a class="btn btn-danger btn-sm" href="{% url 'recipe-delete' object.id %}">Delete</a>
+                            {% else %}
+                            {% if not favorite %}
+                            <a class="btn btn-like" href="{% url 'favorite_add' recipe.id %}"><i
+                                    class="fa-regular fa-heart"></i></a>
+                            {% else %}
+                            <a class="btn btn-like" href="{% url 'favorite_add' recipe.id %}"><i
+                                    class="fa-solid fa-heart"></i></a>
+                            {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <div class="pb-3">{{ recipe.excerp }}</div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-4">
+                                    <strong>Preparation time:</strong><br>
+                                    <p class="text-capitalize">{{ recipe.prep_time }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-4">
+                                    <strong>Cooking time:</strong><br>
+                                    <p class="text-capitalize">{{ recipe.cooking_time }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-4">
+                                    <strong>Total time:</strong><br>
+                                    <p class="text-capitalize">{{ recipe.prep_time|add:recipe.cooking_time }}</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="mb-4">
-                                <strong>Total time:</strong><br>
-                                <p class="text-capitalize">{{ recipe.prep_time|add:recipe.cooking_time }}</p>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-4">
+                                    <strong>Category:</strong><br>
+                                    <p class="text-capitalize">{{ recipe.get_category_display }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-4">
+                                    <strong>Servings:</strong><br>
+                                    <p class="text-capitalize">{{ recipe.servings }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-4">
+                                    <strong>-</strong><br>
+                                    <p class="text-capitalize"></p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="mb-4">
-                                <strong>Category:</strong><br>
-                                <p class="text-capitalize">{{ recipe.get_category_display }}</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mb-4">
-                                <strong>Servings:</strong><br>
-                                <p class="text-capitalize">{{ recipe.servings }}</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mb-4">
-                                <strong>-</strong><br>
-                                <p class="text-capitalize"></p>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-            </div>
-            <div>
-                <p class="card-text" id="recipe-post-description">
-                    <small class="text-body-secondary">Last updated: {{ recipe.date_updated }}</small>
-                </p>
+                <div>
+                    <p class="card-text" id="recipe-post-description">
+                        <small class="text-body-secondary">Last updated: {{ recipe.date_updated }}</small>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 <div class="card mb-3">
     <div class="row">
