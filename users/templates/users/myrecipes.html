@@ -16,28 +16,31 @@
 
     <!-- Check if user has any favorites and if it has - show list of favorites  -->
     {% if added.exists %}
-        <div>
-            <!-- Recipe List -->
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                {% for recipe in added %}
-                    {% if recipe.author == user %}
-                        {% include 'cookbook/list_card.html' %}
-                    {% endif %}
-                {% endfor %}
-            </div>
+    <div>
+        <!-- Recipe List -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {% for recipe in added %}
+            {% if recipe.author == user %}
+            {% include 'cookbook/list_card.html' %}
+            {% endif %}
+            {% endfor %}
         </div>
-    <!-- If user doesn't have any favorites this message with link to cookbook will appear -->
-    {% else %}
+        <!-- If user doesn't have any favorites this message with link to cookbook will appear -->
+        {% else %}
         <div class="nothing-message">
-            <p>You don't have any recipes yet. Why don't you 
+            <p>You don't have any recipes yet. Why don't you
                 <a href="{% url 'recipe-create' %}"> add a recipe</a>
                 right away!
             </p>
         </div>
     </div>
     {% endif %}
-
-    {% include 'cookbook/pagination.html' %}
+    <!-- Pagination -->
+    <div class="row pagination-container">
+        {% if is_paginated %}
+        {% include 'cookbook/pagination.html' %}
+        {% endif %}
+    </div>
 </div>
 
 {% endblock content %}

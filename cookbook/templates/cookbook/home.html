@@ -16,11 +16,16 @@
     <!-- Recipe List -->
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         {% for recipe in recipes %}
-            {% include 'cookbook/list_card.html' %}
+        {% include 'cookbook/list_card.html' %}
         {% endfor %}
     </div>
 
-    {% include 'cookbook/pagination.html' %}
+    <!-- Pagination -->
+    <div class="row pagination-container">
+        {% if is_paginated %}
+        {% include 'cookbook/pagination.html' %}
+        {% endif %}
+    </div>
 </div>
 
 {% endblock content %}

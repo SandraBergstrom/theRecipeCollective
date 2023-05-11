@@ -2,9 +2,8 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-
-<!-- Header and paragraph with links to users different recipe pages -->
 <div class="container container-centered">
+    <!-- Header and paragraph with links to users different recipe pages -->
     <div class="list-header">
         <div class="container-centered">
             <h2>my Favorite Recipes</h2>
@@ -22,7 +21,7 @@
         <!-- Recipe List -->
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             {% for recipe in new %}
-                {% include 'cookbook/list_card.html' %}
+            {% include 'cookbook/list_card.html' %}
             {% endfor %}
         </div>
         <!-- If user doesn't have any favorites this message with link to cookbook will appear -->
@@ -34,10 +33,13 @@
             </p>
         </div>
     </div>
+    {% endif %}
+    <!-- Pagination -->
+    <div class="row pagination-container">
+        {% if is_paginated %}
+        {% include 'cookbook/pagination.html' %}
+        {% endif %}
+    </div>
 </div>
-{% endif %}
-
-<!-- Pagination -->
-{% include 'cookbook/pagination.html' %}
 
 {% endblock content %}
