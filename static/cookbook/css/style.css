@@ -171,12 +171,6 @@ a {
     text-transform: capitalize;
 }
 
-/* .cookbook-links:active {
-    color: var(--clr-primary-dark);
-    border-color: var(--clr-neutral-dark);
-    font-weight: 700;
-} */
-
 .cookbook-links a:hover {
     color: var(--clr-primary-dark);
     border-color: var(--clr-neutral-dark);
@@ -226,6 +220,12 @@ a {
     .btn-link {
         padding: 6px !important;
     }
+}
+
+/* INDEX PAGE */
+
+#intro-index {
+    height: 620px;
 }
 
 /* REGISTER/SIGNUP PAGE */
