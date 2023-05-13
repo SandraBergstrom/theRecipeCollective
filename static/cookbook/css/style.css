@@ -1,16 +1,15 @@
 /* ROOT */
 
 :root {
-    --clr-primary-light: rgba(248, 248, 248);
-    --clr-primary-dark: rgba(66, 47, 33);
-    --clr-primary-black: rgba(29, 19, 18);
+    --clr-primary-light: rgb(239, 239, 241);
+    --clr-primary-dark: rgb(51, 53, 48);
 
-    --clr-neutral-light: rgba(192, 188, 177);
-    --clr-neutral-dark: rgba(106, 86, 77);
+    --clr-neutral-light: rgb(222, 215, 218);
+    --clr-neutral-dark: rgb(196, 180, 159);
 
-    --clr-accent-pink: rgb(176, 75, 124);
-    --clr-accent-orange: rgba(195, 130, 53);
-    --clr-accent-green: rgb(85, 151, 72);
+    --clr-accent-yellow: rgb(252, 211, 86);
+    --clr-accent-orange: rgb(195, 126, 93);
+    --clr-accent-green: rgb(94, 106, 47);
 }
 
 /* BASE */
@@ -36,6 +35,7 @@ p {
         font-size: 80%;
     }
 }
+
 
 /* Navbar */
 
@@ -92,6 +92,16 @@ a {
 
 /* Buttons */
 
+.btn {
+    transition: transform 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    color: var(--clr-primary-light);
+    background-color: var(--clr-accent-green);
+}
+
 .btn-link {
     text-decoration: none;
     color: var(--clr-neutral-dark);
@@ -133,6 +143,11 @@ a {
     text-transform: capitalize;
 }
 
+a:hover {
+    color: var(--clr-accent-green);
+    text-decoration: none;
+}
+
 /* ALL PAGES */
 
 /* Default for bg-img for small devices */
@@ -167,14 +182,12 @@ a {
 
 .cookbook-links a {
     margin-top: 20px;
-    color: var(--clr-neutral-dark);
     text-transform: capitalize;
+    background-color: transparent;
 }
 
-.cookbook-links a:hover {
-    color: var(--clr-primary-dark);
-    border-color: var(--clr-neutral-dark);
-    font-weight: 700;
+.cookbook-links {
+    background-color: transparent !important;
 }
 
 .btn-link {
@@ -224,9 +237,9 @@ a {
 
 /* INTRO PAGES */
 
-.intro-bg {
+/* .intro-bg {
     height: 620px;
-}
+} */
 
 
 /* Register/Sign up page */
@@ -394,9 +407,7 @@ a {
     }
 }
 
-/* SASS PROFILE IMAGE */
-/* 
-$card-height: 100% */ */
+
 /* RECIPE DETAIL PAGE */
 
 #recipe-ud-btn {
@@ -460,8 +471,12 @@ $card-height: 100% */ */
 /* LIKE BUTTON ON RECIPE */
 
 .btn-like {
-    color: var(--clr-accent-green);
+    color: var(--clr-accent-orange);
     font-size: 20px;
+}
+
+.btn-like:hover {
+    background-color: var(--clr-accent-orange) !important;
 }
 
 /* FOOTER */
