@@ -20,15 +20,15 @@
           {% if user.is_authenticated %}
           <p class="mb-4">So why settle for the same old boring meals? Discover new recipes and connect with other foodies and spice up your
             kitchen game!</p>
-          <a class="btn btn-custom-secondary btn-lg m-2 btn-sm" href="{% url 'cookbook-home' %}" role="button"
+          <a class="btn btn-custom-primary btn-lg m-2 btn-sm" href="{% url 'cookbook-home' %}" role="button"
             rel="nofollow">Cookbook</a>
-          <a class="btn btn-custom-secondary-outline btn-lg m-2 btn-sm" href="{% url 'favorite_list' %}" role="button">My Favorites</a>
+          <a class="btn btn-custom-primary-outline btn-lg m-2 btn-sm" href="{% url 'favorite_list' %}" role="button">My Favorites</a>
           {% else %}
           <p class="mb-4">So why settle for the same old boring meals? Join The Recipe Collective and spice up your
             kitchen game!</p>
-          <a class="btn btn-custom-secondary btn-lg m-2 btn-sm" href="{% url 'register' %}" role="button"
+          <a class="btn btn-custom-primary btn-lg m-2 btn-sm" href="{% url 'register' %}" role="button"
             rel="nofollow">Sign up!</a>
-          <a class="btn btn-custom-secondary-outline btn-lg m-2 btn-sm" href="{% url 'login' %}" role="button">Login</a>
+          <a class="btn btn-custom-primary-outline btn-lg m-2 btn-sm" href="{% url 'login' %}" role="button">Login</a>
           {% endif %} 
         </div>
       </div>
