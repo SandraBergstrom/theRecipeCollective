@@ -68,6 +68,8 @@ The Recipe Collective is a web application designed to provide users with a plat
 - Enhancing user experience by curating a collection of diverse and appealing recipes.
 - Encouraging users to engage with the site and share their culinary creations.
 
+[Back up](#table-of-content)
+
 ## User Experience
 
 ### Target Audience
@@ -81,7 +83,7 @@ The Recipe Collective caters to the following target audience:
 
 By providing a seamless recipe storage and sharing experience, the Recipe Collective aims to simplify the process of organizing and accessing recipes, creating a go-to resource for home cooks and food enthusiasts alike.
 
-### User Requrements and Expectations
+### User Requirements and Expectations
 When using the Recipe Collective, users can expect the following features and characteristics to meet their requirements:
 
 - A user-friendly interface that allows for intuitive navigation and easy recipe browsing.
@@ -95,24 +97,27 @@ The Recipe Collective strives to create an enjoyable and engaging environment fo
 
 ### User Stories
 
-#### As a First Time User ...
-- I can create an account so that I can save my recipes.
-- I want to be able to access the About page so that I can learn more about the purpose, features, and benefits of the Recipe Collective without needing to create an account.
+#### Epic 1: User Authentication and Account Management
 
-#### As a Returning User ...
-- I want to be able to navigate through a long list of recipes using pagination so that I can view and interact with the list easily.
-- I can login/logout of my account so that I can access my saved recipes securely.
-- I can go to my profile page so that I can see my saved recipes and personal information.
-- I can save recipes that I find in my own "cookbook" so that can find them easily in the future.
-- I can delete my own recipe so that remove them if wanted.
-- I can click on a recipe so that that I can get all details and instructions about it.
-- I can view all recipes so that I can find new recipes to try.
-- I can edit my own recipes so that I can update them if needed.
-- I can add a new recipe so that can share it with others and save it for myself.
+- [As a First Time User, I can create an account so that I can save my recipes](https://github.com/SandraBergstrom/theRecipeCollective/issues/3#issue-1676151139)<br>
+- [As a Returning User, I can log in/out of my account so that I can access my saved recipes securely](https://github.com/SandraBergstrom/theRecipeCollective/issues/4#issue-1676185860)<br>
+- [As a Returning User, I can go to my profile page so that I can see my saved recipes and personal information](https://github.com/SandraBergstrom/theRecipeCollective/issues/12#issue-1676233050)<br>
+- [As a Site Owner, I can view and manage user accounts to ensure the security and integrity of the site and its users](https://github.com/SandraBergstrom/theRecipeCollective/issues/1#issue-1676139643)
 
-#### As a Site Owner ...
-- I can view and manage user accounts to ensure the security and integrity of the site and its users.
-- I can view and manage recipes to maintain a high standard of content and ensure the quality of the recipes on the site.
+#### Epic 2: Recipe Management
+- [As a Returning User, I can save recipes that I find in my own "cookbook" so that I can find them easily in the future](https://github.com/SandraBergstrom/theRecipeCollective/issues/17#issue-1676239448)<br>
+- [As a Returning User, I can delete my own recipe so that I can remove them if wanted](https://github.com/SandraBergstrom/theRecipeCollective/issues/8#issue-1676201972)<br>
+- [As a Returning User, I can click on a recipe so that I can get all details and instructions about it](https://github.com/SandraBergstrom/theRecipeCollective/issues/6#issue-1676195459)<br>
+- [As a Returning User, I can view all recipes so that I can find new recipes to try](https://github.com/SandraBergstrom/theRecipeCollective/issues/2#issue-1676140284)<br>
+- [As a Returning User, I can edit my own recipes so that I can update them if needed](https://github.com/SandraBergstrom/theRecipeCollective/issues/7#issue-1676198620)<br>
+- [As a Returning User, I can add a new recipe so that I can share it with others and save it for myself](https://github.com/SandraBergstrom/theRecipeCollective/issues/5#issue-1676191345)<br>
+- [As a Site Owner, I can view and manage recipes to maintain a high standard of content and ensure the quality of the recipes on the site](https://github.com/SandraBergstrom/theRecipeCollective/issues/1#issue-1676139643)<br>
+
+#### Epic 3: User Experience and Site Information
+- [As a First Time User, I want to be able to access the About page so that I can learn more about the purpose, features, and benefits of the Recipe Collective without needing to create an account](https://github.com/SandraBergstrom/theRecipeCollective/issues/37#issue-1708609060)<br>
+- [As a Returning User, I want to be able to navigate through a long list of recipes using pagination so that I can view and interact with the list easily](https://github.com/SandraBergstrom/theRecipeCollective/issues/21#issue-1688404118)<br>
+
+[Back up](#table-of-content)
 
 ## Database
 The Recipe Collective utilizes the following database schema:
@@ -131,11 +136,12 @@ The Recipe Collective utilizes the following database schema:
 - The favorites field establishes a many-to-many relationship with the User model, allowing users to save recipes as favorites.
 - A FavoriteManager is implemented to retrieve recipes that are marked as favorites by a specific user.
 
+[Back up](#table-of-content)
+
 ## Design
 
 
 ### Design Choices
-
 
 ### Colour
 <details><summary>See Colour scheme</summary>
@@ -151,25 +157,25 @@ The Recipe Collective is designed with a user-friendly and intuitive structure, 
 
 #### Before Logged In:
 
-**Landing Page:** The landing page serves as the initial entry point to the website, providing an introduction and overview of the Recipe Collective's purpose and features.<br>
-**About Page:** The about page provides detailed information about the Recipe Collective, including its mission, values, and the benefits of being a part of the community.<br>
-**Sign Up Page:** The sign-up page allows new users to create an account by providing their required details and registering as a member of the Recipe Collective.<br>
-**Login Page:** The login page is where registered users can securely log in to access their accounts and the full functionality of the website.
+- **Landing Page:** The landing page serves as the initial entry point to the website, providing an introduction and overview of the Recipe Collective's purpose and features.<br>
+- **About Page:** The about page provides detailed information about the Recipe Collective, including its mission, values, and the benefits of being a part of the community.<br>
+- **Sign Up Page:** The sign-up page allows new users to create an account by providing their required details and registering as a member of the Recipe Collective.<br>
+- **Login Page:** The login page is where registered users can securely log in to access their accounts and the full functionality of the website.
 
 #### When Logged In:
 Upon logging in, users are directed to the main cookbook section of the Recipe Collective, which includes the following pages:
 
-**Home Page (Cookbook):** The home page of the cookbook section serves as the central hub, displaying a personalized collection of recipes based on the user's preferences, saved recipes, and recent activities within the community.<br>
-**My Recipes Page:** The "My Recipes" page allows users to view and manage the recipes they have created and contributed to the Recipe Collective. It provides options to edit, delete, and organize recipes for easy access and retrieval.<br>
-**My Favorites:** The "My Favorites" page displays a curated list of recipes that the user has marked as favorites, making it convenient to revisit and cook their preferred dishes.
+- **Home Page (Cookbook):** The home page of the cookbook section serves as the central hub, displaying a personalized collection of recipes based on the user's preferences, saved recipes, and recent activities within the community.<br>
+- **My Recipes Page:** The "My Recipes" page allows users to view and manage the recipes they have created and contributed to the Recipe Collective. It provides options to edit, delete, and organize recipes for easy access and retrieval.<br>
+- **My Favorites:** The "My Favorites" page displays a curated list of recipes that the user has marked as favorites, making it convenient to revisit and cook their preferred dishes.
 
 #### Profile Navigation:
 Upon clicking on the profile image in the navigation bar, additional links are revealed, providing access to specific profile-related pages and actions:
 
-**Profile Page:** The profile page displays the user's profile information, including their bio, profile picture, and other relevant details. It allows users to update and customize their profile settings.<br>
-**Add Recipe Page:** The "Add Recipe" page enables users to contribute their own recipes to the Recipe Collective. It provides a user-friendly form to input recipe details, including title, description, ingredients, instructions, and other relevant information.<br>
-**Favorite Recipes:** The "Favorite Recipes" page showcases a collection of recipes that the user has marked as favorites, making it easy to access and revisit their preferred dishes.<br>
-**Logout:** The "Logout" option allows users to securely log out of their accounts, ensuring the privacy and security of their personal information.<br>
+- **Profile Page:** The profile page displays the user's profile information, including their bio, profile picture, and other relevant details. It allows users to update and customize their profile settings.<br>
+- **Add Recipe Page:** The "Add Recipe" page enables users to contribute their own recipes to the Recipe Collective. It provides a user-friendly form to input recipe details, including title, description, ingredients, instructions, and other relevant information.<br>
+- **Favorite Recipes:** The "Favorite Recipes" page showcases a collection of recipes that the user has marked as favorites, making it easy to access and revisit their preferred dishes.<br>
+- **Logout:** The "Logout" option allows users to securely log out of their accounts, ensuring the privacy and security of their personal information.<br>
 
 The structured design of the Recipe Collective ensures a seamless and enjoyable user experience, enabling users to explore, contribute, and manage their recipes with ease.
 
@@ -195,6 +201,8 @@ The structured design of the Recipe Collective ensures a seamless and enjoyable 
 <img src="#">
 </details>
 <br>
+
+[Back up](#table-of-content)
 
 ## Technologies Used
 
@@ -237,8 +245,11 @@ The structured design of the Recipe Collective ensures a seamless and enjoyable 
 - sqlparse==0.4.4: A non-validating SQL parser for Python, used by Django for SQL query parsing.
 - requests==2.26.0: A Python library for making HTTP requests, often used in Django projects for external API integrations.
 
+[Back up](#table-of-content)
+
 ## Features
 
+[Back up](#table-of-content)
 
 ## Validation
 
@@ -331,9 +342,35 @@ The website was tested on the following browsers:
 ### Testing user stories
 
 
+[Back up](#table-of-content)
 
 ## Bugs
 
+### Known bugs
+
+| **Bug** | **Status** |
+| ----------- | ----------- |
+|[If there is less than 3 recipe cards it will not look good any longer. The cards get slimmer and the page layout get strange when only 1 card.](https://github.com/SandraBergstrom/theRecipeCollective/issues/36)|Fixed for the favorites page, but the fix is not working on the My Recipes page|
+|[Cant delete users from admin page](https://github.com/SandraBergstrom/theRecipeCollective/issues/35)|High priority: Because of an old field in one of the models. Will change database to a clean before deploy.|
+|[Prep time and cooking time is showing seconds and not minutes.](https://github.com/SandraBergstrom/theRecipeCollective/issues/23)||
+|[Heart icon does not show as saved (solid) when recipe is saved to favorites.](https://github.com/SandraBergstrom/theRecipeCollective/issues/28)|Temporary solution - removed it from the recipe card.<br> Low priority: Since we have a functioning heart icon in the recipe details for users to save them to favorites, this is of low priority and can be addressed in a future update.|
+|[I can't get the active link to show. I use active class according to bootstrap but it will not change when I go to another page.](https://github.com/SandraBergstrom/theRecipeCollective/issues/30)|...|
+|||
+
+### Fixed bugs 
+
+| **Bug** | **Fix** |
+| ----------- | ----------- |
+|[Error message E-tag when deploying to Heroku. Temporary solves when I remove the static folder in Cloudinary. But that also removes all profile pictures and recipe images.](https://github.com/SandraBergstrom/theRecipeCollective/issues/32)|Before deploying on Heroku the static folder in Cloudinary have to be removed. This wiill not remove recipe or profile images.|
+| [Default recipe pic is not showing](https://github.com/SandraBergstrom/theRecipeCollective/issues/25)| Added if statement in the detail template to show the placeholder if image is default, else show uploaded image. |
+| [When trying to update a recipe with an uploade picture instead of the default placeholder, it will not update.](https://github.com/SandraBergstrom/theRecipeCollective/issues/27) | When fixing [#25](https://github.com/SandraBergstrom/theRecipeCollective/issues/25) I instead created this bug. I have now removed the if statment again. I then updated the recipe model and removed the placholder variable and instead added a placeholder image on cloudinary which I directly link to as default in the featured_image field. See more details in bug link.
+|[Last updated field not working in recipe detail. It is working in the recipe card in the list so check there.](https://github.com/SandraBergstrom/theRecipeCollective/issues/22)|Corrected model field name.|
+|[Default profile pic is not showing. Tried both to add a direct link to cloudinary and to store it locally.](https://github.com/SandraBergstrom/theRecipeCollective/issues/24)|In the profile model that extends the user I added a imageField instead of CloudinaryField. I switched, added a cloudinary link and problem solved.|
+|[Can't connect to fontawesome](https://github.com/SandraBergstrom/theRecipeCollective/issues/26)|Installed fontawesome for bootstrap 5|
+|[Food relation should be showing after username on the recipe cards, but it's not anymore. Now it's only showing the code.](https://github.com/SandraBergstrom/theRecipeCollective/issues/31)|When I use format document it creates a linebreak right after "{{" in "{{ recipe.author.profile.get_food_relation_display }}" which will create problems.|
+|||
+
+[Back up](#table-of-content)
 
 ## Deployment
 The website was deployed using Heroku by following these steps:
@@ -357,16 +394,12 @@ You can clone the repository by following these steps:
 6. Type the command **'git clone'** followed by the URL you copied in step 3. The command should look like this: **git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY**.
 7.Press Enter to create your local clone.
 
+[Back up](#table-of-content)
+
 ## Credits
 Images not referenced below are owned by the developer.
 
 ### Media
-  
-### Code
-User extension,  with profile and register view: 
-Based on the "Python Django Tutorial: Full-Featured Web App" tutorial by Corey Schafer
-Tutorial: https://youtu.be/UmljXZIypDc
-Code adapted from the tutorial with modifications.
 
 ## Acknowledgements
 I would like to acknowledge the following tutorial which provided valuable guidance and inspiration during the development of this project:
