@@ -36,7 +36,6 @@ p {
     }
 }
 
-
 /* Navbar */
 
 header {
@@ -64,6 +63,11 @@ header {
 
 #nav-profile-img:hover {
     transform: scale(1.2);
+}
+
+.nav-link:hover, .nav-link:active {
+    color: var(--clr-accent-orange);
+    font-weight: 500;
 }
 
 a {
@@ -99,7 +103,7 @@ a {
 .btn:hover {
     transform: scale(1.1);
     color: var(--clr-primary-light);
-    background-color: var(--clr-accent-green);
+    background-color: var(--clr-accent-orange);
 }
 
 .btn-link {
@@ -114,6 +118,12 @@ a {
 .btn-custom-primary {
     background-color: var(--clr-accent-orange);
     color: var(--clr-primary-light);
+}
+
+.btn-custom-primary-outline {
+    border-color: var(--clr-accent-orange);
+    border-radius: 5px;
+    color: var(--clr-accent-orange)
 }
 
 .btn-custom-secondary {
