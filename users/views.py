@@ -1,3 +1,7 @@
+# Register view and profile view is based on the "Python Django Tutorial: Full-Featured Web App" tutorial by Corey Schafer
+# Tutorial: https://youtu.be/UmljXZIypDc
+# Snippets adapted from the tutorial with modifications
+
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin

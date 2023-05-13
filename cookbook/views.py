@@ -1,3 +1,7 @@
+# Based on the "Python Django Tutorial: Full-Featured Web App" tutorial by Corey Schafer
+# Tutorial: https://youtu.be/UmljXZIypDc
+# Snippet adapted from the tutorial with modifications
+
 from django.shortcuts import render, redirect
 from .models import Recipe
 from django.views.generic import (
@@ -124,3 +128,5 @@ class RecipeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 class AboutView(TemplateView):
     template_name = 'cookbook/about.html'
     extra_content = {'title': 'About'}
+
+    
