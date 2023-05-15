@@ -20,20 +20,26 @@ So why settle for the same old boring meals? Join The Recipe Collective and spic
     1. [Target Audience](#target-audience)
     2. [User Requrements and Expectations](#user-requrements-and-expectations)
     3. [User Stories](#user-stories)
-4. [Database](#database)
+3. [Database](#database)
     1. [User App](#user-app)
     2. [Cookbook App](#cookbook-app)
-3. [Design](#design)
+4. [Design](#design)
     1. [Design Choices](#design-choices)
     2. [Colour](#colours)
     3. [Fonts](#fonts)
     4. [Structure](#structure)
     5. [Wireframes](#wireframes)
-4. [Technologies Used](#technologies-used)
+5. [Technologies Used](#technologies-used)
     1. [Languages](#languages)
     2. [Frameworks & Tools](#frameworks-&-tools)
-5. [Features](#features)
-6. [Testing](#validation)
+6. [Methodology](#methodology)
+    1. [Agile Project Management with GitHub Projects](#agile-project-management-with-github-projects)
+    2. [User Stories as GitHub Issues](#user-stories-as-github-issues)
+    3. [Bug Tracking](#bug-tracking)
+    4. [Iterative Development Approach](#iterative-development-approach)
+    5. [Backlog and Subsequent Iterations](#backlog-and-subsequent-iterations)
+7. [Features](#features)
+8. [Testing](#validation)
     1. [HTML Validation](#HTML-validation)
     2. [CSS Validation](#CSS-validation)
     3. [Accessibility](#accessibility)
@@ -41,10 +47,10 @@ So why settle for the same old boring meals? Join The Recipe Collective and spic
     5. [Device testing](#performing-tests-on-various-devices)
     6. [Browser compatibility](#browser-compatability)
     7. [Testing user stories](#testing-user-stories)
-8. [Bugs](#Bugs)
-9. [Deployment](#deployment)
-10. [Credits](#credits)
-11. [Acknowledgements](#acknowledgements)
+9. [Bugs](#Bugs)
+10. [Deployment](#deployment)
+11. [Credits](#credits)
+12. [Acknowledgements](#acknowledgements)
 
 ## Project Goals 
 The Recipe Collective is a web application designed to provide users with a platform to discover, save, and organize recipes. The goals of the project include:
@@ -244,6 +250,30 @@ The structured design of the Recipe Collective ensures a seamless and enjoyable 
 - pytz==2023.3: A Python library that provides timezone support.
 - sqlparse==0.4.4: A non-validating SQL parser for Python, used by Django for SQL query parsing.
 - requests==2.26.0: A Python library for making HTTP requests, often used in Django projects for external API integrations.
+
+[Back up](#table-of-content)
+
+## Methodology
+The Recipe Collective project has been developed using agile principles, enabling efficient collaboration, iterative development, and effective project management. The following methodology has been employed throughout the project:
+
+### Agile Project Management with GitHub Projects
+GitHub Projects has been utilized to facilitate agile project management. User stories and bugs have been organized as GitHub issues, allowing for a clear and structured approach to development. The project board in GitHub Projects serves as a Kanban board, providing an overview of the project's progress.
+
+### User Stories as GitHub Issues
+Each user story has been created as a GitHub issue, capturing the desired functionality from the user's perspective. The user stories are linked to their corresponding GitHub issues, allowing easy access to the acceptance criteria, tasks, and comments associated with each user story.
+
+### Bug Tracking
+Bugs encountered during the development process have also been logged as GitHub issues. These issues contain details about the specific bug, its impact, and steps to reproduce it. By linking the bugs in the README.md to their respective GitHub issues, users can gain insights into the bugs' resolution progress and view any additional comments.
+
+### Iterative Development Approach
+The Recipe Collective project adopts an iterative development approach, allowing for continuous improvement and progress within the given time constraints. Although the project timeline has been condensed, it has been structured to accommodate future iterations and enhancements.
+
+### Backlog and Subsequent Iterations 
+The user stories are tracked on the project board, and the "To do" column represents the backlog of user stories, indicating the tasks that will be addressed in subsequent iterations.
+
+Please note that even though the project timeline has been accelerated, the iterative development approach allows for ongoing improvements and enhancements to meet the evolving needs of users.
+
+For a comprehensive view of the project progress, user stories, and bug tracking, please see the [Kanban board](https://github.com/users/SandraBergstrom/projects/6).
 
 [Back up](#table-of-content)
 
