@@ -1,7 +1,8 @@
-{% extends 'cookbook/base.html' %} 
+{% extends 'cookbook/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
 
+<div class="main-recipe">
 <div class="card mb-3">
     <div class="row g-0">
         <div class="col-md-4 h-400">
@@ -11,7 +12,7 @@
         <div class="col-md-8 p-3">
             <div class="card-body">
                 <div>
-                    <div style="display: flex; justify-content: space-between">
+                    <div class="crud-btn" style="display: flex;justify-content: space-between;flex-wrap: wrap;">
                         <div>
                             <h5 class="card-title">{{ recipe.title }}</h5>
                             <div id="recipe-ud-btn">
@@ -23,9 +24,9 @@
                         </div>
                         <div>
                             {% if recipe.author == user %}
-                            <a class="btn btn-custom-secondary btn-sm"
+                            <a class="btn btn-custom-secondary btn-sm crud-btn-text"
                                 href="{% url 'recipe-update' object.id %}">Update</a>
-                            <a class="btn btn-danger btn-sm" href="{% url 'recipe-delete' object.id %}">Delete</a>
+                            <a class="btn btn-danger btn-sm crud-btn-text" href="{% url 'recipe-delete' object.id %}">Delete</a>
                             {% else %} {% if not favorite %}
                             <a class="btn btn-like" href="{% url 'favorite_add' recipe.id %}"><i
                                     class="fa-regular fa-heart"></i></a>
@@ -115,23 +116,49 @@
     <div class="row">
         <div class="col-md-4">
             <div class="card-body">
-                
+                {% if commented %}
+                <div class="alert alert-success" role="alert">
+                    Your comment is awaiting approval
+                </div>
+                {% else %}
+                {% if user.is_authenticated %}
+
+                <h3>Leave a comment:</h3>
+                <p>Posting as: {{ user.username }}</p>
+                <form method="post" style="margin-top: 1.3em;">
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                </form>
+                {% endif %}
+                {% endif %}
             </div>
         </div>
         <div class="col-md-8">
             <div class="card-body">
-                {% if user.is_authenticated %}
-                <h3>Leave a comment:</h3>
-                <p>Posting as: {{ user.username }}</p>
-                <form method="post" style="margin-top: 1.3rem">
-                    {{ comment_form | crispy }}
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-signup btn-sm">Submit</button>
-                </form>
-                {% endif %}
+                <h3>Comments:</h3>
+                <div class="card-body">
+                    <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
+                    {% for comment in comments %}
+                    <div class="comments" style="padding: 10px;">
+                        <p class="font-weight-bold">
+                            <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
+                            {{ comment.name }}
+                            <span class=" text-muted font-weight-normal">
+                                <!-- The comment's created date goes here -->
+                                {{ comment.created_on }}
+                            </span> wrote:
+                        </p>
+                        <!-- The body of the comment goes before the | -->
+                        {{ comment.body | linebreaks }}
+                    </div>
+                    <!-- Our for loop ends here -->
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 {% endblock %}
