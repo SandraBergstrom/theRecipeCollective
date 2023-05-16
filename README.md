@@ -47,7 +47,7 @@ So why settle for the same old boring meals? Join The Recipe Collective and spic
     5. [Device testing](#performing-tests-on-various-devices)
     6. [Browser compatibility](#browser-compatability)
     7. [Testing user stories](#testing-user-stories)
-9. [Bugs](#Bugs)
+9. [Bugs](#bugs)
 10. [Deployment](#deployment)
 11. [Credits](#credits)
 12. [Acknowledgements](#acknowledgements)
@@ -189,7 +189,7 @@ The structured design of the Recipe Collective ensures a seamless and enjoyable 
 ### Wireframes
 
 <details><summary>Log in (landing page)</summary>
-<img src="/docs/wireframes/index.png">
+<img src="docs/wireframes/index.png">
 </details>
 <details><summary>About</summary>
 <img src="docs/wireframes/about.png">
@@ -415,9 +415,6 @@ The website was tested on the following browsers:
 | **Bug** | **Status** |
 | ----------- | ----------- |
 |[If there is less than 3 recipe cards it will not look good any longer. The cards get slimmer and the page layout get strange when only 1 card.](https://github.com/SandraBergstrom/theRecipeCollective/issues/36)|Fixed for the favorites page, but the fix is not working on the My Recipes page|
-|[Cant delete users from admin page](https://github.com/SandraBergstrom/theRecipeCollective/issues/35)|High priority: Because of an old field in one of the models. Will change database to a clean before deploy.|
-|[Prep time and cooking time is showing seconds and not minutes.](https://github.com/SandraBergstrom/theRecipeCollective/issues/23)||
-|[Heart icon does not show as saved (solid) when recipe is saved to favorites.](https://github.com/SandraBergstrom/theRecipeCollective/issues/28)|Temporary solution - removed it from the recipe card.<br> Low priority: Since we have a functioning heart icon in the recipe details for users to save them to favorites, this is of low priority and can be addressed in a future update.|
 |[I can't get the active link to show. I use active class according to bootstrap but it will not change when I go to another page.](https://github.com/SandraBergstrom/theRecipeCollective/issues/30)|...|
 |||
 
@@ -425,7 +422,10 @@ The website was tested on the following browsers:
 
 | **Bug** | **Fix** |
 | ----------- | ----------- |
+|[Prep time and cooking time is showing seconds and not minutes.](https://github.com/SandraBergstrom/theRecipeCollective/issues/23)|Changed from DurationField to PositiveIntegerField. <br> [See detailed steps](https://github.com/SandraBergstrom/theRecipeCollective/issues/23#issuecomment-1549336886)|
+|[Cant delete users from admin page](https://github.com/SandraBergstrom/theRecipeCollective/issues/35)|High priority: Because of an old field in one of the models. Will change database to a clean before deploy.|
 |[Error message E-tag when deploying to Heroku. Temporary solves when I remove the static folder in Cloudinary. But that also removes all profile pictures and recipe images.](https://github.com/SandraBergstrom/theRecipeCollective/issues/32)|Before deploying on Heroku the static folder in Cloudinary have to be removed. This wiill not remove recipe or profile images.|
+|[Heart icon does not show as saved (solid) when recipe is saved to favorites.](https://github.com/SandraBergstrom/theRecipeCollective/issues/28)|Temporary solution - removed it from the recipe card.<br> Low priority: Since we have a functioning heart icon in the recipe details for users to save them to favorites, this is of low priority and can be addressed in a future update.|
 | [Default recipe pic is not showing](https://github.com/SandraBergstrom/theRecipeCollective/issues/25)| Added if statement in the detail template to show the placeholder if image is default, else show uploaded image. |
 | [When trying to update a recipe with an uploade picture instead of the default placeholder, it will not update.](https://github.com/SandraBergstrom/theRecipeCollective/issues/27) | When fixing [#25](https://github.com/SandraBergstrom/theRecipeCollective/issues/25) I instead created this bug. I have now removed the if statment again. I then updated the recipe model and removed the placholder variable and instead added a placeholder image on cloudinary which I directly link to as default in the featured_image field. See more details in bug link.
 |[Last updated field not working in recipe detail. It is working in the recipe card in the list so check there.](https://github.com/SandraBergstrom/theRecipeCollective/issues/22)|Corrected model field name.|
