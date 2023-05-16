@@ -2,45 +2,48 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<div class="container container-centered">
-    <!-- Header and paragraph with links to users different recipe pages -->
-    <div class="list-header">
-        <div class="container-centered">
-            <h2>my Favorite Recipes</h2>
-            <p>Here you can view all the recipes that you have added to your favorites. You can easily remove recipes
-                from your favorites list by clicking on the
-                remove button that you see below or add to favorites by clicking on the add button on the recipe detail
-                page.</p>
-        </div>
-        {% include 'cookbook/cookbook_links.html' %}
-    </div>
-    <br>
-
-    <!-- Check if user has any favorites and if it has - show list of favorites  -->
-    {% if new.exists %}
-            <!-- Recipe List -->
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-            {% for recipe in new %}
-                {% include 'cookbook/list_card.html' %}
-            {% endfor %}
+<div class="main-scroll-page">
+    <div class="container container-centered">
+        <!-- Header and paragraph with links to users different recipe pages -->
+        <div class="list-header">
+            <div class="container-centered">
+                <h2>my Favorite Recipes</h2>
+                <p>Here you can view all the recipes that you have added to your favorites. You can easily remove
+                    recipes
+                    from your favorites list by clicking on the
+                    remove button that you see below or add to favorites by clicking on the add button on the recipe
+                    detail
+                    page.</p>
             </div>
+            {% include 'cookbook/cookbook_links.html' %}
+        </div>
+        <br>
 
-    <!-- If user doesn't have any favorites this message with link to cookbook will appear -->
-    {% else %}
+        <!-- Check if user has any favorites and if it has - show list of favorites  -->
+        {% if new.exists %}
+        <!-- Recipe List -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {% for recipe in new %}
+            {% include 'cookbook/list_card.html' %}
+            {% endfor %}
+        </div>
+
+        <!-- If user doesn't have any favorites this message with link to cookbook will appear -->
+        {% else %}
         <div class="nothing-message">
             <p>You don't have any favorites yet. Check out the recipes in
                 <a href="{% url 'cookbook-home' %}"> the Collective Cookbook</a>
                 and see if you find any favorites to save.
             </p>
-         </div>
-    {% endif %}    
-
-    <!-- Pagination -->
-    <div class="row pagination-container">
-        {% if is_paginated %}
-        {% include 'cookbook/pagination.html' %}
+        </div>
         {% endif %}
+
+        <!-- Pagination -->
+        <div class="row pagination-container">
+            {% if is_paginated %}
+            {% include 'cookbook/pagination.html' %}
+            {% endif %}
+        </div>
     </div>
 </div>
-
 {% endblock content %}

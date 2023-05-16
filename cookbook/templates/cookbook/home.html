@@ -1,31 +1,36 @@
 {% extends 'cookbook/base.html' %}
+
 {% block content %}
 
-<div class="container container-centered">
-    <!-- Header and paragraph with links to users different recipe pages -->
-    <div class="list-header">
-        <div class="container-centered container-cookbook-text">
-            <h2>the Collective Cookbook</h2>
-            <p>On this page, you can view the latest recipes that have been added to the collective's cookbook. If you
-                find any
-                that you like, feel free to add them to your favorites.</p>
+<div class="main-scroll-page">
+    <div class="container container-centered">
+        <!-- Header and paragraph with links to users different recipe pages -->
+        <div class="list-header">
+            <div class="container-centered container-cookbook-text">
+                <h2>the Collective Cookbook</h2>
+                <p>On this page, you can view the latest recipes that have been added to the collective's
+                    cookbook. If
+                    you
+                    find any
+                    that you like, feel free to add them to your favorites.</p>
+            </div>
+            {% include 'cookbook/cookbook_links.html' %}
         </div>
-        {% include 'cookbook/cookbook_links.html' %}
-    </div>
-    <br>
+        <br>
 
-    <!-- Recipe List -->
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        {% for recipe in recipes %}
-        {% include 'cookbook/list_card.html' %}
-        {% endfor %}
-    </div>
+        <!-- Recipe List -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {% for recipe in recipes %}
+            {% include 'cookbook/list_card.html' %}
+            {% endfor %}
+        </div>
 
-    <!-- Pagination -->
-    <div class="row pagination-container">
-        {% if is_paginated %}
-        {% include 'cookbook/pagination.html' %}
-        {% endif %}
+        <!-- Pagination -->
+        <div class="row pagination-container">
+            {% if is_paginated %}
+            {% include 'cookbook/pagination.html' %}
+            {% endif %}
+        </div>
     </div>
 </div>
 

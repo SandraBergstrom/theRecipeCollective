@@ -1,22 +1,20 @@
-{% extends "cookbook/base.html" %}
-{% load crispy_forms_tags %}
+{% extends 'cookbook/base.html' %}
 {% block content %}
 
-<div class="container container-centered">
-    <!-- Header and paragraph with links to users different recipe pages -->
-    <div class="list-header">
-        <div class="container-centered">
-            <h2>my Recipes</h2>
-            <p>Here you can view all the recipes that you have added to the collective - both the private and the public
-                ones.</p>
-            <br>
+<div class="main-scroll-page">
+    <div class="container container-centered">
+        <!-- Header and paragraph with links to users different recipe pages -->
+        <div class="list-header">
+            <div class="container-centered container-cookbook-text">
+                <h2>My Recipes</h2>
+                <p>Here you can view all the recipes that you have added to the collective - both the private and
+                    the
+                    public ones.</p>
+            </div>
+            {% include 'cookbook/cookbook_links.html' %}
         </div>
-        {% include 'cookbook/cookbook_links.html' %}
-    </div>
+        <br>
 
-    <!-- Check if user has any favorites and if it has - show list of favorites  -->
-    {% if added.exists %}
-    <div>
         <!-- Recipe List -->
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             {% for recipe in added %}
@@ -35,12 +33,12 @@
         </div>
     </div>
     {% endif %}
-    <!-- Pagination -->
-    <div class="row pagination-container">
-        {% if is_paginated %}
-        {% include 'cookbook/pagination.html' %}
-        {% endif %}
+        <!-- Pagination -->
+        <div class="row pagination-container">
+            {% if is_paginated %}
+            {% include 'cookbook/pagination.html' %}
+            {% endif %}
+        </div>
     </div>
 </div>
-
 {% endblock content %}

@@ -9,7 +9,7 @@
 
     --clr-accent-yellow: rgb(252, 211, 86);
     --clr-accent-orange: rgb(195, 126, 93);
-    --clr-accent-green: rgb(94, 106, 47);
+    --clr-accent-green: rgb(54, 122, 59);
 }
 
 
@@ -31,6 +31,14 @@ body {
  /* this will make the bg-image cover the whole bg */
 .bg-img-one-page {
     height: 78vh;
+}
+
+.main-scroll-page {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 h1,
