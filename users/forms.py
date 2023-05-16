@@ -6,6 +6,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .models import Profile
+from .models import Comment
 
 
 # form that shows when user wants to register
@@ -32,3 +33,8 @@ class ProfileUpdateForm(forms.ModelForm):
         model = Profile
         fields = ['image', 'food_relation', 'country']
         
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('body',)

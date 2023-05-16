@@ -1,5 +1,5 @@
-{% extends 'cookbook/base.html' %}
-
+{% extends 'cookbook/base.html' %} 
+{% load crispy_forms_tags %}
 {% block content %}
 
 <div class="card mb-3">
@@ -11,15 +11,13 @@
         <div class="col-md-8 p-3">
             <div class="card-body">
                 <div>
-                    <div style="
-                        display: flex;
-                        justify-content: space-between;
-                    ">
+                    <div style="display: flex; justify-content: space-between">
                         <div>
                             <h5 class="card-title">{{ recipe.title }}</h5>
                             <div id="recipe-ud-btn">
-                                <small>by <a href="#">{{ recipe.author }}, 
-                                    {{recipe.author.profile.get_food_relation_display }}</a>
+                                <small>by
+                                    <a href="#">{{ recipe.author }},
+                                        {{recipe.author.profile.get_food_relation_display }}</a>
                                     on {{ recipe.date_posted }}</small>
                             </div>
                         </div>
@@ -28,56 +26,59 @@
                             <a class="btn btn-custom-secondary btn-sm"
                                 href="{% url 'recipe-update' object.id %}">Update</a>
                             <a class="btn btn-danger btn-sm" href="{% url 'recipe-delete' object.id %}">Delete</a>
-                            {% else %}
-                            {% if not favorite %}
+                            {% else %} {% if not favorite %}
                             <a class="btn btn-like" href="{% url 'favorite_add' recipe.id %}"><i
                                     class="fa-regular fa-heart"></i></a>
                             {% else %}
                             <a class="btn btn-like" href="{% url 'favorite_add' recipe.id %}"><i
                                     class="fa-solid fa-heart"></i></a>
-                            {% endif %}
-                            {% endif %}
+                            {% endif %} {% endif %}
                         </div>
                     </div>
-                    <hr>
+                    <hr />
                     <div>
-                        <div class="p-3">{{ recipe.excerp }}</div><hr>
+                        <div class="p-3">{{ recipe.excerp }}</div>
+                        <hr />
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="mb-4">
-                                    <strong>Preparation time:</strong><br>
+                                    <strong>Preparation time:</strong><br />
                                     <p class="text-capitalize">{{ recipe.prep_time }}</p>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-4">
-                                    <strong>Cooking time:</strong><br>
+                                    <strong>Cooking time:</strong><br />
                                     <p class="text-capitalize">{{ recipe.cooking_time }}</p>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-4">
-                                    <strong>Total time:</strong><br>
-                                    <p class="text-capitalize">{{ recipe.prep_time|add:recipe.cooking_time }}</p>
+                                    <strong>Total time:</strong><br />
+                                    <p class="text-capitalize">
+                                        {{ recipe.prep_time|add:recipe.cooking_time }}
+                                    </p>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="mb-4">
-                                    <strong>Category:</strong><br>
-                                    <p class="text-capitalize">{{ recipe.get_category_display }}</p>
+                                    <strong>Category:</strong><br />
+                                    <p class="text-capitalize">
+                                        {{ recipe.get_category_display }}
+                                    </p>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-4">
-                                    <strong>Servings:</strong><br>
+                                    <strong>Servings:</strong><br />
                                     <p class="text-capitalize">{{ recipe.servings }}</p>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-4">
-                                    <strong>-</strong><br>
+                                    <strong>-</strong><br />
                                     <p class="text-capitalize"></p>
                                 </div>
                             </div>
@@ -105,6 +106,29 @@
             <div class="card-body">
                 <h5>Instructions:</h5>
                 <p>{{ recipe.instructions|linebreaksbr }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card mb-3">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card-body">
+                
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                {% if user.is_authenticated %}
+                <h3>Leave a comment:</h3>
+                <p>Posting as: {{ user.username }}</p>
+                <form method="post" style="margin-top: 1.3rem">
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-signup btn-sm">Submit</button>
+                </form>
+                {% endif %}
             </div>
         </div>
     </div>

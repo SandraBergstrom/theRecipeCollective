@@ -4,6 +4,8 @@
 
 from django.shortcuts import render, redirect
 from .models import Recipe
+from users.models import Comment
+from users.forms import CommentForm
 from django.views.generic import (
     ListView,
     DetailView,
@@ -47,7 +49,10 @@ class RecipeDetailView(DetailView):
                 context['favorite'] = True
             else:
                 context['favorite'] = False
+        comments = Comment.objects.filter(recipe=recipe)
+        context['comments'] = comments
         return context
+
 
 # This class will make it possible to create a new recipe
 class RecipeCreateView(LoginRequiredMixin, CreateView):
