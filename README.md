@@ -145,28 +145,26 @@ The Recipe Collective utilizes the following database schema:
 [Back up](#table-of-content)
 
 ## Design
+At the Recipe Collective, the design philosophy revolves around creating a clean and modern user interface that puts the spotlight on the recipes themselves. Taking inspiration from modern home kitchens, the aim is to provide a visually pleasing and immersive experience for users, where they can easily navigate, discover, and engage with a vast collection of recipes.
 
+By adopting a minimalistic design approach, we strive to eliminate distractions and ensure that the focus remains on the culinary creations shared within the community. The use of ample white space, intuitive layouts, and crisp typography enhances readability and allows the vibrant colors and mouthwatering imagery of the recipes to take center stage.
 
 ### Design Choices
 
 ### Colour
-<details><summary>See Colour scheme</summary>
 <img src="docs/color-palette.png">
-</details>
-
 
 ### Fonts
-
+The Recipe Collective embraces the default fonts provided by Bootsrap 5. No specific modifications have been made to the default fonts, as they effectively contribute to the overall aesthetic and user experience of the Recipe Collective.
 
 ### Structure
 The Recipe Collective is designed with a user-friendly and intuitive structure, making it easy for users to navigate and learn their way around the website. The overall structure of the website is organized into the following sections and pages:
 
 #### Before Logged In:
 
-- **Landing Page:** The landing page serves as the initial entry point to the website, providing an introduction and overview of the Recipe Collective's purpose and features.<br>
+- **Landing Page (Login Page)** The landing page serves as the initial entry point to the Recipe Collective and doubles as the login page. It provides an overview of the platform's purpose and features, along with a login form for registered users to securely access their accounts and the full functionality of the website.<br>
 - **About Page:** The about page provides detailed information about the Recipe Collective, including its mission, values, and the benefits of being a part of the community.<br>
 - **Sign Up Page:** The sign-up page allows new users to create an account by providing their required details and registering as a member of the Recipe Collective.<br>
-- **Login Page:** The login page is where registered users can securely log in to access their accounts and the full functionality of the website.
 
 #### When Logged In:
 Upon logging in, users are directed to the main cookbook section of the Recipe Collective, which includes the following pages:
@@ -174,13 +172,15 @@ Upon logging in, users are directed to the main cookbook section of the Recipe C
 - **Home Page (Cookbook):** The home page of the cookbook section serves as the central hub, displaying a personalized collection of recipes based on the user's preferences, saved recipes, and recent activities within the community.<br>
 - **My Recipes Page:** The "My Recipes" page allows users to view and manage the recipes they have created and contributed to the Recipe Collective. It provides options to edit, delete, and organize recipes for easy access and retrieval.<br>
 - **My Favorites:** The "My Favorites" page displays a curated list of recipes that the user has marked as favorites, making it convenient to revisit and cook their preferred dishes.
+- **Recipe Detail Page:** The recipe detail page provides comprehensive information about each recipe, including its title, description, ingredients, and instructions. Users have the option to add the recipe to their favorites, allowing them to easily revisit and cook their preferred dishes. Additionally, if the recipe belongs to the user, they can update or delete it, empowering them to manage their own recipes. <br>
 
 #### Profile Navigation:
 Upon clicking on the profile image in the navigation bar, additional links are revealed, providing access to specific profile-related pages and actions:
 
 - **Profile Page:** The profile page displays the user's profile information, including their bio, profile picture, and other relevant details. It allows users to update and customize their profile settings.<br>
 - **Add Recipe Page:** The "Add Recipe" page enables users to contribute their own recipes to the Recipe Collective. It provides a user-friendly form to input recipe details, including title, description, ingredients, instructions, and other relevant information.<br>
-- **Favorite Recipes:** The "Favorite Recipes" page showcases a collection of recipes that the user has marked as favorites, making it easy to access and revisit their preferred dishes.<br>
+- **My Recipes:** The "My Recipes" page allows users to view and manage the recipes they have created and contributed to the Recipe Collective. It provides options to edit, delete, and organize recipes for easy access and retrieval.<br>
+- **Favorite Recipes:** The "My Favorites" page displays a curated list of recipes that the user has marked as favorites, making it convenient to revisit and cook their preferred dishes.<br>
 - **Logout:** The "Logout" option allows users to securely log out of their accounts, ensuring the privacy and security of their personal information.<br>
 
 The structured design of the Recipe Collective ensures a seamless and enjoyable user experience, enabling users to explore, contribute, and manage their recipes with ease.
@@ -188,23 +188,35 @@ The structured design of the Recipe Collective ensures a seamless and enjoyable 
 
 ### Wireframes
 
-<details><summary>Index</summary>
-<img src="#">
+<details><summary>Log in (landing page)</summary>
+<img src="docs/wireframes/index.png">
 </details>
 <details><summary>About</summary>
-<img src="#">
-</details>
-<details><summary>Log In</summary>
-<img src="#">
+<img src="docs/wireframes/about.png">
 </details>
 <details><summary>Sign Up</summary>
-<img src="#">
+<img src="docs/wireframes/register.png">
 </details>
-<details><summary>Cookbook</summary>
-<img src="#">
+<details><summary>The Collective Cookbook</summary>
+<img src="docs/wireframes/home.png">
+</details>
+<details><summary>My Recipes</summary>
+<img src="docs/wireframes/my-recipes.png">
+</details>
+<details><summary>My Favorites</summary>
+<img src="docs/wireframes/my-favorites.png">
+</details>
+<details><summary>Add/Update Recipe</summary>
+<img src="docs/wireframes/add-update-recipe.png">
+</details>
+<details><summary>Recipe Detail</summary>
+<img src="docs/wireframes/recipe-detail.png">
 </details>
 <details><summary>Profile</summary>
-<img src="#">
+<img src="docs/wireframes/profile.png">
+</details>
+<details><summary>Logout</summary>
+<img src="docs/wireframes/logout.png">
 </details>
 <br>
 
@@ -278,6 +290,28 @@ For a comprehensive view of the project progress, user stories, and bug tracking
 [Back up](#table-of-content)
 
 ## Features
+### Landing Page:
+- The landing page serves as the entry point to the Recipe Collective, providing an introduction and overview of the platform.
+- Users can easily navigate to different sections of the website through the navigation bar.
+
+### Recipe Pages:
+- Recipe details page displays comprehensive information about each recipe, including ingredients, instructions, and cooking time.
+- Users can view, create, update, and delete recipes through CRUD functionality.
+
+### User Account Management:
+- Account sign-up form allows new users to create an account and join the Recipe Collective community.
+- Users can log in to their accounts to access personalized features and settings.
+- Profile page enables users to view and update their profile information.
+- Users have the ability to update their delivery information and manage their account settings.
+
+### Recipe Management:
+- Recipe creators can add, edit, and delete recipes from their profile.
+- Comprehensive forms facilitate easy recipe submission and editing.
+
+### Navigation:
+- The navigation bar provides easy access to different sections and pages of the Recipe Collective.
+
+The Recipe Collective focuses on providing a clean and user-friendly design, with a focus on the recipes themselves. It emphasizes CRUD functionality, allowing users to create, read, update, and delete recipes as they contribute to the culinary community. The platform aims to inspire and facilitate the sharing of delicious recipes among users.
 
 [Back up](#table-of-content)
 
