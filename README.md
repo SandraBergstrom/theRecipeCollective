@@ -162,9 +162,10 @@ The Recipe Collective is designed with a user-friendly and intuitive structure, 
 
 #### Before Logged In:
 
-- **Landing Page (Login Page)** The landing page serves as the initial entry point to the Recipe Collective and doubles as the login page. It provides an overview of the platform's purpose and features, along with a login form for registered users to securely access their accounts and the full functionality of the website.<br>
+- **Landing Page** The landing page serves as the initial entry point to the website, providing an introduction and overview of the Recipe Collective's purpose and features.<br>
 - **About Page:** The about page provides detailed information about the Recipe Collective, including its mission, values, and the benefits of being a part of the community.<br>
 - **Sign Up Page:** The sign-up page allows new users to create an account by providing their required details and registering as a member of the Recipe Collective.<br>
+- **Login Page:** The login page is where registered users can securely log in to access their accounts and the full functionality of the website.<br>
 
 #### When Logged In:
 Upon logging in, users are directed to the main cookbook section of the Recipe Collective, which includes the following pages:
