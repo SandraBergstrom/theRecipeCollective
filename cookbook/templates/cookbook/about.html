@@ -2,34 +2,40 @@
 
 {% block content %}
 
-<!-- Background image -->
-<div class="p-5 text-center bg-image intro-bg"
-  style="background-image: url('https://res.cloudinary.com/sandrabergstrom/image/upload/v1683872725/bg/ella-olsson-oPBjWBCcAEo-unsplash_e6grui.jpg');">
-  <div class="mask" style="background-color: rgba(248, 248,248, 0.6);">
-    <div class="container d-flex h-100">
-      <div class="text-dark row justify-content-center align-items-center mt-3" id="about-box">
-        <div class="col-md-8 p-5 rounded mb-3" style="background-color: rgba(248, 248,248, 0.6);">
-          <h2 class="mb-3">About The Recipe Collective</h2>
-          <p class="mb-4">Are you tired of cooking the same old meals every week? Let The Recipe Collective be your
-            go-to source for culinary inspiration. Our community-driven platform offers a smorgasbord of delicious recipes to suit every
-            taste bud, whether you're a kitchen novice or a seasoned chef. And for all the tired moms out there with tiny food
-            critics at home, we've got you covered too! Plus, with features like comments and likes, you can connect
-            with fellow foodies and get feedback on your latest creations.</p>
-          
+<div class="main-one-page">
+  <!-- Background image -->
+  <div class="p-5 text-center bg-image intro-bg bg-img-one-page"
+    style="background-image: url('https://res.cloudinary.com/sandrabergstrom/image/upload/v1683872725/bg/ella-olsson-oPBjWBCcAEo-unsplash_e6grui.jpg');">
+    <div class="mask" style="background-color: rgba(248, 248,248, 0.6);">
+      <div class="container d-flex h-100">
+        <div class="text-dark row justify-content-center align-items-center mt-3" id="about-box">
+          <div class="col-md-8 p-5 rounded mb-3" style="background-color: rgba(248, 248,248, 0.6);">
+            <h2 class="mb-3">About The Recipe Collective</h2>
+            <p class="mb-4">Are you tired of cooking the same old meals every week? Let The Recipe Collective be your
+              go-to source for culinary inspiration. Our community-driven platform offers a smorgasbord of delicious
+              recipes to suit every
+              taste bud, whether you're a kitchen novice or a seasoned chef. And for all the tired moms out there with
+              tiny food
+              critics at home, we've got you covered too! Plus, with features like comments and likes, you can connect
+              with fellow foodies and get feedback on your latest creations.</p>
+
             <!--  Buttons  -->
-          {% if user.is_authenticated %}
-          <p class="mb-4">So why settle for the same old boring meals? Discover new recipes and connect with other foodies and spice up your
-            kitchen game!</p>
-          <a class="btn btn-custom-primary btn-lg m-2 btn-sm" href="{% url 'cookbook-home' %}" role="button"
-            rel="nofollow">Cookbook</a>
-          <a class="btn btn-custom-primary-outline btn-lg m-2 btn-sm" href="{% url 'favorite_list' %}" role="button">My Favorites</a>
-          {% else %}
-          <p class="mb-4">So why settle for the same old boring meals? Join The Recipe Collective and spice up your
-            kitchen game!</p>
-          <a class="btn btn-custom-primary btn-lg m-2 btn-sm" href="{% url 'register' %}" role="button"
-            rel="nofollow">Sign up!</a>
-          <a class="btn btn-custom-primary-outline btn-lg m-2 btn-sm" href="{% url 'login' %}" role="button">Login</a>
-          {% endif %} 
+            {% if user.is_authenticated %}
+            <p class="mb-4">So why settle for the same old boring meals? Discover new recipes and connect with other
+              foodies and spice up your
+              kitchen game!</p>
+            <a class="btn btn-custom-primary btn-lg m-2 btn-sm" href="{% url 'cookbook-home' %}" role="button"
+              rel="nofollow">Cookbook</a>
+            <a class="btn btn-custom-primary-outline btn-lg m-2 btn-sm" href="{% url 'favorite_list' %}"
+              role="button">My Favorites</a>
+            {% else %}
+            <p class="mb-4">So why settle for the same old boring meals? Join The Recipe Collective and spice up your
+              kitchen game!</p>
+            <a class="btn btn-custom-primary btn-lg m-2 btn-sm" href="{% url 'register' %}" role="button"
+              rel="nofollow">Sign up!</a>
+            <a class="btn btn-custom-primary-outline btn-lg m-2 btn-sm" href="{% url 'login' %}" role="button">Login</a>
+            {% endif %}
+          </div>
         </div>
       </div>
     </div>

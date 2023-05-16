@@ -113,26 +113,27 @@
     <!-- End Navbar -->
   </header>
 
-
   <!-- Content block with flash message on top -->
   <main>
-      <div>
-        {% if messages %}
-        {% for message in messages %}
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-          {{ message }}
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        {% endfor %}
-        {% endif %}
-      </div>
-      <div>
-        {% block content %}
-        {% endblock %}
-      </div>
-  </main>
+  <section>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+  </section>
 
-  <footer class="text-center text-dark mb-0 bg-white mt-3">
+  <section>
+    {% block content %}
+    {% endblock %}
+  </section>
+</main>
+
+
+  <footer class="text-center text-dark mb-0 bg-white">
     <!-- Grid container -->
     <div class=" container pt-1">
       <!-- Section: Social media -->

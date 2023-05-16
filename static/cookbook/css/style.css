@@ -12,11 +12,25 @@
     --clr-accent-green: rgb(94, 106, 47);
 }
 
+
 /* BASE */
 
 body {
     background: var(--clr-primary-light);
     color: var(--clr-primary-dark)
+}
+
+/* On pages that don't scroll fix the footer to the bottom. */
+.main-one-page {
+    height: 78vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+ /* this will make the bg-image cover the whole bg */
+.bg-img-one-page {
+    height: 78vh;
 }
 
 h1,
@@ -162,7 +176,7 @@ a:hover {
 
 /* Default for bg-img for small devices */
 .bg-image {
-    height: 400px;
+    /* height: 400px; */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -209,14 +223,14 @@ a:hover {
 /* Height on bg-im for devices larger than 430px */
 @media (min-width: 430px) {
     .bg-image {
-        height: 500px;
+        /* height: 500px; */
     }
 }
 
 /* Height on bg-img for devices larger than 1025px */
 @media (min-width: 1025px) {
     .bg-image {
-        height: 600px;
+        /* height: 600px; */
     }
 }
 
@@ -225,9 +239,9 @@ a:hover {
         display: none;
     }
 
-    .content-section {
+    /* .content-section {
         max-height: 700px;
-    }
+    } */
 
     .cookbook-links a {
         font-size: 60%;
@@ -386,7 +400,13 @@ a:hover {
     max-height: 1800px;
     overflow-y: auto;
     padding-right: 0px;
-    width: 700px;
+    /* width: 700px; */
+}
+
+@media (min-width: 600px) {
+    #content-recipe {
+        width: 550px;
+    }
 }
 
 /* DELETE RECIPE  */
