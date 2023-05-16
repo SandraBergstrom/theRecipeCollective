@@ -16,6 +16,7 @@
         <br>
 
         <!-- Recipe List -->
+        {% if added.exists %}
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             {% for recipe in added %}
             {% if recipe.author == user %}
@@ -23,22 +24,23 @@
             {% endif %}
             {% endfor %}
         </div>
-        <!-- If user doesn't have any favorites this message with link to cookbook will appear -->
         {% else %}
+        <!-- If user doesn't have any favorites this message with link to cookbook will appear -->
         <div class="nothing-message">
             <p>You don't have any recipes yet. Why don't you
                 <a href="{% url 'recipe-create' %}"> add a recipe</a>
                 right away!
             </p>
         </div>
+        {% endif %}
     </div>
-    {% endif %}
-        <!-- Pagination -->
-        <div class="row pagination-container">
-            {% if is_paginated %}
-            {% include 'cookbook/pagination.html' %}
-            {% endif %}
-        </div>
+
+    <!-- Pagination -->
+    <div class="row pagination-container">
+        {% if added|length > paginate_by %}
+        {% include 'cookbook/pagination.html' %}
+        {% endif %}
     </div>
 </div>
+
 {% endblock content %}
