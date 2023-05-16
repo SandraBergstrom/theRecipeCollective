@@ -56,12 +56,20 @@ class Recipe(models.Model):
 
     @property
     def prep_time(self):
-        return f"{self.prep_time_hours}h {self.prep_time_minutes}min"
+        total_minutes = self.prep_time_hours * 60 + self.prep_time_minutes
+        return total_minutes
 
     @property
     def cooking_time(self):
-        return f"{self.cooking_time_hours}h {self.cooking_time_minutes}min"
+        total_minutes = self.cooking_time_hours * 60 + self.cooking_time_minutes
+        return total_minutes
 
-    # Will show the user the recipe-detail page for the recipe posted
+    @property
+    def total_time(self):
+        total_minutes = self.prep_time + self.cooking_time
+        hours = total_minutes // 60
+        minutes = total_minutes % 60
+        return f"{hours}h {minutes}min"
+
     def get_absolute_url(self):
-        return reverse('recipe-detail', kwargs={'pk': self.pk})
+        return reverse('recipe-detail', args=[str(self.id)])
