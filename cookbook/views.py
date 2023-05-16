@@ -51,6 +51,7 @@ class RecipeDetailView(DetailView):
                 context['favorite'] = False
         comments = Comment.objects.filter(recipe=recipe)
         context['comments'] = comments
+        context['comment_form'] = CommentForm()
         return context
 
 
