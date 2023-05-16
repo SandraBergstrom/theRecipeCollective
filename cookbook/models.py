@@ -37,8 +37,10 @@ class Recipe(models.Model):
         ('OTHER', 'Other'),
     ]
     category = models.CharField(max_length=30, choices=category_choices, default="MAIN_DISHES")
-    prep_time = models.DurationField(blank=True, null=True)
-    cooking_time = models.DurationField(blank=True, null=True)
+    prep_time_hours = models.PositiveIntegerField(default=0)
+    prep_time_minutes = models.PositiveIntegerField(default=0)
+    cooking_time_hours = models.PositiveIntegerField(default=0)
+    cooking_time_minutes = models.PositiveIntegerField(default=0)
     servings = models.IntegerField(default=1) 
     ingredients = models.TextField()
     instructions = models.TextField()
@@ -51,6 +53,14 @@ class Recipe(models.Model):
 
     def __str__(self):
         return self.title
+
+    @property
+    def prep_time(self):
+        return f"{self.prep_time_hours}h {self.prep_time_minutes}min"
+
+    @property
+    def cooking_time(self):
+        return f"{self.cooking_time_hours}h {self.cooking_time_minutes}min"
 
     # Will show the user the recipe-detail page for the recipe posted
     def get_absolute_url(self):
