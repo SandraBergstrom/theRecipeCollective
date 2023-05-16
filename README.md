@@ -152,7 +152,7 @@ By adopting a minimalistic design approach, we strive to eliminate distractions 
 ### Design Choices
 
 ### Colour
-<img src="docs/color-palette.png">
+![Mockup image](/docs/color-palette.png)
 
 ### Fonts
 The Recipe Collective embraces the default fonts provided by Bootsrap 5. No specific modifications have been made to the default fonts, as they effectively contribute to the overall aesthetic and user experience of the Recipe Collective.
@@ -189,7 +189,7 @@ The structured design of the Recipe Collective ensures a seamless and enjoyable 
 ### Wireframes
 
 <details><summary>Log in (landing page)</summary>
-<img src="docs/wireframes/index.png">
+<img src="/docs/wireframes/index.png">
 </details>
 <details><summary>About</summary>
 <img src="docs/wireframes/about.png">
