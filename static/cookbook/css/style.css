@@ -193,7 +193,7 @@ a:hover {
 }
 
 .content-section {
-    max-height: 500px;
+    max-height: fit-content;
     overflow-y: auto;
     padding-right: 50px;
 }
@@ -248,10 +248,6 @@ a:hover {
         display: none;
     }
 
-    /* .content-section {
-        max-height: 700px;
-    } */
-
     .cookbook-links a {
         font-size: 60%;
         padding: 2px;
@@ -272,13 +268,13 @@ a:hover {
 /* Register/Sign up page */
 
 #intro-register {
-    max-height: none;
-    height: 1030px;
+    min-height: 268vh;
+    /* height: 1030px; */
     width: 100%;
 }
 
 #content-register {
-    max-height: 860px;
+    max-height: fit-content;
     padding-right: 0px;
 }
 
@@ -292,13 +288,13 @@ a:hover {
 /* Profile page */
 
 #intro-profile {
-    max-height: none;
-    height: 1200px;
+    min-height: 268vh;
+    /* height: 1200px; */
     width: 100%;
 }
 
 #content-profile {
-    max-height: 1000px;
+    max-height: fit-content;
     overflow-y: auto;
     padding-right: 0px;
 }
@@ -320,12 +316,12 @@ a:hover {
         flex-direction: column;
         align-items: center;
     }
-
+/* 
     #intro-profile {
         max-height: none;
         height: 1040px;
         width: 100%;
-    }
+    } */
 
     #content-profile {
         padding-right: 0px;
@@ -392,13 +388,13 @@ a:hover {
 /* Add recipe page */
 
 #intro-recipe {
-    max-height: none;
-    height: 1800px;
+    min-height: 268vh;
+    /* height: 1800px; */
     width: 100%;
 }
 
 #content-recipe {
-    max-height: 1800px;
+    max-height: fit-content;
     overflow-y: auto;
     padding-right: 0px;
     /* width: 700px; */
@@ -411,28 +407,32 @@ a:hover {
 }
 
 /* Delete Recipe  */
+.main-recipe-delete {
+    height: 74vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 #intro-recipe-delete {
-    max-height: none;
     height: 600px;
     width: 100%;
 }
 
 #content-recipe-delete {
-    max-height: 400px;
+    max-height: max-content;
     overflow-y: auto;
     padding-right: 0px;
-    width: 700px;
 }
 
 @media (max-width: 430px) {
     #intro-recipe-delete {
-        height: 600px;
+        /* height: 600px; */
 
     }
 
     #content-recipe-delete {
-        max-height: 600px;
+        max-height: fit-content;
         width: 200px;
         font-size: 80%;
     }

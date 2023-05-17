@@ -2,38 +2,42 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<div id="intro-recipe-delete" class="p-5 text-center bg-image"
-    style="
-    background-image: url('https://res.cloudinary.com/sandrabergstrom/image/upload/v1683275066/calum-lewis-vA1L1jRTM70-unsplash_hylrbe.jpg');">
-    <div class="mask" style="background-color: rgba(248, 248, 248, 0.6)">
-        <div class="container d-flex h-100 justify-content-center">
-            <div class="text-dark row justify-content-center align-items-center">
-                <div class="col-md-12 p-5 rounded" style="background-color: rgba(248, 248, 248, 0.6)">
-                    <div class="content-section" id="content-recipe-delete">
-                        <form method="POST" action="#">
-                            {% csrf_token %}
-                            <fieldset class="form-group d-flex align-items-center" style="flex-direction: column;">
-                                <legend class="border-bottom mb-4">Delete Post?</legend>
-                                <h3>Are you sure that you want to delete recipe '{{ object.title }}'?</h3>
-                                <p class="col-md-6 justify-content-center">Once you click on the delete button below, <strong>this recipe will be permanently
-                                        removed</strong>
-                                    and cannot be recovered. Please make sure that you want to proceed with this action
-                                    before
-                                    continuing.</p>
-                            </fieldset>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-danger btn-sm">Delete Recipe</button>
-                                <a class="btn btn-custom-secondary btn-sm"
-                                    href="{% url 'recipe-detail' object.id %}">Cancel</a>
-                            </div>
-                            <br>
-                            <br>
-                        </form>
+<div class="main-recipe-delete">
+    <div id="intro-recipe-delete" class="p-5 text-center bg-image"
+        style="
+    background-image: url('https://res.cloudinary.com/sandrabergstrom/image/upload/v1683872724/bg/tamanna-rumee-cvq_8XHp2rM-unsplash_cjnwbf.jpg');">
+        <div class="mask" style="background-color: rgba(248, 248, 248, 0.6)">
+            <div class="container d-flex h-100 justify-content-center">
+                <div class="text-dark row justify-content-center align-items-center">
+                    <div class="col-md-12 p-5 rounded" style="background-color: rgba(248, 248, 248, 0.6)">
+                        <div class="content-section" id="content-recipe-delete">
+                            <form method="POST" action="#">
+                                {% csrf_token %}
+                                <fieldset class="form-group d-flex align-items-center" style="flex-direction: column;">
+                                    <legend class="border-bottom mb-4">Delete Post?</legend>
+                                    <h3>Are you sure that you want to delete recipe '{{ object.title }}'?</h3>
+                                    <p class="col-md-6 justify-content-center">Once you click on the delete button
+                                        below, <strong>this recipe will be permanently
+                                            removed</strong>
+                                        and cannot be recovered. Please make sure that you want to proceed with this
+                                        action
+                                        before
+                                        continuing.</p>
+                                </fieldset>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-danger btn-sm">Delete Recipe</button>
+                                    <a class="btn btn-custom-secondary btn-sm"
+                                        href="{% url 'recipe-detail' object.id %}">Cancel</a>
+                                </div>
+                                <br>
+                                <br>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-</div>
+
 {% endblock content %}
