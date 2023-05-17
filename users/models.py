@@ -4,17 +4,18 @@ from cloudinary.models import CloudinaryField
 from cookbook.models import Recipe
 
 
-
 """
 Model that extends the user model and adds fields image,
 food relation and country.
 """
+
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = CloudinaryField(
-        'image', 
+        'image',
         default='https://res.cloudinary.com/sandrabergstrom/image/upload/v1684322604/user_zyrx8b.png'
-        )
+    )
     food_relation_choices = [
         ('CHEF', 'Chef'),
         ('NUTRITIONIST', 'Nutritionist'),
@@ -26,22 +27,23 @@ class Profile(models.Model):
         ('OTHER', 'Other'),
     ]
     food_relation = models.CharField(
-        max_length=30, 
-        choices=food_relation_choices, 
+        max_length=30,
+        choices=food_relation_choices,
         default='HOME_COOK'
-        )
+    )
     country = models.CharField(
-        max_length=200, 
+        max_length=200,
         default='Citizen of the world'
-        )
+    )
 
     def __str__(self):
-        return f'{self.user.first_name} {self.user.last_name}, {self.get_food_relation_display()}'
+        return f'{self.user.first_name} {self.user.last_name}, ' \
+           f'{self.get_food_relation_display()}'
 
 
 class Comment(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE,
-                             related_name="comments")
+                               related_name="comments")
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()

@@ -1,4 +1,5 @@
-# Register view and profile view is based on the "Python Django Tutorial: Full-Featured Web App" tutorial by Corey Schafer
+# Register view and profile view is based on the
+# "Python Django Tutorial: Full-Featured Web App" tutorial by Corey Schafer
 # Tutorial: https://youtu.be/UmljXZIypDc
 # Snippets adapted from the tutorial with modifications
 
@@ -11,6 +12,7 @@ from django.db.models import Q
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from cookbook.models import Recipe
 
+
 # registtration view for new user
 def register(request):
     if request.method == 'POST':
@@ -19,9 +21,10 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(
-                request, 
-                f'Welcome { username }! Your account was successfully created! Please log in!'
-                )
+                request,
+                f'Welcome { username }! Your account was successfully '
+                f'/created! Please log in!'
+            )
             return redirect('login')
     else:
         form = UserRegisterForm()
@@ -33,16 +36,17 @@ def register(request):
 def profile(request):
     if request.method == 'POST':
         user_form = UserUpdateForm(request.POST, instance=request.user)
-        profile_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
+        profile_form = ProfileUpdateForm(
+            request.POST, request.FILES, instance=request.user.profile)
 
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
 
             messages.success(
-                request, 
+                request,
                 f'Your account has been successfully updated!'
-                )
+            )
             return redirect('profile')
     else:
         user_form = UserUpdateForm(instance=request.user)
@@ -51,13 +55,13 @@ def profile(request):
     context = {
         'user_form': user_form,
         'profile_form': profile_form
-        
+
     }
     return render(request, 'users/profile.html', context)
 
 
-# view to filter favorite field to see if user id is there or not. If 
-# the user id is there the user can remove from its favorites. If the 
+# view to filter favorite field to see if user id is there or not. If
+# the user id is there the user can remove from its favorites. If the
 # user id isn't there the user can add to favorites.
 @login_required
 def favorite_add(request, id):
@@ -65,17 +69,17 @@ def favorite_add(request, id):
     if recipe.favorites.filter(id=request.user.id).exists():
         recipe.favorites.remove(request.user)
 
-        messages.warning (
-                request, 
-                f'This recipe was removed from your favorites!'
-                )
+        messages.warning(
+            request,
+            f'This recipe was removed from your favorites!'
+        )
     else:
         recipe.favorites.add(request.user)
 
         messages.success(
-                request, 
-                f'This recipe was added to your favorites!'
-                )
+            request,
+            f'This recipe was added to your favorites!'
+        )
     # redirect to the current page
     return redirect(request.META.get('HTTP_REFERER'))
 
@@ -87,6 +91,7 @@ def favorite_list(request):
     return render(request, 'users/favorites.html', {'new': new})
 
 
+# view for the users added recipes
 @login_required
 def my_recipe_list(request):
     added = Recipe.objects.filter(author=request.user).order_by('-date_posted')
@@ -94,11 +99,3 @@ def my_recipe_list(request):
         'added': added
     }
     return render(request, 'users/myrecipes.html', context)
-
-
-# class MyRecipeListView(LoginRequiredMixin, ListView):
-#     model = Recipe
-#     template_name = 'users/myrecipes.html'
-#     context_object_name = 'added'
-#     ordering = ['-date_posted']
-#     paginate_by = 9

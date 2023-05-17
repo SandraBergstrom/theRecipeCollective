@@ -1,4 +1,5 @@
-# Based on the "Python Django Tutorial: Full-Featured Web App" tutorial by Corey Schafer
+# Based on the "Python Django Tutorial: Full-Featured Web App"
+# by Corey Schafer
 # Tutorial: https://youtu.be/UmljXZIypDc
 # Snippet adapted from the tutorial with modifications
 
@@ -15,7 +16,14 @@ class UserRegisterForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['username','first_name', 'last_name', 'email', 'password1', 'password2']
+        fields = [
+            'username',
+            'first_name',
+            'last_name',
+            'email',
+            'password1',
+            'password2'
+            ]
 
 
 # update form that user finds on profile page
@@ -24,7 +32,7 @@ class UserUpdateForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ['username','first_name', 'last_name', 'email']
+        fields = ['username', 'first_name', 'last_name', 'email']
 
 
 # extended update form on profile page
@@ -32,7 +40,7 @@ class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['image', 'food_relation', 'country']
-        
+
 
 class CommentForm(forms.ModelForm):
     class Meta:

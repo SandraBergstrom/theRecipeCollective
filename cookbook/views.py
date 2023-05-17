@@ -1,4 +1,5 @@
-# Based on the "Python Django Tutorial: Full-Featured Web App" tutorial by Corey Schafer
+# Based on the "Python Django Tutorial: Full-Featured Web App"
+# by Corey Schafer
 # Tutorial: https://youtu.be/UmljXZIypDc
 # Snippet adapted from the tutorial with modifications
 
@@ -18,11 +19,13 @@ from django.views.generic import (
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.db.models import Q
 
+
 def index(request):
     if request.user.is_authenticated:
-        return redirect ('cookbook-home')
+        return redirect('cookbook-home')
     else:
         return render(request, 'index.html')
+
 
 # this class will list all recipes with the latest
 # recipe listed first
@@ -87,8 +90,9 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
         'status',
     ]
 
-    # If the form is valid it will first check if user is logged in and if so
-    # the user will be set as the author. If not it will redirect to the login page.
+    # If the form is valid it will first check if user is logged in
+    # and if so the user will be set as the author. If not it will
+    # redirect to the login page.
     def form_valid(self, form):
         if self.request.user.is_authenticated:
             form.instance.author = self.request.user
@@ -117,13 +121,14 @@ class RecipeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     ]
 
     # If the form is valid it will first check if user is logged in and if so
-    # the user will be set as the author. If not it will redirect to the login page.
+    # the user will be set as the author. If not it will redirect to
+    # the login page.
     def form_valid(self, form):
         if self.request.user.is_authenticated:
             form.instance.author = self.request.user
             title = form.instance.title
             messages.success(
-                self.request, 
+                self.request,
                 f'{ title } has been successfully updated!'
                 )
             return super().form_valid(form)
@@ -152,9 +157,8 @@ class RecipeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
             return True
         return False
 
-# Shows the about page 
+
+# Shows the about page
 class AboutView(TemplateView):
     template_name = 'cookbook/about.html'
     extra_content = {'title': 'About'}
-
-    
