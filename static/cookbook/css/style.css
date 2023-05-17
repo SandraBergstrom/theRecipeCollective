@@ -28,6 +28,14 @@ body {
     justify-content: center;
 }
 
+.main-scroll-page {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
  /* this will make the bg-image cover the whole bg */
 .bg-img-one-page {
     height: 78vh;
@@ -267,9 +275,16 @@ a:hover {
 
 /* Register/Sign up page */
 
+#main-register {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 #intro-register {
-    min-height: 268vh;
-    /* height: 1030px; */
+    min-height: 132vh;
     width: 100%;
 }
 
@@ -286,6 +301,14 @@ a:hover {
 
 
 /* Profile page */
+
+#main-profile {
+    width: 100%;
+    height: 126vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 #intro-profile {
     min-height: 152vh;
@@ -330,6 +353,7 @@ a:hover {
 /* Home Page */
 
 .container-centered {
+    max-width: 900px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -349,6 +373,9 @@ a:hover {
     padding-top: 10px;
     padding-bottom: 15px;
 }
+
+
+
 
 .container-cookbook-text {
     height: 180px;
@@ -386,8 +413,7 @@ a:hover {
 /* Add recipe page */
 
 #intro-recipe {
-    min-height: 268vh;
-    /* height: 1800px; */
+    min-height: 222vh;
     width: 100%;
 }
 
@@ -406,7 +432,7 @@ a:hover {
 
 /* Delete Recipe  */
 .main-recipe-delete {
-    height: 74vh;
+    height: 78vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -468,6 +494,7 @@ a:hover {
 /* Favorites */
 
 .nothing-message {
+    height: 45vh;
     margin-top: 25px;
     background-color: var(--clr-primary-light);
     border: 1px var(--clr-neutral-dark) solid;
@@ -476,6 +503,7 @@ a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     padding: 25px;
 }
 
