@@ -316,38 +316,64 @@ The Recipe Collective focuses on providing a clean and user-friendly design, wit
 
 [Back up](#table-of-content)
 
-## Validation
+## Testing
+Index
+About
+Sign up
+Login
+Profile
+Logout
+Cookbook
+My recipes
+Favorite recipes
+Recipe Details
+Add/Update recipe
+Delete recipe
 
-### HTML Validation
+### Validation
+
+#### HTML Validation
 The W3C Markup Validation Service was used to validate the HTML of the website. All pages pass with no errors no warnings to show.
-<details><summary>Home</summary>
+<details><summary>Index</summary>
 <img src="#">
 </details>
 <details><summary>About</summary>
 <img src="#">
 </details>
-<details><summary>Login</summary>
-<img src="#">
-</details>
 <details><summary>Sign up</summary>
 <img src="#">
 </details>
-<details><summary>Cookbook</summary>
+<details><summary>Login</summary>
 <img src="#">
 </details>
 <details><summary>Profile</summary>
 <img src="#">
 </details>
+<details><summary>Logout</summary>
+<img src="#">
+</details>
+<details><summary>Logout</summary>
+<img src="#">
+</details>
 
-### CSS Validation
+#### CSS Validation
 The W3C Jigsaw CSS Validation Service was used to validate the CSS of the website.
-When validating the page as a whole, the validator shows some errors linked to Bootstrap v5.0. When validating just my own custom CSS ...
-<details><summary>whole page</summary>
-<img src="#">
-</details>
-<details><summary>style.css</summary>
-<img src="#">
-</details>
+
+| **Tested** | **Result** | **Validation Result** |
+| ----------- | ----------- | ----------- |
+|CSS file | No errors |[Result](http://jigsaw.w3.org/css-validator/validator$link)|
+|Whole webpage | When validating the page as a whole, the validator shows some errors linked to Bootstrap v5.0. When validating just my own custom CSS |[Result](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fthe-recipe-collective.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=sv#banner)|
+|||
+
+#### PEP8 
+
+
+| **Tested** | **Result** | **Validation Result** |
+| ----------- | ----------- | ----------- |
+|cookbook/models | 29: E501 line too long (108 > 79 characters) - URL for default image |<details><summary>Result</summary>![Result](/docs/validation/pep8/cookbook-models.png)</details>|
+|||
+
+
 
 ### Accessibility
 The WAVE WebAIM web accessibility evaluation tool was used to ensure the website met high accessibility standards. All pages pass with 0 errors.
