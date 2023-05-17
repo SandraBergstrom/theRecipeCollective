@@ -288,8 +288,7 @@ a:hover {
 /* Profile page */
 
 #intro-profile {
-    min-height: 268vh;
-    /* height: 1200px; */
+    min-height: 152vh;
     width: 100%;
 }
 
