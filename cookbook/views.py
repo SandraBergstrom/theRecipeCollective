@@ -3,6 +3,7 @@
 # Snippet adapted from the tutorial with modifications
 
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from .models import Recipe
 from users.models import Comment
 from users.forms import CommentForm
@@ -67,8 +68,6 @@ class RecipeDetailView(DetailView):
         return self.get(request, *args, **kwargs)
 
 
-
-
 # This class will make it possible to create a new recipe
 class RecipeCreateView(LoginRequiredMixin, CreateView):
     model = Recipe
@@ -122,6 +121,11 @@ class RecipeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def form_valid(self, form):
         if self.request.user.is_authenticated:
             form.instance.author = self.request.user
+            title = form.instance.title
+            messages.success(
+                self.request, 
+                f'{ title } has been successfully updated!'
+                )
             return super().form_valid(form)
         else:
             return self.form.invalid(form)
