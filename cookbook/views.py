@@ -50,9 +50,23 @@ class RecipeDetailView(DetailView):
             else:
                 context['favorite'] = False
         comments = Comment.objects.filter(recipe=recipe)
+        commented = False
         context['comments'] = comments
         context['comment_form'] = CommentForm()
         return context
+
+    def post(self, request, *args, **kwargs):
+        recipe = self.get_object()
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            comment_form.instance.email = request.user.email
+            comment_form.instance.name = request.user.username
+            comment = comment_form.save(commit=False)
+            comment.recipe = recipe
+            comment.save()
+        return self.get(request, *args, **kwargs)
+
+
 
 
 # This class will make it possible to create a new recipe
