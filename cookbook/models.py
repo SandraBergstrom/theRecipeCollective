@@ -22,7 +22,7 @@ class Recipe(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     featured_image = CloudinaryField(
         'image', 
-        default='https://res.cloudinary.com/sandrabergstrom/image/upload/v1682690083/placeholder_got9h5.jpg'
+        default='https://res.cloudinary.com/sandrabergstrom/image/upload/v1684323615/placeholder_ywziah.jpg'
         )
     excerp = models.CharField(max_length=200, blank=True, null=True)
     about = models.TextField(max_length=600, blank=True, null=True)

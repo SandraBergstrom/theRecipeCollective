@@ -13,7 +13,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = CloudinaryField(
         'image', 
-        default='https://res.cloudinary.com/sandrabergstrom/image/upload/v1683716250/user_minu4x.png'
+        default='https://res.cloudinary.com/sandrabergstrom/image/upload/v1684322604/user_zyrx8b.png'
         )
     food_relation_choices = [
         ('CHEF', 'Chef'),
