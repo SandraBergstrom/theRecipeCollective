@@ -337,7 +337,6 @@ a:hover {
 
 .list-header {
     margin-top: 25px;
-    width: 60%;
     height: ;
     display: flex;
     flex-direction: column;
@@ -473,7 +472,6 @@ a:hover {
     background-color: var(--clr-primary-light);
     border: 1px var(--clr-neutral-dark) solid;
     border-radius: 10px;
-    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -482,8 +480,13 @@ a:hover {
 }
 
 .nothing-message p {
-    padding-top: 10px;
-    padding-bottom: 15px;
+    padding: 20px;
+}
+
+@media (max-width: 375px) {
+    .nothing-message p {
+        padding: 0px;
+    }
 }
 
 /* Recipe cards in list */
