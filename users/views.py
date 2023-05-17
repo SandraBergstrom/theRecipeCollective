@@ -87,9 +87,18 @@ def favorite_list(request):
     return render(request, 'users/favorites.html', {'new': new})
 
 
-class MyRecipeListView(LoginRequiredMixin, ListView):
-    model = Recipe
-    template_name = 'users/myrecipes.html'
-    context_object_name = 'added'
-    ordering = ['-date_posted']
-    paginate_by = 9
+@login_required
+def my_recipe_list(request):
+    added = Recipe.objects.filter(author=request.user).order_by('-date_posted')
+    context = {
+        'added': added
+    }
+    return render(request, 'users/myrecipes.html', context)
+
+
+# class MyRecipeListView(LoginRequiredMixin, ListView):
+#     model = Recipe
+#     template_name = 'users/myrecipes.html'
+#     context_object_name = 'added'
+#     ordering = ['-date_posted']
+#     paginate_by = 9
