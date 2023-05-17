@@ -1,4 +1,4 @@
-/* ROOT */
+/* || Root */
 
 :root {
     --clr-primary-light: rgb(239, 239, 241);
@@ -13,14 +13,15 @@
 }
 
 
-/* BASE */
+/* || Base.html */
 
 body {
     background: var(--clr-primary-light);
     color: var(--clr-primary-dark)
 }
 
-/* On pages that don't scroll fix the footer to the bottom. */
+/* On pages that don't scroll fix the footer to the bottom. 
+All classes and id's starting with "main-" has this function*/
 .main-one-page {
     height: 78vh;
     display: flex;
@@ -48,23 +49,6 @@ body {
     flex-direction: column;
     justify-content: center;
     margin-top: 1rem;
-}
-
-h1,
-h2,
-h3,
-h4 {
-    color: var(--clr-primary-dark);
-}
-
-p {
-    color: var(--clr-primary-dark);
-}
-
-@media (max-width: 770px) {
-    p {
-        font-size: 80%;
-    }
 }
 
 /* Navbar */
@@ -122,6 +106,104 @@ a {
 
     #logo-auth {
         font-size: 1rem;
+    }
+}
+
+/* || General styles */
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--clr-primary-dark);
+}
+
+p {
+    color: var(--clr-primary-dark);
+}
+
+@media (max-width: 770px) {
+    p {
+        font-size: 80%;
+    }
+}
+
+/* Default for bg-img for small devices */
+.bg-image {
+    /* height: 400px; */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content-section {
+    max-height: fit-content;
+    overflow-y: auto;
+    padding-right: 50px;
+}
+
+.content-section::-webkit-scrollbar {
+    width: 4px;
+}
+
+.content-section::-webkit-scrollbar-thumb {
+    background-color: #999;
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.content-section::-webkit-scrollbar-track {
+    background-color: #eee;
+    border-radius: 10px;
+}
+
+.cookbook-links a {
+    margin-top: 20px;
+    text-transform: capitalize;
+    background-color: transparent;
+}
+
+.cookbook-links {
+    background-color: transparent !important;
+}
+
+.btn-link {
+    padding: 6px;
+}
+
+/* Height on bg-im for devices larger than 430px */
+@media (min-width: 430px) {
+    .bg-image {
+        /* height: 500px; */
+    }
+}
+
+/* Height on bg-img for devices larger than 1025px */
+@media (min-width: 1025px) {
+    .bg-image {
+        /* height: 600px; */
+    }
+}
+
+@media (max-width: 430px) {
+    .content-section::-webkit-scrollbar {
+        display: none;
+    }
+
+    .cookbook-links a {
+        font-size: 60%;
+        padding: 2px;
+    }
+
+    .cookbook-links {
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 325px) {
+    .btn-link {
+        padding: 6px !important;
     }
 }
 
@@ -189,91 +271,18 @@ a:hover {
     text-decoration: none;
 }
 
-/* ALL PAGES */
+/* Favorite button */
 
-/* Default for bg-img for small devices */
-.bg-image {
-    /* height: 400px; */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.btn-like {
+    color: var(--clr-accent-orange);
+    font-size: 20px;
 }
 
-.content-section {
-    max-height: fit-content;
-    overflow-y: auto;
-    padding-right: 50px;
+.btn-like:hover {
+    background-color: var(--clr-accent-orange) !important;
 }
 
-.content-section::-webkit-scrollbar {
-    width: 4px;
-}
-
-.content-section::-webkit-scrollbar-thumb {
-    background-color: #999;
-    border-radius: 10px;
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-.content-section::-webkit-scrollbar-track {
-    background-color: #eee;
-    border-radius: 10px;
-}
-
-.cookbook-links a {
-    margin-top: 20px;
-    text-transform: capitalize;
-    background-color: transparent;
-}
-
-.cookbook-links {
-    background-color: transparent !important;
-}
-
-.btn-link {
-    padding: 6px;
-}
-
-/* media queries */
-
-/* Height on bg-im for devices larger than 430px */
-@media (min-width: 430px) {
-    .bg-image {
-        /* height: 500px; */
-    }
-}
-
-/* Height on bg-img for devices larger than 1025px */
-@media (min-width: 1025px) {
-    .bg-image {
-        /* height: 600px; */
-    }
-}
-
-@media (max-width: 430px) {
-    .content-section::-webkit-scrollbar {
-        display: none;
-    }
-
-    .cookbook-links a {
-        font-size: 60%;
-        padding: 2px;
-    }
-
-    .cookbook-links {
-        margin-top: 5px;
-    }
-}
-
-@media (max-width: 325px) {
-    .btn-link {
-        padding: 6px !important;
-    }
-}
-
-
-/* Register/Sign up page */
+/* || Register/Sign up page */
 
 #main-register {
     width: 100%;
@@ -293,14 +302,13 @@ a:hover {
     padding-right: 0px;
 }
 
-/* Login page */
+/* || Login page */
 
 .form-label {
     display: flex;
 }
 
-
-/* Profile page */
+/* || Profile page */
 
 #main-profile {
     width: 100%;
@@ -338,19 +346,13 @@ a:hover {
         flex-direction: column;
         align-items: center;
     }
-/* 
-    #intro-profile {
-        max-height: none;
-        height: 1040px;
-        width: 100%;
-    } */
 
     #content-profile {
         padding-right: 0px;
     }
 }
 
-/* Home Page */
+/* || Home Page */
 
 .container-centered {
     max-width: 900px;
@@ -361,7 +363,6 @@ a:hover {
 
 .list-header {
     margin-top: 25px;
-    height: ;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -373,9 +374,6 @@ a:hover {
     padding-top: 10px;
     padding-bottom: 15px;
 }
-
-
-
 
 .container-cookbook-text {
     height: 180px;
@@ -410,7 +408,7 @@ a:hover {
     border-color: var(--clr-accent-orange);
 }
 
-/* Add recipe page */
+/* || Add recipe page */
 
 #intro-recipe {
     min-height: 222vh;
@@ -421,7 +419,6 @@ a:hover {
     max-height: fit-content;
     overflow-y: auto;
     padding-right: 0px;
-    /* width: 700px; */
 }
 
 @media (min-width: 600px) {
@@ -430,7 +427,8 @@ a:hover {
     }
 }
 
-/* Delete Recipe  */
+/* || Delete Recipe  */
+
 .main-recipe-delete {
     height: 78vh;
     display: flex;
@@ -450,10 +448,6 @@ a:hover {
 }
 
 @media (max-width: 430px) {
-    #intro-recipe-delete {
-        /* height: 600px; */
-
-    }
 
     #content-recipe-delete {
         max-height: fit-content;
@@ -462,7 +456,7 @@ a:hover {
     }
 }
 
-/* Recipe detail page */
+/* || Recipe detail page */
 
 #recipe-ud-btn {
     display: flex;
@@ -490,8 +484,7 @@ a:hover {
     }
 }
 
-
-/* Favorites */
+/* || Favorites Page */
 
 .nothing-message {
     height: 45vh;
@@ -517,7 +510,7 @@ a:hover {
     }
 }
 
-/* Recipe cards in list */
+/* || Recipe cards in list */
 
 .card {
     margin-bottom: 1.5rem;
@@ -529,18 +522,7 @@ a:hover {
     object-fit: cover;
 }
 
-/* Favorite */
-
-.btn-like {
-    color: var(--clr-accent-orange);
-    font-size: 20px;
-}
-
-.btn-like:hover {
-    background-color: var(--clr-accent-orange) !important;
-}
-
-/* Footer */
+/* || Footer */
 
 .footer-icon {
     display: flex;
