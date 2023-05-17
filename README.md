@@ -415,14 +415,14 @@ The website was tested on the following browsers:
 
 | **Bug** | **Status** |
 | ----------- | ----------- |
-|[If there is less than 3 recipe cards it will not look good any longer. The cards get slimmer and the page layout get strange when only 1 card.](https://github.com/SandraBergstrom/theRecipeCollective/issues/36)|Fixed for the favorites page, but the fix is not working on the My Recipes page|
-|[I can't get the active link to show. I use active class according to bootstrap but it will not change when I go to another page.](https://github.com/SandraBergstrom/theRecipeCollective/issues/30)|...|
+| [I can't get the active link to show. I use active class according to bootstrap but it will not change when I go to another page.](https://github.com/SandraBergstrom/theRecipeCollective/issues/30)| ... |
 |||
 
 ### Fixed bugs 
 
 | **Bug** | **Fix** |
 | ----------- | ----------- |
+|[If there is less than 3 recipe cards it will not look good any longer. The cards get slimmer and the page layout get strange when only 1 card.](https://github.com/SandraBergstrom/theRecipeCollective/issues/36)|The problem seems to have been a fixed height on the .card-img-top. I have now changed it to keep an image ratio of 1:1 widht a full widht.|
 |[Prep time and cooking time is showing seconds and not minutes.](https://github.com/SandraBergstrom/theRecipeCollective/issues/23)|Changed from DurationField to PositiveIntegerField. <br> [See detailed steps](https://github.com/SandraBergstrom/theRecipeCollective/issues/23#issuecomment-1549336886)|
 |[Cant delete users from admin page](https://github.com/SandraBergstrom/theRecipeCollective/issues/35)|High priority: Because of an old field in one of the models. Will change database to a clean before deploy.|
 |[Error message E-tag when deploying to Heroku. Temporary solves when I remove the static folder in Cloudinary. But that also removes all profile pictures and recipe images.](https://github.com/SandraBergstrom/theRecipeCollective/issues/32)|Before deploying on Heroku the static folder in Cloudinary have to be removed. This wiill not remove recipe or profile images.|
