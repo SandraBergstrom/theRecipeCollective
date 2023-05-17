@@ -1,6 +1,7 @@
 {% extends 'cookbook/base.html' %}
 {% block content %}
 
+
 <div class="main-scroll-page">
     <div class="container container-centered">
         <!-- Header and paragraph with links to users different recipe pages -->
@@ -15,17 +16,19 @@
         </div>
         <br>
 
-        <!-- Recipe List -->
+        <!-- Check if user has any favorites and if it has - show list of favorites  -->
         {% if added.exists %}
+        <!-- Recipe List -->
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             {% for recipe in added %}
-            {% if recipe.author == user %}
-            {% include 'cookbook/list_card.html' %}
-            {% endif %}
+                {% if recipe.author == user %}
+                    {% include 'cookbook/list_card.html' %}
+                {% endif %}
             {% endfor %}
         </div>
-        {% else %}
+
         <!-- If user doesn't have any favorites this message with link to cookbook will appear -->
+        {% else %}
         <div class="nothing-message">
             <p>You don't have any recipes yet. Why don't you
                 <a href="{% url 'recipe-create' %}"> add a recipe</a>
