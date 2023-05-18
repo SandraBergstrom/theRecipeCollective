@@ -2,119 +2,121 @@
 <!doctype html>
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Fontawesome -->
-    <script src="https://kit.fontawesome.com/16606b6431.js" crossorigin="anonymous"></script>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="A mouthwatering collection of diverse recipes for every occasion. Explore our extensive database of delectable dishes, ranging from appetizers to desserts. Discover culinary inspiration and step-by-step instructions to create unforgettable meals.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Fontawesome -->
+  <script src="https://kit.fontawesome.com/16606b6431.js" crossorigin="anonymous"></script>
 
-    <!-- MDB -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet">
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
-    <!-- Static CSS file -->
-    <link rel="stylesheet" type="text/css" href="{% static 'cookbook/css/style.css' %}">
+  <!-- Static CSS file -->
+  <link rel="stylesheet" type="text/css" href="{% static 'cookbook/css/style.css' %}">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
 
 
-    {% if title %}
-    <title>the Recipe Collective - {{ recipe.title }}</title>
-    {% else %}
-    <title>the Recipe Collective</title>
-    {% endif %}
-  </head>
+  {% if title %}
+  <title>the Recipe Collective - {{ recipe.title }}</title>
+  {% else %}
+  <title>the Recipe Collective</title>
+  {% endif %}
+</head>
 
-  <body>
-    <header>
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm p-3 bg-body-tertiary rounded">
-        <!-- Container wrapper -->
-        <div class="container-fluid d-flex" id="nav-items">
-          <!-- Toggle button -->
-          <button class="navbar-toggler mr-auto" type="button" data-mdb-toggle="collapse"
-            data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i>
-          </button>
-          <!-- Navbar brand -->
-          {% if user.is_authenticated %}
-          <a class="navbar-brand mx-auto" id="logo-auth" href="{% url 'cookbook-home' %}">the Recipe Collective</a>
-          {% else %}
-          <a class="navbar-brand mx-auto" href="{% url 'index' %}">the Recipe Collective</a>
-          {% endif %}
-          <!-- Collapsible wrapper -->
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Left links -->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 pl-3" id="navbar-links-coll">
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'cookbook-about' %}">About</a>
-              </li>
-              {% if user.is_authenticated %}
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'cookbook-home' %}">Cookbook</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#">Meal Planner - Coming soon!</a>
-              </li>
-              {% else %}
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'login' %}">Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'register' %}">Sign Up</a>
-              </li>
-              {% endif %}
-            </ul>
-            <!-- End Left links -->
-          </div>
-          <!-- End Collapsible wrapper -->
-
-          <!-- Right elements -->
-          <div class="d-flex align-items-center" style="margin-left: 10px;">
+<body>
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm p-3 bg-body-tertiary rounded">
+      <!-- Container wrapper -->
+      <div class="container-fluid d-flex" id="nav-items">
+        <!-- Toggle button -->
+        <button class="navbar-toggler mr-auto" type="button" data-mdb-toggle="collapse"
+          data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <!-- Navbar brand -->
+        {% if user.is_authenticated %}
+        <a class="navbar-brand mx-auto" id="logo-auth" href="{% url 'cookbook-home' %}">the Recipe Collective</a>
+        {% else %}
+        <a class="navbar-brand mx-auto" href="{% url 'index' %}">the Recipe Collective</a>
+        {% endif %}
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- Left links -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 pl-3" id="navbar-links-coll">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'cookbook-about' %}">About</a>
+            </li>
             {% if user.is_authenticated %}
-
-            <!-- Avatar -->
-            <div class="dropdown">
-              <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar"
-                role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                <img src="{{ user.profile.image.url }}" id="nav-profile-img" class="rounded-circle" height="40"
-                  alt="Profile image of {{ user.first_name }} {{ user.last_name }}" loading="lazy" />
-              </a>
-              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
-                <li>
-                  <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="{% url 'recipe-create' %}">Add Recipe</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="{% url 'myrecipes' %}">My Recipes</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="{% url 'favorite_list' %}">Favorite Recipes</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
-                </li>
-              </ul>
-            </div>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'cookbook-home' %}">Cookbook</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Meal Planner - Coming soon!</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'register' %}">Sign Up</a>
+            </li>
             {% endif %}
-          </div>
-          <!-- End Right elements -->
+          </ul>
+          <!-- End Left links -->
         </div>
-        </div>
-        <!-- End Container wrapper -->
-      </nav>
-      <!-- End Navbar -->
-    </header>
+        <!-- End Collapsible wrapper -->
 
-    <!-- Content block with flash message on top -->
-    <main>
+        <!-- Right elements -->
+        <div class="d-flex align-items-center" style="margin-left: 10px;">
+          {% if user.is_authenticated %}
+
+          <!-- Avatar -->
+          <div class="dropdown">
+            <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar"
+              role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+              <img src="{{ user.profile.image.url }}" id="nav-profile-img" class="rounded-circle" height="40"
+                alt="Profile image of {{ user.first_name }} {{ user.last_name }}" loading="lazy" />
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+              <li>
+                <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="{% url 'recipe-create' %}">Add Recipe</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="{% url 'myrecipes' %}">My Recipes</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="{% url 'favorite_list' %}">Favorite Recipes</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+              </li>
+            </ul>
+          </div>
+          {% endif %}
+        </div>
+        <!-- End Right elements -->
+      </div>
+      </div>
+      <!-- End Container wrapper -->
+    </nav>
+    <!-- End Navbar -->
+  </header>
+
+  <!-- Content block with flash message on top -->
+  <main>
     <section>
       {% if messages %}
       {% for message in messages %}
@@ -133,62 +135,62 @@
   </main>
 
 
-    <footer class="text-center text-dark mb-0 mt-auto sticky-bottom bg-white">
-      <!-- Grid container -->
-      <div class=" container pt-1">
-        <!-- Section: Social media -->
-        <div class="pt-3" style="
+  <footer class="text-center text-dark mb-0 mt-auto sticky-bottom bg-white">
+    <!-- Grid container -->
+    <div class=" container pt-1">
+      <!-- Section: Social media -->
+      <div class="pt-3" style="
               display: flex;
               justify-content: center;
               align-items: center;">
-          <!-- Facebook -->
-          <a class=" btn btn-link btn-floating btn-lg text-dark m-1 footer-icon" href="https://www.facebook.com/"
-            role="button" data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
+        <!-- Facebook -->
+        <a class=" btn btn-link btn-floating btn-lg text-dark m-1 footer-icon" href="https://www.facebook.com/"
+          role="button" data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
 
-          <!-- Twitter -->
-          <a class="btn btn-link btn-floating btn-lg text-dark m-1 footer-icon" href="https://twitter.com/" role="button"
-            data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
+        <!-- Twitter -->
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1 footer-icon" href="https://twitter.com/" role="button"
+          data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
 
-          <!-- Instagram -->
-          <a class="btn btn-link btn-floating btn-lg text-dark m-1 footer-icon" href="https://www.instagram.com/"
-            role="button" data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
+        <!-- Instagram -->
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1 footer-icon" href="https://www.instagram.com/"
+          role="button" data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
 
-          <!-- Linkedin -->
-          <a class="btn btn-link btn-floating btn-lg text-dark m-1 footer-icon"
-            href="https://www.linkedin.com/in/sandrabergstrom/" role="button" data-mdb-ripple-color="dark"><i
-              class="fab fa-linkedin"></i></a>
+        <!-- Linkedin -->
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1 footer-icon"
+          href="https://www.linkedin.com/in/sandrabergstrom/" role="button" data-mdb-ripple-color="dark"><i
+            class="fab fa-linkedin"></i></a>
 
-          <!-- Github -->
-          <a class="btn btn-link btn-floating btn-lg text-dark m-1 footer-icon"
-            href="https://github.com/SandraBergstrom/theRecipeCollective" role="button" data-mdb-ripple-color="dark"><i
-              class="fab fa-github"></i></a>
-        </div>
-        <!-- Section: Social media -->
+        <!-- Github -->
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1 footer-icon"
+          href="https://github.com/SandraBergstrom/theRecipeCollective" role="button" data-mdb-ripple-color="dark"><i
+            class="fab fa-github"></i></a>
       </div>
-      <!-- Grid container -->
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
 
-      <!-- Copyright -->
-      <div class="text-center text-dark pb-4">
-        <small>© 2023 Copyright:
-          <a class="text-dark" href="#">the Recipe Collective</a></small>
-      </div>
-      <!-- Copyright -->
-    </footer>
+    <!-- Copyright -->
+    <div class="text-center text-dark pb-4">
+      <small>© 2023 Copyright:
+        <a class="text-dark" href="#">the Recipe Collective</a></small>
+    </div>
+    <!-- Copyright -->
+  </footer>
 
 
-    <!-- MDB -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
+  <!-- MDB -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
 
-    <!-- Bootstrap JavaScript-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-      crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
-      integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
-      crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
-      integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
-      crossorigin="anonymous"></script>
-  </body>
+  <!-- Bootstrap JavaScript-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+    integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+    integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous">
+  </script>
+</body>
 
 </html>
