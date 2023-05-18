@@ -158,14 +158,12 @@ p {
     border-radius: 10px;
 }
 
-.cookbook-links a {
-    margin-top: 20px;
-    text-transform: capitalize;
-    background-color: transparent;
-}
-
 .cookbook-links {
     background-color: transparent !important;
+    margin-top: 20px;
+    text-transform: capitalize;
+    color: var(--clr-accent-orange)!important;
+    font-weight: 500;
 }
 
 .btn-link {
@@ -195,13 +193,10 @@ p {
         width: 270px;
     }
 
-    .cookbook-links a {
-        font-size: 75%;
-        padding: 0px;
-    }
-
     .cookbook-links {
         margin-top: 5px;
+        font-size: 75%;
+        padding: 0px;
     }
 }
 
