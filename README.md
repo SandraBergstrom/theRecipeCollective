@@ -39,13 +39,6 @@ Developer: Sandra Bergström <br>
     5. [Backlog and Subsequent Iterations](#backlog-and-subsequent-iterations)
 7. [Features](#features)
 8. [Testing](#validation)
-    1. [HTML Validation](#HTML-validation)
-    2. [CSS Validation](#CSS-validation)
-    3. [Accessibility](#accessibility)
-    4. [Performance](#performance)
-    5. [Device testing](#performing-tests-on-various-devices)
-    6. [Browser compatibility](#browser-compatability)
-    7. [Testing user stories](#testing-user-stories)
 9. [Bugs](#bugs)
 10. [Deployment](#deployment)
 11. [Credits](#credits)
@@ -66,12 +59,13 @@ The Recipe Collective is a web application designed to provide users with a plat
 - Uploading and managing their own recipes within their personal cookbook.
 - Accessing their personal cookbook, which includes three sections: the Collective's Recipes, User's Uploaded Recipes, and Favorite Recipes.
 - Finding culinary inspiration by discovering recipes from various cuisines, continents and categories.
+- Engaging with the community by adding comments and sharing feedback on recipes.
 
 ### Site Owner Goals
 - Providing a platform for users to discover, save, and organize recipes.
 - Offering users the ability to upload and manage their own recipes.
 - Enhancing user experience by curating a collection of diverse and appealing recipes.
-- Encouraging users to engage with the site and share their culinary creations.
+- Encouraging users to engage with the site, share their culinary creations, and participate in discussions through comments.
 
 [Back up](#table-of-content)
 
@@ -94,11 +88,10 @@ When using the Recipe Collective, users can expect the following features and ch
 - A user-friendly interface that allows for intuitive navigation and easy recipe browsing.
 - High-quality recipe presentation, including clear instructions, ingredients, and visuals.
 - Responsive design that ensures a visually appealing experience on different devices.
-- Personalized features, such as a user cookbook to store favorite recipes and track personal creations.
+- Personalized features, such as a user cookbook to store favorite recipes, track personal creations, and add comments to recipes.
 - Access to a diverse collection of recipes, offering inspiration for everyday meals and special occasions.
 
 The Recipe Collective strives to create an enjoyable and engaging environment for users to explore, discover, and share their love for cooking and delicious recipes.
-
 
 ### User Stories
 
@@ -116,6 +109,7 @@ The Recipe Collective strives to create an enjoyable and engaging environment fo
 - [As a Returning User, I can view all recipes so that I can find new recipes to try](https://github.com/SandraBergstrom/theRecipeCollective/issues/2#issue-1676140284)<br>
 - [As a Returning User, I can edit my own recipes so that I can update them if needed](https://github.com/SandraBergstrom/theRecipeCollective/issues/7#issue-1676198620)<br>
 - [As a Returning User, I can add a new recipe so that I can share it with others and save it for myself](https://github.com/SandraBergstrom/theRecipeCollective/issues/5#issue-1676191345)<br>
+- [As a Returning User I can comment on a recipe so that share my thoughts and suggestions](https://github.com/SandraBergstrom/theRecipeCollective/issues/11)<br>
 - [As a Site Owner, I can view and manage recipes to maintain a high standard of content and ensure the quality of the recipes on the site](https://github.com/SandraBergstrom/theRecipeCollective/issues/1#issue-1676139643)<br>
 
 #### Epic 3: User Experience and Site Information
@@ -134,6 +128,7 @@ The Recipe Collective utilizes the following database schema:
 - Profile model that extends the User model to add additional fields like image, food_relation, and country to store user-specific information.
 - The Profile model is linked to the default Django User model using a one-to-one relationship.
 - CloudinaryField from the cloudinary.models module to store the user's image with cloud-based hosting.
+- Comment model is added to represent a comment on a recipe. It has a many-to-one relationship with the recipe model, linking each comment to the recipe it belongs to. 
 
 ### Cookbook App
 - Recipe model in the Cookbook app represents a recipe that users can create, view, update, and delete.
@@ -172,7 +167,7 @@ Upon logging in, users are directed to the main cookbook section of the Recipe C
 - **Home Page (Cookbook):** The home page of the cookbook section serves as the central hub, displaying a personalized collection of recipes based on the user's preferences, saved recipes, and recent activities within the community.<br>
 - **My Recipes Page:** The "My Recipes" page allows users to view and manage the recipes they have created and contributed to the Recipe Collective. It provides options to edit, delete, and organize recipes for easy access and retrieval.<br>
 - **My Favorites:** The "My Favorites" page displays a curated list of recipes that the user has marked as favorites, making it convenient to revisit and cook their preferred dishes.
-- **Recipe Detail Page:** The recipe detail page provides comprehensive information about each recipe, including its title, description, ingredients, and instructions. Users have the option to add the recipe to their favorites, allowing them to easily revisit and cook their preferred dishes. Additionally, if the recipe belongs to the user, they can update or delete it, empowering them to manage their own recipes. <br>
+- **Recipe Detail Page:** The recipe detail page provides comprehensive information about each recipe, including its title, description, ingredients, and instructions. Users have the option to add the recipe to their favorites, allowing them to easily revisit and cook their preferred dishes. Additionally, if the recipe belongs to the user, they can update or delete it, empowering them to manage their own recipes. Furthermore, users can engage with the recipe by leaving comments, sharing their thoughts, suggestions, and feedback with the community. This fosters interaction and allows users to exchange culinary ideas and experiences.<br>
 
 #### Profile Navigation:
 Upon clicking on the profile image in the navigation bar, additional links are revealed, providing access to specific profile-related pages and actions:
@@ -184,7 +179,6 @@ Upon clicking on the profile image in the navigation bar, additional links are r
 - **Logout:** The "Logout" option allows users to securely log out of their accounts, ensuring the privacy and security of their personal information.<br>
 
 The structured design of the Recipe Collective ensures a seamless and enjoyable user experience, enabling users to explore, contribute, and manage their recipes with ease.
-
 
 ### Wireframes
 The wireframes provide a visual representation of the different pages and features of the web application. They serve as a blueprint for the design and layout of each page, helping to visualize the user interface and overall user experience. These wireframes were created using Balsamiq, a tool that enables quick and intuitive sketching of design ideas.
@@ -292,12 +286,13 @@ For a comprehensive view of the project progress, user stories, and bug tracking
 
 ## Features
 ### Landing Page:
-- The landing page serves as the entry point to the Recipe Collective, providing an introduction and overview of the platform.
+- The landing page serves as the entry point to the Recipe Collective, providing a short introduction and overview of the platform.
 - Users can easily navigate to different sections of the website through the navigation bar.
 
 ### Recipe Pages:
 - Recipe details page displays comprehensive information about each recipe, including ingredients, instructions, and cooking time.
 - Users can view, create, update, and delete recipes through CRUD functionality.
+- Users can engage with recipes by leaving comments, sharing their thoughts, suggestions, and feedback with the community.
 
 ### User Account Management:
 - Account sign-up form allows new users to create an account and join the Recipe Collective community.
