@@ -2,6 +2,7 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
+
 <div id="main-recipe-form">
   <div id="intro-recipe" class="p-5 text-center bg-image"
     style="
@@ -12,16 +13,23 @@
           <div class="col-md-12 p-5 rounded pb-0" style="background-color: rgba(248, 248, 248, 0.6)">
             <div class="content-section" id="content-recipe">
               <div class="media profile-image">
-                <img class="rounded-circle" src="{{ recipe.featured_image.url }}" alt="Image of {{ recipe.title }}" style="
+
+                <!-- Recipe image -->
+                <img class="rounded-circle" src="{{ recipe.featured_image.url }}" alt="Image of {{ recipe.title }}"
+                  style="
                   width: 150px;
                   height: 150px;
                   display: cover;
-              ">
+                  ">
+                
+                <!-- -Recipe title with excerp -->
                 <div class="media-body-profile">
                   <h2 class="account-heading">{{ recipe.title }}</h2>
                   <p class="text-secondary">{{ recipe.excerp }}</p>
                 </div>
               </div>
+
+              <!-- Form to add/edit recipe -->
               <form method="POST" action="#" enctype="multipart/form-data">
                 {% csrf_token %}
                 <fieldset class="form-group">
@@ -35,6 +43,7 @@
                 <br>
                 <br>
               </form>
+    
             </div>
           </div>
         </div>

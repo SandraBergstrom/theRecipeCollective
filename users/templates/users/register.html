@@ -2,8 +2,9 @@
 {% load crispy_forms_tags %}
 {% block content%}
 
-
 <div id="main-register">
+
+  <!-- Registration Section -->
   <div id="intro-register" class="p-5 text-center bg-image"
     style="
       background-image: url('https://res.cloudinary.com/sandrabergstrom/image/upload/v1684404872/bg/ella-olsson-oPBjWBCcAEo-unsplash_lhwhp2.webp');">
@@ -12,6 +13,8 @@
         <div class="text-dark row justify-content-center align-items-center">
           <div class="col-md-12 p-5 rounded" style="background-color: rgba(248, 248, 248, 0.6)">
             <div class="content-section" id="content-register">
+
+              <!-- Registration Form -->
               <form method="POST" action="#">
                 {% csrf_token %}
                 <fieldset class="form-group">
@@ -21,9 +24,11 @@
                 <div class="form-group">
                   <button type="submit" class="btn btn-custom-primary">Sign Up!</button>
                 </div>
-                <br />
-                <br />
+                <br>
+                <br>
               </form>
+
+              <!-- Existing Account Link-->
               <div class="border-top pt-3">
                 <small class="text-muted">
                   Already Have An Account?
@@ -37,4 +42,5 @@
     </div>
   </div>
 </div>
+
 {% endblock content %}

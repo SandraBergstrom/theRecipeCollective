@@ -7,19 +7,25 @@
     style="
       background-image: url('https://res.cloudinary.com/sandrabergstrom/image/upload/v1684412129/bg/4k-3825646_j4nmgw.webp');">
     <div class="mask" style="background-color: rgba(248, 248, 248, 0.6)">
+
+      <!-- Content Section -->
       <div class="container d-flex h-100 justify-content-center">
         <div class="text-dark row justify-content-center align-items-center">
           <div class="col-md-12 p-5 rounded pb-0" style="background-color: rgba(248, 248, 248, 0.6)">
             <div class="content-section" id="content-profile">
+
+              <!-- Profile Image -->
               <div class="media profile-image">
                 <img class="rounded-circle" src="{{ user.profile.image.url }}" alt="Image of {{ user.username }}" style="
                   width: 150px;
-              ">
+                  ">
                 <div class="media-body-profile">
                   <h2 class="account-heading">{{ user.first_name }} {{ user.last_name }}</h2>
                   <p class="text-secondary" id="profile-p">{{ user.email }}</p>
                 </div>
               </div>
+              
+              <!-- Profile Form -->
               <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <fieldset class="form-group">

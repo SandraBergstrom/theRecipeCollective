@@ -1,6 +1,6 @@
 {% extends 'cookbook/base.html' %}
-{% block content %}
 
+{% block content %}
 
 <div class="main-scroll-page">
     <div class="container container-centered">
@@ -21,9 +21,9 @@
         <!-- Recipe List -->
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             {% for recipe in added %}
-                {% if recipe.author == user %}
-                    {% include 'cookbook/list_card.html' %}
-                {% endif %}
+            {% if recipe.author == user %}
+            {% include 'cookbook/list_card.html' %}
+            {% endif %}
             {% endfor %}
         </div>
 

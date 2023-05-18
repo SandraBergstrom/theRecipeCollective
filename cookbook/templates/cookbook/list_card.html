@@ -1,17 +1,29 @@
 <div class="col">
     <div class="card h-100">
-        <img src="{{ recipe.featured_image.url }}" class="card-img-top" alt="Image of {{ recipe.title }}" />
+
+        <!-- Recipe Image -->
+        <img src="{{ recipe.featured_image.url }}" class="card-img-top" alt="Image of {{ recipe.title }}">
         <div class="card-body">
+
+            <!-- Recipe Title with link to detail page-->
             <h5 class="card-title"><a href="{% url 'recipe-detail' recipe.id %}"> {{ recipe.title }} </a></h5>
+            
+            <!-- Author and date information -->
             <small class="author">by <a href="#">{{ recipe.author }},
-                    {{ recipe.author.profile.get_food_relation_display }}</a> on 
+                    {{ recipe.author.profile.get_food_relation_display }}</a> on
                     {{ recipe.date_posted }}</small><br>
+            
+            <!-- Prep time and cooking time -->
             <small>Prep Time: {{ recipe.prep_time }} | Cooking Time: {{ recipe.cooking_time }} </small>
             <hr>
+
+            <!-- Recipe excerpt -->
             <p class="card-text">
                 {{ recipe.excerp }}
             </p>
         </div>
+
+        <!-- Card footer with date for last updated -->
         <div class="card-footer d-flex justify-content-between align-items-center pt-3 pb-3">
             <small class="text-muted">Last updated: {{ recipe.date_updated }}</small>
             <a href="{% url 'recipe-detail' recipe.id %}" class="btn btn-custom-primary info-btn btn-sm">Info</a>

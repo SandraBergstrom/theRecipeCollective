@@ -1,11 +1,10 @@
 <div class="cookbook-links-container container-centered">
-    <button type="button" class="btn btn-link cookbook-links" data-mdb-ripple-color="dark">
-        <a href="{% url 'cookbook-home' %}">All Recipes</a>
-    </button>
-    <button type="button" class="btn btn-link cookbook-links" data-mdb-ripple-color="dark">
-        <a href="{% url 'myrecipes' %}"> | My Recipes | </a>
-    </button>
-    <button type="button" class="btn btn-link cookbook-links">
-        <a href="{% url 'favorite_list' %}">Favorite Recipes</a>
-    </button>
+    <!-- Text link for All Recipes -->
+    <a class="btn btn-link cookbook-links" data-mdb-ripple-color="dark" href="{% url 'cookbook-home' %}">All Recipes</a>
+    
+    <!-- Text link for My Recipes -->
+    <a class="btn btn-link cookbook-links" data-mdb-ripple-color="dark" href="{% url 'myrecipes' %}"> | My Recipes | </a>
+    
+    <!-- Text link for Favorite Recipes -->
+    <a class="btn btn-link cookbook-links" href="{% url 'favorite_list' %}">Favorite Recipes</a>
 </div>

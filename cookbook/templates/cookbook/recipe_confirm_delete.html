@@ -11,6 +11,8 @@
                 <div class="text-dark row justify-content-center align-items-center">
                     <div class="col-md-12 p-5 rounded" style="background-color: rgba(248, 248, 248, 0.6)">
                         <div class="content-section" id="content-recipe-delete">
+
+                            <!-- Form to delete recipe-->
                             <form method="POST" action="#">
                                 {% csrf_token %}
                                 <fieldset class="form-group d-flex align-items-center" style="flex-direction: column;">
@@ -25,6 +27,8 @@
                                         continuing.</p>
                                 </fieldset>
                                 <div class="form-group">
+
+                                    <!-- Buttons to confirm delete or cancel -->
                                     <button type="submit" class="btn btn-danger btn-sm">Delete Recipe</button>
                                     <a class="btn btn-custom-secondary btn-sm"
                                         href="{% url 'recipe-detail' object.id %}">Cancel</a>

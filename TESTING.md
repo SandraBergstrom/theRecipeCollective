@@ -1,28 +1,27 @@
 ### HTML Validation
 [W3C Markup Validation](https://validator.w3.org/) is a service provided by the W3C that allows you to validate your HTML code against the official specifications. It checks for syntax errors, improper tag usage, and other issues that may affect the structure and semantics of your web pages. Validating your HTML code with W3C Markup Validation helps ensure that your pages are well-formed and adhere to web standards
 
-<details><summary>Index</summary>
-<img src="#">
-</details>
-<details><summary>About</summary>
-<img src="#">
-</details>
-<details><summary>Sign up</summary>
-<img src="#">
-</details>
-<details><summary>Login</summary>
-<img src="#">
-</details>
-<details><summary>Profile</summary>
-<img src="#">
-</details>
-<details><summary>Logout</summary>
-<img src="#">
-</details>
-<details><summary>Logout</summary>
-<img src="#">
-</details>
-<br>
+All pages passed through the validation and the code was pasted in and I used a filter to remove issues related to the Django templating system. <details><summary>See filter</summary>![Result](/docs/validation/html/filter.png)</details>
+
+| **Tested** | **Result** | **View Result** | **Pass** |
+--- | --- | --- | :---:
+|base| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/validation/html/base.png)</details>| :white_check_mark:
+|index| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/validation/html/index.png)</details>| :white_check_mark:
+|about| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/validation/html/about.png)</details>| :white_check_mark:
+|register| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/validation/html/register.png)</details>| :white_check_mark:
+|login| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/validation/html/login.png)</details>| :white_check_mark:
+|profile| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/validation/html/profile.png)</details>| :white_check_mark:
+|logout| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/validation/html/logout)</details>| :white_check_mark:
+|home| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/validation/html/home.png)</details>| :white_check_mark:
+|myrecipes| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/validation/html/my-recipes.png)</details>| :white_check_mark:
+|favorites| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/validation/html/favorites.png)</details>| :white_check_mark:
+|cookbook_links| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/validation/html/cookbook-links.png)</details>| :white_check_mark:
+|list_card| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/validation/html/list_card.png)</details>| :white_check_mark:
+|pagination| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/validation/html/pagination.png)</details>| :white_check_mark:
+|recipe_form| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/validation/html/recipe-form.png)</details>| :white_check_mark:
+|recipe_detail| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/validation/html/recipe-detail.png)</details>| :white_check_mark:
+|recipe_confirmation_delete| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/validation/html/recipe-confirm-delete.png)</details>| :white_check_mark:
+|
 
 ### CSS Validation
 [W3C Jigsaw](https://jigsaw.w3.org/css-validator/) is a tool provided by the World Wide Web Consortium (W3C) that allows you to validate and check the correctness of your HTML and CSS code. It helps ensure that your web pages comply with the standards set by the W3C, promoting interoperability and accessibility.

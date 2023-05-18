@@ -11,6 +11,8 @@
         <div class="text-dark row justify-content-center align-items-center">
           <div class="col-md-12 p-5 rounded" style="background-color: rgba(248, 248, 248, 0.6)">
             <div class="content-section" id="content-login">
+              
+              <!-- Login form -->
               <form method="POST" action="#">
                 {% csrf_token %}
                 <fieldset class="form-group">
@@ -22,9 +24,11 @@
                     Login
                   </button>
                 </div>
-                <br />
-                <br />
+                <br>
+                <br>
               </form>
+
+              <!-- Sign up Link -->
               <div class="border-top pt-3">
                 <small class="text-muted">
                   Do You Need An Account?
@@ -38,4 +42,5 @@
     </div>
   </div>
 </div>
+
 {% endblock content %}
