@@ -191,9 +191,13 @@ p {
         display: none;
     }
 
+    .cookbook-links-container {
+        width: 270px;
+    }
+
     .cookbook-links a {
-        font-size: 60%;
-        padding: 2px;
+        font-size: 75%;
+        padding: 0px;
     }
 
     .cookbook-links {
