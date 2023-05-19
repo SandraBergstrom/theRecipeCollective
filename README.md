@@ -286,28 +286,105 @@ For a comprehensive view of the project progress, user stories, and bug tracking
 
 ## Features
 ### Landing Page:
-- The landing page serves as the entry point to the Recipe Collective, providing a short introduction and overview of the platform.
-- Users can easily navigate to different sections of the website through the navigation bar.
+- The landing page serves as the entry point to the Recipe Collective, providing a short introduction and overview of the platform and have clear buttons to the Sign up page as well as the Login page.<details><summary>See Screenshot</summary>
+<img src="docs/features/entry-point.png">
+</details>
+
+- Users can easily navigate to different sections available for unauthorized users of the website through the navigation bar. <details><summary>See Screenshot</summary>
+<img src="docs/features/navbar-unauth.png">
+</details>
+
+### Cookbook Pages:
+- When the user has logged in they will be directed to the Collective Cookbook where they can scroll recipe cards. <details><summary>See Screenshot</summary><img src="docs/features/cookbook.png"></details>
+
+- The user can 
 
 ### Recipe Pages:
-- Recipe details page displays comprehensive information about each recipe, including ingredients, instructions, and cooking time.
-- Users can view, create, update, and delete recipes through CRUD functionality.
-- Users can engage with recipes by leaving comments, sharing their thoughts, suggestions, and feedback with the community.
+- Recipe details page displays comprehensive information about each recipe, including ingredients, instructions, and cooking time. <details><summary>See Screenshot</summary>
+<img src="docs/features/recipe-detail.png">
+</details>
+
+- Users can add the recipe to the favorites by clicking the heart icon and will get a confirmation message to give them information that the recipe was added. <details><summary>See Screenshot</summary>
+<img src="docs/features/added-favorite.png">
+</details>  
+
+- Likewise the user can easily remove a recipe from their favorites by clicking the heart icon again. <details><summary>See Screenshot</summary>
+<img src="docs/features/remove-favorite.png">
+</details>
+
+- Users can engage with recipes by leaving comments, sharing their thoughts, suggestions, and feedback with the community. <details><summary>See Screenshot</summary>
+<img src="docs/features/comment.png">
+</details>
 
 ### User Account Management:
-- Account sign-up form allows new users to create an account and join the Recipe Collective community.
-- Users can log in to their accounts to access personalized features and settings.
-- Profile page enables users to view and update their profile information.
-- Users have the ability to update their delivery information and manage their account settings.
+- Account sign-up form allows new users to create an account and join the Recipe Collective community. The form has validation to make sure that the user enters the correct information needed. Such validation is: 
+    - username required and has a maximum of 150 characters or fewer. Letters, digits and @/./+/-/_ only.
+    - email required and has to be an email
+    - password has the following constraints:
+        - can’t be too similar to your other personal information.
+        - must contain at least 8 characters.
+        - can’t be a commonly used password.
+        - can’t be entirely numeric.
+    - password confirmation
+    <details><summary>See Screenshot</summary><img src="docs/features/signup.png">
+</details>
+
+- When successfully created an account the user will get confirmation and be asked to log in. <details><summary>See Screenshot</summary><img src="docs/features/account-created.png">
+</details>
+
+- Users can log in to their accounts to access personalized features and settings.<details><summary>See Screenshot</summary>
+<img src="docs/features/login.png">
+</details>
+
+- Profile page enables users to view and update their profile information. <details><summary>See Screenshot</summary>
+<img src="docs/features/profile.png">
+</details>
+
+- When user has updated their profile they will get a messgage confirming the update. <details><summary>See Screenshot</summary>
+<img src="docs/features/update-profile.png">
+</details>
 
 ### Recipe Management:
-- Recipe creators can add, edit, and delete recipes from their profile.
-- Comprehensive forms facilitate easy recipe submission and editing.
+- Recipe creators can add (from profile section), edit, and delete recipes from their profile. <details><summary>See Screenshot</summary>
+<img src="docs/features/crud.png">
+</details>
+
+- Comprehensive forms facilitate easy recipe submission and editing. <details><summary>See Screenshot</summary>
+<img src="docs/features/update-recipe.png">
+</details>
 
 ### Navigation:
-- The navigation bar provides easy access to different sections and pages of the Recipe Collective.
+- The navigation bar provides easy access to different sections and pages of the Recipe Collective and adapts based on the user's authorization status, providing different options for unauthorized and authorized users.
+
+- On smaller screens, the navigation bar collapses into a burger menu, allowing for a compact and mobile-friendly navigation experience. Users can access the menu by clicking on the burger icon, which reveals the navigation options in a dropdown fashion.
+
+#### Unauthorized users
+- When unauthorized, the navigation bar displays links to "About," "Sign up," and "Login. <details><summary>See Screenshot</summary>
+<img src="docs/features/navbar-unauth.png">
+</details>
+
+- On smaller screens, the navigation bar collapses into a burger menu, allowing for a compact and mobile-friendly navigation experience. Users can access the menu by clicking on the burger icon, which reveals the navigation options in a dropdown fashion. <details><summary>See Screenshot</summary>
+<img src="docs/features/navbar-unauth-sm.png">
+</details>
+
+#### Unauthorized users
+- Once authorized, the navigation bar updates to include links to "About" and "Cookbook." <details><summary>See Screenshot</summary>
+<img src="docs/features/navbar-auth.png">
+</details> 
+
+- On the right side, it displays a round profile image with a collapsible navigation menu, which includes options such as "Profile page," "Add recipe," "My Recipes," "Favorite recipes," and "Logout. <details><summary>See Screenshot</summary>
+<img src="docs/features/navbar-rolldown.png">
+</details>
+
+- On smaller screens, the navigation bar on the lef collapses into a burger menu, allowing for a compact and mobile-friendly navigation experience. Users can access the menu by clicking on the burger icon, which reveals the navigation options in a dropdown fashion. <details><summary>See Screenshot</summary>
+<img src="docs/features/navbar-auth-sm.png">
+</details>
 
 The Recipe Collective focuses on providing a clean and user-friendly design, with a focus on the recipes themselves. It emphasizes CRUD functionality, allowing users to create, read, update, and delete recipes as they contribute to the culinary community. The platform aims to inspire and facilitate the sharing of delicious recipes among users.
+
+### Future Features
+
+-  
 
 [Back up](#table-of-content)
 
@@ -324,7 +401,7 @@ The Recipe Collective focuses on providing a clean and user-friendly design, wit
 
 | **Bug** | **Status** |
 | ----------- | ----------- |
-| [I can't get the active link to show. I use active class according to bootstrap but it will not change when I go to another page.](https://github.com/SandraBergstrom/theRecipeCollective/issues/30)| ... |
+| [I can't get the active link to show. I use active class according to bootstrap but it will not change when I go to another page.](https://github.com/SandraBergstrom/theRecipeCollective/issues/30)| [See update here](https://github.com/SandraBergstrom/theRecipeCollective/issues/30#issuecomment-1554147835) |
 |||
 
 ### Fixed bugs 
