@@ -140,13 +140,13 @@ The Recipe Collective utilizes the following database schema:
 - Profile model that extends the User model to add additional fields like image, food_relation, and country to store user-specific information.
 - The Profile model is linked to the default Django User model using a one-to-one relationship.
 - CloudinaryField from the cloudinary.models module to store the user's image with cloud-based hosting.
-- Comment model is added to represent a comment on a recipe. It has a many-to-one relationship with the recipe model, linking each comment to the recipe it belongs to. 
 
 ### Cookbook App
 - Recipe model in the Cookbook app represents a recipe that users can create, view, update, and delete.
 - Fields include title, author (linked to the Django User model), featured_image, excerpt, about, category, prep_time, cooking_time, servings, ingredients, instructions, date_posted, date_updated, and status.
 - The favorites field establishes a many-to-many relationship with the User model, allowing users to save recipes as favorites.
 - A FavoriteManager is implemented to retrieve recipes that are marked as favorites by a specific user.
+- Comment model is added to represent a comment on a recipe. It has a many-to-one relationship with the recipe model, linking each comment to the recipe it belongs to. 
 
 [Back up](#table-of-content)
 
@@ -156,8 +156,12 @@ At the Recipe Collective, the design philosophy revolves around creating a clean
 By adopting a minimalistic design approach, we strive to eliminate distractions and ensure that the focus remains on the culinary creations shared within the community. The use of ample white space, intuitive layouts, and crisp typography enhances readability and allows the vibrant colors and mouthwatering imagery of the recipes to take center stage.
 
 ### Design Choices
+Taking inspiration from modern scandinavian home kitchens, our design philosophy revolves around providing a clean and modern experience where users can easily navigate, discover, and engage with a vast collection of recipes.
 
+To achieve this, we have adopted a minimalistic design approach that eliminates distractions and puts the spotlight on the culinary creations shared within our community. 
 ### Colour
+One of the key design choices we made was to keep the overall aesthetic light and clean. This approach enhances the recipe images and creates an inviting atmosphere for users to explore and engage with the content. We carefully selected a color scheme that evokes a sense of freshness with a tiny bit of color to reflect the culinary nature of our application.
+
 ![Mockup image](/docs/color-palette.png)
 
 ### Fonts
