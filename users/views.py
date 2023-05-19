@@ -23,7 +23,7 @@ def register(request):
             messages.success(
                 request,
                 f'Welcome { username }! Your account was successfully '
-                f'/created! Please log in!'
+                f'created! Please log in!'
             )
             return redirect('login')
     else:
