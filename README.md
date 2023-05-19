@@ -17,7 +17,7 @@ Developer: Sandra Bergström <br>
     2. [Site Owner Goals](#site-owner-goals)
 2. [User Experience](#user-experience)
     1. [Target Audience](#target-audience)
-    2. [User Requrements and Expectations](#user-requrements-and-expectations)
+    2. [User Requirements and Expectations](#user-requirements-and-expectations)
     3. [User Stories](#user-stories)
 3. [Database](#database)
     1. [User App](#user-app)
@@ -30,7 +30,10 @@ Developer: Sandra Bergström <br>
     5. [Wireframes](#wireframes)
 5. [Technologies Used](#technologies-used)
     1. [Languages](#languages)
-    2. [Frameworks & Tools](#frameworks-&-tools)
+    2. [Frameworks](#frameworks)
+    3. [Database](#database)
+    4. [Tools](#tools)
+    5. [Supporting Libraries and Packages](#supporting-libraries-and-packages)
 6. [Methodology](#methodology)
     1. [Agile Project Management with GitHub Projects](#agile-project-management-with-github-projects)
     2. [User Stories as GitHub Issues](#user-stories-as-github-issues)
@@ -38,8 +41,17 @@ Developer: Sandra Bergström <br>
     4. [Iterative Development Approach](#iterative-development-approach)
     5. [Backlog and Subsequent Iterations](#backlog-and-subsequent-iterations)
 7. [Features](#features)
+    1. [Landing Page](#landing-page)
+    2. [Cookbook Pages](#cookbook-pages)
+    3. [Recipe Pages](#recipe-pages)
+    4. [User Account Management](#user-account-management)
+    5. [Recipe Management](#recipe-management)
+    6. [Navigation](#navigation)
+    7. [Future Features](#future-features)
 8. [Testing](#validation)
 9. [Bugs](#bugs)
+    1. [Known bugs](#known-bugs)
+    2. [Fixed bugs](#fixed-bugs)
 10. [Deployment](#deployment)
 11. [Credits](#credits)
 12. [Acknowledgements](#acknowledgements)
@@ -103,12 +115,12 @@ The Recipe Collective strives to create an enjoyable and engaging environment fo
 - [As a Site Owner, I can view and manage user accounts to ensure the security and integrity of the site and its users](https://github.com/SandraBergstrom/theRecipeCollective/issues/1#issue-1676139643)
 
 #### Epic 2: Recipe Management
-- [As a Returning User, I can save recipes that I find in my own "cookbook" so that I can find them easily in the future](https://github.com/SandraBergstrom/theRecipeCollective/issues/17#issue-1676239448)<br>
-- [As a Returning User, I can delete my own recipe so that I can remove them if wanted](https://github.com/SandraBergstrom/theRecipeCollective/issues/8#issue-1676201972)<br>
-- [As a Returning User, I can click on a recipe so that I can get all details and instructions about it](https://github.com/SandraBergstrom/theRecipeCollective/issues/6#issue-1676195459)<br>
 - [As a Returning User, I can view all recipes so that I can find new recipes to try](https://github.com/SandraBergstrom/theRecipeCollective/issues/2#issue-1676140284)<br>
-- [As a Returning User, I can edit my own recipes so that I can update them if needed](https://github.com/SandraBergstrom/theRecipeCollective/issues/7#issue-1676198620)<br>
+- [As a Returning User, I can click on a recipe so that I can get all details and instructions about it](https://github.com/SandraBergstrom/theRecipeCollective/issues/6#issue-1676195459)<br>
+- [As a Returning User, I can save recipes that I find in my own "cookbook" so that I can find them easily in the future](https://github.com/SandraBergstrom/theRecipeCollective/issues/17#issue-1676239448)<br>
 - [As a Returning User, I can add a new recipe so that I can share it with others and save it for myself](https://github.com/SandraBergstrom/theRecipeCollective/issues/5#issue-1676191345)<br>
+- [As a Returning User, I can edit my own recipes so that I can update them if needed](https://github.com/SandraBergstrom/theRecipeCollective/issues/7#issue-1676198620)<br>
+- [As a Returning User, I can delete my own recipe so that I can remove them if wanted](https://github.com/SandraBergstrom/theRecipeCollective/issues/8#issue-1676201972)<br>
 - [As a Returning User I can comment on a recipe so that share my thoughts and suggestions](https://github.com/SandraBergstrom/theRecipeCollective/issues/11)<br>
 - [As a Site Owner, I can view and manage recipes to maintain a high standard of content and ensure the quality of the recipes on the site](https://github.com/SandraBergstrom/theRecipeCollective/issues/1#issue-1676139643)<br>
 
@@ -356,8 +368,9 @@ The Recipe Collective focuses on providing a clean and user-friendly design, wit
 [Back up](#table-of-content)
 
 ## Testing
+The Recipe Collective website underwent thorough testing to ensure its functionality, accessibility, and performance. The testing process involved code validation, accessibility assessment, performance evaluation, testing on various devices, browser compatibility checks, testing user stories, and incorporating user feedback for improvements.
 
-[View complete testing](TESTING.md)
+To view the complete testing details and results, please [click here](TESTING.md).
 
 
 [Back up](#table-of-content)
