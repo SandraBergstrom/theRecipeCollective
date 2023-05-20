@@ -37,7 +37,7 @@ class RecipeListView(ListView):
     paginate_by = 9
 
     def get_queryset(self):
-        return Recipe.objects.filter(status=1)
+        return Recipe.objects.filter(status=1).order_by('-date_posted')
 
 
 # this class will show the recipe with all details.
