@@ -156,9 +156,8 @@ At the Recipe Collective, the design philosophy revolves around creating a clean
 By adopting a minimalistic design approach, we strive to eliminate distractions and ensure that the focus remains on the culinary creations shared within the community. The use of ample white space, intuitive layouts, and crisp typography enhances readability and allows the vibrant colors and mouthwatering imagery of the recipes to take center stage.
 
 ### Design Choices
-Taking inspiration from modern scandinavian home kitchens, our design philosophy revolves around providing a clean and modern experience where users can easily navigate, discover, and engage with a vast collection of recipes.
+One of the key design choices we made was to prioritize a light and clean aesthetic throughout the Recipe Collective. This deliberate approach aims to enhance the presentation of recipe images and create an inviting atmosphere for users to immerse themselves in the content. To achieve this, I meticulously curated a color scheme that exudes freshness while incorporating subtle hints of color that resonate with the culinary nature of our application.
 
-To achieve this, we have adopted a minimalistic design approach that eliminates distractions and puts the spotlight on the culinary creations shared within our community. 
 ### Colour
 One of the key design choices we made was to keep the overall aesthetic light and clean. This approach enhances the recipe images and creates an inviting atmosphere for users to explore and engage with the content. We carefully selected a color scheme that evokes a sense of freshness with a tiny bit of color to reflect the culinary nature of our application.
 
@@ -432,9 +431,62 @@ You can clone the repository by following these steps:
 [Back up](#table-of-content)
 
 ## Credits
-Images not referenced below are owned by the developer.
+I would like to express my sincere gratitude to the following resources, which have been instrumental in the development of the Recipe Collective:
 
 ### Media
+Images are taken from the following pages:
+- [Pexels](https://www.pexels.com/)
+- [Unsplash](https://unsplash.com/)
+- [Stockvault](https://www.stockvault.net/)
+- [Pixabay](https://pixabay.com/)
+
+### Django Documentation:
+The official Django documentation has been an invaluable resource throughout the project, providing comprehensive guidance on models, forms, templates, and various aspects of Django development.
+
+- [Models](https://docs.djangoproject.com/en/4.2/topics/db/models/)
+- [Model Field Types](https://docs.djangoproject.com/en/4.2/ref/models/fields/#model-field-types)
+- [CSRF Trusted Origins](https://docs.djangoproject.com/en/4.0/ref/settings/#csrf-trusted-origins)
+- [Django Durationfield for only hours and minutes](https://forum.djangoproject.com/t/django-durationfield-for-only-hours-and-minutes/10575/3)
+- [Form Validation](https://docs.djangoproject.com/en/4.1/ref/forms/validation/)
+- [Built-in template tags and filters](https://docs.djangoproject.com/en/4.2/ref/templates/builtins/)
+- [Creating forms from models](https://docs.djangoproject.com/en/4.2/topics/forms/modelforms/)
+- [Model instance reference](https://docs.djangoproject.com/en/4.2/ref/models/instances/)
+- [Signals](https://docs.djangoproject.com/en/4.2/topics/signals/)
+- [Using a custom user model when starting a project](https://docs.djangoproject.com/en/4.1/topics/auth/customizing/#using-a-custom-user-model-when-starting-a-project)
+- [Using mixins with class-based views](https://docs.djangoproject.com/en/4.2/topics/class-based-views/mixins/#detailview-working-with-a-single-django-object)
+
+### W3 Schools:
+W3 Schools' documentation has provided clear explanations and examples for HTML and other web technologies, aiding in the development of user-friendly interfaces.
+https://www.w3schools.com/tags/tag_select.asp
+
+### Stackoverflow:
+The Stackoverflow community has been incredibly helpful in resolving specific challenges and providing solutions to common issues faced during the development process.
+- [Creating a Django Model for a recipe](https://stackoverflow.com/questions/72018345/creating-a-django-model-for-a-recipe)
+- [django CSRF_TRUSTED_ORIGINS not working as expected](https://stackoverflow.com/questions/70508568/django-csrf-trusted-origins-not-working-as-expected)
+- [Django user model override](https://stackoverflow.com/questions/74186422/django-user-model-override)
+- [How To Save A User's Favorite Posts in Django](https://stackoverflow.com/questions/49098606/how-to-save-a-users-favorite-posts-in-django)
+- [Django input as hour and minutes, saved as minutes](https://stackoverflow.com/questions/45366181/django-input-as-hour-and-minutes-saved-as-minutes)
+
+### Geeksforgeeks: 
+Geeksforgeeks has been a reliable source for detailed explanations and code examples, particularly for topics like overriding model methods.
+- [Overriding the save method](https://www.geeksforgeeks.org/overriding-the-save-method-django-models/)
+
+### Various tutorials and YouTube channels:
+I would like to extend my appreciation to the authors of the tutorials and YouTube channels that have shared their knowledge and expertise in Django development, enabling me to learn and apply best practices in building the Recipe Collective.
+- [Create a Recipe App in Django](https://dev.to/domvacchiano/create-a-recipe-app-in-django-tutorial-5hh)
+- [Python Django Tutorial - Build A Todo App](https://www.youtube.com/watch?v=2yXfUPwlZTw)
+- [Python Django Tutorial: Full-Featured Web App Part 1 - Getting Started](https://www.youtube.com/watch?v=UmljXZIypDchttps://www.youtube.com/watch?v=UmljXZIypDc)
+- [Python Django Tutorial: Full-Featured Web App Part 5 - Database and Migrations](https://www.youtube.com/watch?v=aHC3uTkT9r8)
+- [How to Extend Django User Model](https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html)
+- [Learn Django 3 - Creating a User Bookmark / Favourites Features](https://www.youtube.com/watch?v=H4QPHLmsZMU)
+
+### Other open-source projects and packages:
+The Recipe Collective utilizes open-source projects and packages, such as Django Measurement and Django Crispy Forms, which have greatly enhanced the functionality and user experience of the application.
+
+- [Django Measurement](https://pypi.org/project/django-measurement/)
+- [safe Filter](https://www.djangotemplatetagsandfilters.com/filters/safe/)
+- [crispy-bootstrap5](https://github.com/django-crispy-forms/crispy-bootstrap5)
+- [Django - User Profile](https://dev.to/earthcomfy/django-user-profile-3hik)
 
 ## Acknowledgements
 I would like to acknowledge the following tutorial which provided valuable guidance and inspiration during the development of this project:
