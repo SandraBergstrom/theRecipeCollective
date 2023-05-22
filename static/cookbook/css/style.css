@@ -164,6 +164,12 @@ p {
 
 .btn-link {
     padding: 6px;
+    --bs-btn-color: none;
+    --bs-btn-active-color: var(--clr-accent-green);
+    --bs-btn-hover-color: var(--clr-accent-green);
+    --mdb-btn-focus-color: var(--clr-accent-orange);
+    margin: 0 10px;
+
 }
 
 @media (max-width: 460px) {
