@@ -365,8 +365,41 @@ For a comprehensive view of the project progress, user stories, and bug tracking
 The Recipe Collective focuses on providing a clean and user-friendly design, with a focus on the recipes themselves. It emphasizes CRUD functionality, allowing users to create, read, update, and delete recipes as they contribute to the culinary community. The platform aims to inspire and facilitate the sharing of delicious recipes among users.
 
 ### Future Features
+Here are some exciting features that I would like to add to the Recipe Collective in the future:
 
--  
+
+- Adjust Serving Size: <br>
+Allow users to scale the serving size of a recipe, automatically adjusting the ingredient quantities accordingly, making it easier to prepare meals for different group sizes.
+
+- Filter Recipes by Category: <br>
+Allow users to filter recipes based on different categories, such as cuisine type or meal category.
+
+- Filter Recipes by Dietary Restrictions: <br>
+Implement a filtering mechanism that allows users to find recipes that meet their specific dietary needs, such as vegetarian, gluten-free, or dairy-free options.
+
+- Nutritional Information: <br>
+Provide nutritional information for recipes, including calorie count, macronutrients, and other relevant details, helping users make informed decisions about their meal choices.
+
+- Sharing on Social Media:<br> 
+Enable users to easily share their favorite recipes on various social media platforms, increasing the visibility of the Recipe Collective.
+
+
+- Search Recipes: <br>
+Implement a search functionality that enables users to quickly find specific recipes based on keywords or ingredient names.
+
+- Personal Recipe Modification: <br>
+Allow users to customize and modify recipes according to their preferences, enabling personalization and creativity in the cooking process.
+
+- Generate Shopping List: <br>
+Provide a feature that generates a shopping list based on the selected recipes, making it convenient for users to gather all the necessary ingredients for their planned meals.
+
+- Create Meal Plan: <br>
+Enable users to create and organize meal plans, allowing for better meal preparation and planning in advance.
+
+- Translation: <br>
+Implement multi-language support to make the Recipe Collective accessible to users from different regions and cultures.
+
+These future features aim to enhance the Recipe Collective's functionality, user experience, and engagement, making it a more versatile and valuable platform for cooking enthusiasts.
 
 [Back up](#table-of-content)
 
@@ -391,6 +424,7 @@ To view the complete testing details and results, please [click here](TESTING.md
 
 | **Bug** | **Fix** |
 | ----------- | ----------- |
+|[Ordering by latest added recipe not working](https://github.com/SandraBergstrom/theRecipeCollective/issues/39)|The ordering in the view was overridden by the get_queryset. Added ordering to the queryset.|
 |[If there is less than 3 recipe cards it will not look good any longer. The cards get slimmer and the page layout get strange when only 1 card.](https://github.com/SandraBergstrom/theRecipeCollective/issues/36)|The problem seems to have been a fixed height on the .card-img-top. I have now changed it to keep an image ratio of 1:1 widht a full widht.|
 |[Prep time and cooking time is showing seconds and not minutes.](https://github.com/SandraBergstrom/theRecipeCollective/issues/23)|Changed from DurationField to PositiveIntegerField. <br> [See detailed steps](https://github.com/SandraBergstrom/theRecipeCollective/issues/23#issuecomment-1549336886)|
 |[Cant delete users from admin page](https://github.com/SandraBergstrom/theRecipeCollective/issues/35)|High priority: Because of an old field in one of the models. Will change database to a clean before deploy.|
