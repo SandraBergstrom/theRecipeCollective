@@ -48,7 +48,7 @@ Developer: Sandra Bergström <br>
     5. [Recipe Management](#recipe-management)
     6. [Navigation](#navigation)
     7. [Future Features](#future-features)
-8. [Testing](#validation)
+8. [Testing](#testing)
 9. [Bugs](#bugs)
     1. [Known bugs](#known-bugs)
     2. [Fixed bugs](#fixed-bugs)

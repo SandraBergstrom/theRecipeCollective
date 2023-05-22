@@ -45,7 +45,6 @@ All pages passed through the validation and the code was pasted in and I used a 
 |recipe_form| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/validation/html/recipe-form.png)</details>| :white_check_mark:
 |recipe_detail| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/validation/html/recipe-detail.png)</details>| :white_check_mark:
 |recipe_confirmation_delete| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/validation/html/recipe-confirm-delete.png)</details>| :white_check_mark:
-|
 
 ### CSS Validation
 [W3C Jigsaw](https://jigsaw.w3.org/css-validator/) is a tool provided by the World Wide Web Consortium (W3C) that allows you to validate and check the correctness of your HTML and CSS code. It helps ensure that your web pages comply with the standards set by the W3C, promoting interoperability and accessibility.
@@ -54,7 +53,6 @@ All pages passed through the validation and the code was pasted in and I used a 
 --- | --- | --- | :---:
 |CSS file | No errors |[Result](http://jigsaw.w3.org/css-validator/validator$link)| :white_check_mark:
 |Whole webpage | When validating the page as a whole, the validator shows some errors linked to Bootstrap v5.0. When validating just my own custom CSS |[Result](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fthe-recipe-collective.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=sv#banner)| :white_check_mark:
-|
 
 ### Python Validation 
 [PEP 8](https://pep8ci.herokuapp.com/) is a style guide for writing Python code to ensure consistency and readability. It provides guidelines on how to format code, naming conventions for variables and functions, and other best practices. Following PEP 8 helps to improve code quality, readability, and maintainability.
@@ -73,7 +71,6 @@ Note: The specific details and validation results for each file can be viewed by
 |users/models | One line too long because of URL |![Result](/docs/validation/pep8/users-models.png)| :white_check_mark:
 |users/signals | All clear, no errors found | ![Result](/docs/validation/pep8/users-signals.png)| :white_check_mark:
 |users/views | All clear, no errors found |![Result](/docs/validation/pep8/users-views.png)| :white_check_mark:
-|
 
 [Back to the top](#table-of-content)
 
@@ -118,8 +115,7 @@ The Recipe Collective website was tested using [Google Lighthouse in Google Chro
 |recipe details| 98 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/validation/lighthouse/desktop/recipe-detail.png)</details> | :white_check_mark:
 |add recipe| 92 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/validation/lighthouse/desktop/add-recipe.png)</details> | :white_check_mark:
 |update recipe| 95 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/validation/lighthouse/desktop/update-recipe.png)</details> | :white_check_mark:
-|delete recipe|| <details><summary>Screenshot of result</summary>![Result](/docs/validation/lighthouse/desktop/delete-recipe.png)</details> | :white_check_mark:
-|
+|delete recipe| 98 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/validation/lighthouse/desktop/delete-recipe.png)</details> | :white_check_mark:
 
 ### Mobile Performance
 - Average performance score: 77/100
@@ -141,7 +137,6 @@ The Recipe Collective website was tested using [Google Lighthouse in Google Chro
 |add recipe| 73 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/validation/lighthouse/mobile/add-recipe.png)</details> | :white_check_mark:
 |update recipe| 72 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/validation/lighthouse/mobile/update.png)</details> | :white_check_mark:
 |delete recipe| 72 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/validation/lighthouse/mobile/delete-recipe.png)</details> | :white_check_mark:
-|
 
 Overall, the Recipe Collective website performed well in terms of performance, providing a smooth user experience on both desktop and mobile devices.
 
@@ -181,7 +176,6 @@ The website was tested on the following browsers:
 --- | --- | --- | :---:
 |[I can create an account so that I can save my recipes](https://github.com/SandraBergstrom/theRecipeCollective/issues/3#issue-1676151139)|Click on the "Signup" navigation link or the signup button on the landing page|The user should be redirected to the signup form|:white_check_mark:
 |[I want to be able to access the About page so that I can learn more about the purpose, features, and benefits of the Recipe Collective without needing to create an account](https://github.com/SandraBergstrom/theRecipeCollective/issues/37#issue-1708609060)|Click on the "About" button in the navigation bar on the landing page|The user should be directed to the About page|:white_check_mark:
-|
 
 #### As a returning user...
 | **User Story** | **Action** | **Expected Result** | **Pass** |
@@ -197,14 +191,12 @@ The website was tested on the following browsers:
 |[I can edit my own recipes so that I can update them if needed](https://github.com/SandraBergstrom/theRecipeCollective/issues/7#issue-1676198620)|Click on the "Update" button in the upper right corner of the recipe detail page|The user is directed to the recipe form to update the recipe|:white_check_mark:
 |[I can delete my own recipe so that I can remove them if wanted](https://github.com/SandraBergstrom/theRecipeCollective/issues/8#issue-1676201972)|Click the delete button on the recipe detail page|The user is taken to a confirmation page to confirm the deletion of the recipe. Upon confirming, the recipe is deleted|:white_check_mark:
 |[I can comment on a recipe so that share my thoughts and suggestions](https://github.com/SandraBergstrom/theRecipeCollective/issues/11#issue-1676227838)|Scroll down to the comment form on the recipe detail card and add a comment|The comment is successfully added|:white_check_mark:
-|
 
 #### As a site owner...
 | **User Story** | **Action** | **Expected Result** | **Pass** |
 --- | --- | --- | :---:
 |[I can view and manage user accounts to ensure the security and integrity of the site and its users](https://github.com/SandraBergstrom/theRecipeCollective/issues/1#issue-1676139643)|Access the Django admin section and navigate to the user management section|The admin section displays all users and their associated information. The owner can perform actions such as deleting users and managing their comments|:white_check_mark:
 |[I can view and manage recipes to maintain a high standard of content and ensure the quality of the recipes on the site](https://github.com/SandraBergstrom/theRecipeCollective/issues/1#issue-1676139643)|Access the admin page and navigate to the recipe management section|The admin page allows the owner to view and manage all recipes, ensuring the quality and standards of the content|:white_check_mark:
-|
 
 [Back to the top](#table-of-content)
 
@@ -228,7 +220,6 @@ Each participant was encouraged to provide feedback and report any issues or imp
 |--- | --- | --- | :---:
 |Navbar| Some users found the initial profile icon (chef's hat) unclear. Both color and icon was changed to make it more clear that this is a button for the user profile section | <details><summary>Screenshot of result</summary>![Result](/docs/validation/user-testing/user-default-img.png)</details> | :white_check_mark:
 |Scrolling Recipes| Some users found the sticky footer annoying. The sticky footer was removed, resulting in a better scrolling experience for recipes. | Removed the sticky-bottom to footer which gives a better experience when scrolling the recipes in the cookbook | :white_check_mark:
-|
 
 ### Full testing
 
@@ -239,7 +230,6 @@ Each participant was encouraged to provide feedback and report any issues or imp
 |About|Redirects to the about page with login and sign up buttons|Clicked on link "About"|about page loads and shows the login and signup buttons|:white_check_mark:
 |Login|Redirects to the login page|clicked on link "Login"|loads the login page and form|:white_check_mark:
 |Sign up|Redirects to to the signup page and form|clicked on the link "Sign up"|loads the sign up page and form|:white_check_mark:
-|
 
 #### Navbar authorized user
 |**Feature**|**Expected Outcome**|**Testing Performed**|**Result**|**Pass**|
@@ -248,7 +238,6 @@ Each participant was encouraged to provide feedback and report any issues or imp
 |About|Redirects to the about page with buttons to "Cookbook" and "My Favorites"|Clicked on link "About"|about page with links to "Cookbook" and "My Favorites" loads|:white_check_mark:
 |Meal Planner|Link not working|Clicked on link|Nothing happens|:white_check_mark:
 |Profile image/icon|Triggers the dropdown menu|Clicked on image|The dropdown menu is displayed|:white_check_mark:
-|
 
 #### Profile drop down menu
 |**Feature**|**Expected Outcome**|**Testing Performed**|**Result**|**Pass**|
@@ -258,28 +247,24 @@ Each participant was encouraged to provide feedback and report any issues or imp
 |My Recipes|Redirects to the page displaying the user's uploaded recipes|Clicked on the "My Recipes" link|The "My Recipes" page loads, showing the user's uploaded recipes|:white_check_mark:
 |Favorite Recipes|Redirects to the page displaying the user's favorite recipes|Clicked on the "Favorite Recipes" link|The "Favorite Recipes" page loads, displaying the user's favorite recipes|:white_check_mark:
 |Logout|Logs out the user and displays a confirmation message|Clicked on "Logout"|The user is successfully logged out and redirected to a page confirming the logout|:white_check_mark:
-|
 
 #### Index page
 |**Feature**|**Expected Outcome**|**Testing Performed**|**Result**|**Pass**|
 |--- | --- | --- | --- | :---:
 |Sign up button|Redirects to the signup page with a registration form|Clicked on the "Sign up" button|The signup page and form are successfully loaded|:white_check_mark:
 |Login button|Redirects to the login page|Clicked on the "Login" button|The login page is successfully loaded|:white_check_mark:
-|
 
 #### About page unauthorized user
 |**Feature**|**Expected Outcome**|**Testing Performed**|**Result**|**Pass**|
 |--- | --- | --- | --- | :---:
 |Sign up button|Redirects to the signup page with a registration form|Clicked on the "Sign up" button|The signup page and form are successfully loaded|:white_check_mark:
 |Login button|Redirects to the login page|Clicked on the "Login" button|The login page is successfully loaded|:white_check_mark:
-|
 
 #### About page authorized user
 |**Feature**|**Expected Outcome**|**Testing Performed**|**Result**|**Pass**|
 |--- | --- | --- | --- | :---:
 |Cookbook button|Redirects to the collective cookbook page|Clicked on the "Cookbook" button|The collective cookbook page is successfully loaded|:white_check_mark:
 |My Favorites button|Redirects to the page that displays the user's favorite recipes, or shows a prompt to add recipes if there are no favorites|Clicked on the "My Favorites" button|The favorite page is successfully loaded and displays the prompt when no favorite recipes are added|:white_check_mark:
-|
 
 #### Sign up page
 |**Feature**|**Expected Outcome**|**Testing Performed**|**Result**|**Pass**|
@@ -290,7 +275,6 @@ Each participant was encouraged to provide feedback and report any issues or imp
 |Password confirmation|Field is required and should match the entered password|Tested with empty field, mismatched passwords|Error message displayed prompting the user to confirm the password correctly|:white_check_mark:
 |Sign up button|If the form is valid, the user is redirected to the login page with a flash message confirming successful registration and a prompt to login. If the form is not valid, an error message is displayed.|Clicked the button with valid and non-valid formats|The button functions as expected, redirecting to the appropriate pages and displaying the corresponding messages|:white_check_mark:
 |Login text link|Redirects to the login page|Clicked on the "Login" link|The login page and form were successfully loaded|:white_check_mark:
-|
 
 #### Login page
 |**Feature**|**Expected Outcome**|**Testing Performed**|**Result**|**Pass**|
@@ -304,7 +288,6 @@ Each participant was encouraged to provide feedback and report any issues or imp
 |**Feature**|**Expected Outcome**|**Testing Performed**|**Result**|**Pass**|
 |--- | --- | --- | --- | :---:
 |Update|When changes are made and the "Update" button is clicked, the changes should be saved, the user should be redirected to the updated form, and a flash message should confirm the update|Made changes and clicked on the "Update" button|Changes were successfully saved, redirected to the updated form, and a flash message confirmed the update|:white_check_mark:
-|
 
 #### the Cookbook pages
 |**Feature**|**Expected Outcome**|**Testing Performed**|**Result**|**Pass**|
@@ -319,7 +302,6 @@ Each participant was encouraged to provide feedback and report any issues or imp
 |Recipe card info button|Redirects to the recipe detail page|Clicked on the info button of a recipe card|Successfully redirected to the recipe detail page|:white_check_mark:
 |Pagination|Displays pagination if more than 9 recipes|Added more than 9 recipes to the list|Pagination is displayed showing the correct number of pages|:white_check_mark:
 |Page buttons on pagination|Navigates to the correct page|Clicked on page number/next/previous buttons in pagination|Successfully navigated to the correct page based on the button clicked|:white_check_mark:
-|
 
 #### Recipe Detail page
 |**Feature**|**Expected Outcome**|**Testing Performed**|**Result**|**Pass**|
@@ -328,20 +310,17 @@ Each participant was encouraged to provide feedback and report any issues or imp
 |Update button|	Only shown on the user's own recipes. Takes the user to the recipe form with pre-filled fields|Clicked on the update button|Only shown on user's recipes and successfully redirected to the recipe form with the fields pre-filled|:white_check_mark:
 |Delete button|Only shown on the user's own recipes. Redirects to the delete confirmation page|Clicked on the delete button|Only shown on user's recipes and successfully redirected to the delete confirmation page|:white_check_mark:
 |Heart icon|Only shown if the recipe is not the user's own recipe. Toggles between adding to favorites and removing from favorites. Displays flash messages to confirm the action|Toggled the heart icon|Successfully toggled between adding to favorites and removing from favorites. Flash messages confirm the action|:white_check_mark:
-|
 
 #### Update recipe page
 |**Feature**|**Expected Outcome**|**Testing Performed**|**Result**|**Pass**|
 |--- | --- | --- | --- | :---:
 |Update|When changes are made and the "Update" button is clicked, the changes should be saved, the user should be redirected to the recipe detail page, and a flash message should confirm the update|Made changes and clicked on the "Update" button|Changes were successfully saved, redirected to the recipe detail page, and a flash message confirmed the update|:white_check_mark:
-|
 
 #### Delete recipe page
 |**Feature**|**Expected Outcome**|**Testing Performed**|**Result**|**Pass**|
 |--- | --- | --- | --- | :---:
 |Delete button|Deletes the recipe and redirects to the collective recipe page|Clicked on the delete button|The recipe was successfully deleted and I was redirected to the collective recipe page|:white_check_mark:
 |Cancel button|Redirects to the recipe detail page|Clicked on the Cancel button|Successfully redirected to the recipe detail page|:white_check_mark:
-|
 
 [Back to the top](#table-of-content)
 
