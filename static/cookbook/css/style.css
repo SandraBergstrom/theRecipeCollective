@@ -510,3 +510,7 @@ a:hover {
     justify-content: center;
     align-items: center;
 }
+
+.footer-buttons:hover {
+    background-color: transparent;
+}
