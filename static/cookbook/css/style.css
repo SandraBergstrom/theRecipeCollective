@@ -7,7 +7,7 @@
     --clr-neutral-light: rgb(222, 215, 218);
     --clr-neutral-dark: rgb(196, 180, 159);
 
-    --clr-accent-yellow: rgb(252, 211, 86);
+    --clr-accent-danger: rgb(151, 5, 15);
     --clr-accent-orange: rgb(195, 126, 93);
     --clr-accent-green: rgb(54, 122, 59);
 }
@@ -230,6 +230,7 @@ p {
 .btn-custom-secondary {
     background-color: var(--clr-accent-green);
     color: var(--clr-primary-light);
+    text-transform: capitalize;
 }
 
 .btn-custom-secondary-outline {
@@ -257,6 +258,21 @@ p {
 a:hover {
     color: var(--clr-accent-green);
     text-decoration: none;
+}
+
+/* Danger button override*/
+.btn-danger {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--clr-accent-danger);
+    --bs-btn-hover-border-color: var(--clr-accent-orange);
+    --bs-btn-focus-shadow-rgb: 225,83,97;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--clr-accent-danger);
+    --bs-btn-active-border-color: var(--clr-accent-danger);
+    margin: 0 5px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: capitalize;
 }
 
 /* Favorite button */
