@@ -219,12 +219,15 @@ p {
 .btn-custom-primary {
     background-color: var(--clr-accent-orange);
     color: var(--clr-primary-light);
+    text-transform: capitalize;
 }
 
 .btn-custom-primary-outline {
     border-color: var(--clr-accent-orange);
     border-radius: 5px;
-    color: var(--clr-accent-orange)
+    color: var(--clr-accent-orange);
+    text-transform: capitalize;
+    font-weight: 500;
 }
 
 .btn-custom-secondary {
