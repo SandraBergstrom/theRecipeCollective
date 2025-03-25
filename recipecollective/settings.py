@@ -31,11 +31,7 @@ DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-<<<<<<< HEAD
 ALLOWED_HOSTS = ['the-recipe-collective.herokuapp.com', 'the-recipe-collective-eb39c49c7599.herokuapp.com', 'localhost', '127.0.0.1']
-=======
-ALLOWED_HOSTS = ['the-recipe-collective.herokuapp.com', 'localhost', 'the-recipe-collective-eb39c49c7599.herokuapp.com']
->>>>>>> 7b430921cd46ad45def1da3c1a08a109d68430d4
 
 
 # Application definition
