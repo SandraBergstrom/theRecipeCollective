@@ -13,12 +13,14 @@
                         <h1 class="mb-3">the Recipe Collective</h1>
                         <p class="mb-1">Discover a world of culinary inspiration with the Recipe Collective</p>
                         <p class="mb-4">- your go-to resource for mouth-watering recipes and insider culinary secrets!</p>
-                        <a class="btn btn-custom-primary-outline btn-lg m-2" href="{% url 'cookbook-home' %}" role="button">Browse Recipes</a>
-                        <p class="mt-4 mb-1 w-75 mx-auto text-center">If you want to be a part of the collective and be able to add and save your favoritres please</p>
-                        <a class="btn btn-custom-primary btn-lg m-2 btn-sm" href="{% url 'register' %}"
+                        <a class="btn btn-custom-primary-outline btn-lg m-2 btn-sm" href="{% url 'register' %}"
                             role="button" rel="nofollow">Sign up!</a>
                         <a class="btn btn-custom-primary-outline btn-lg m-2 btn-sm" href="{% url 'login' %}"
                             role="button">Login</a>
+                        <hr>
+                        <small class="text-muted">Pssst...You don’t need an account to browse</small><br>
+                        <a class="btn btn-custom-primary btn-lg m-2" href="{% url 'cookbook-home' %}" role="button">Browse Recipes</a>
+                        
                     </div>
                 </div>
             </div>
