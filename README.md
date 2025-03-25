@@ -8,7 +8,7 @@ So why settle for the same old boring meals? Join The Recipe Collective and spic
 
 ![Mockup image](docs/mockup.png)
 Developer: Sandra Bergström <br>
-[Live webpage](https://the-recipe-collective.herokuapp.com/)
+[Live webpage]([https://the-recipe-collective.herokuapp.com/](https://the-recipe-collective-eb39c49c7599.herokuapp.com/))
 
 ## Table of Content
 
